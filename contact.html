@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OneWater</title>
+    <!-- Google Font: Text Me One -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Text+Me+One&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/contact.css" />
+</head>
+<body>
+    <header class="main-header">
+        <div class="brand">
+            <img src="/images/logo.png" alt="OneWater Logo" />
+        </div>
+
+        <!-- Hamburger for mobile -->
+        <button class="hamburger" aria-label="Toggle menu" id="hamburgerBtn">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+
+        <!-- Desktop Nav (only shown on desktop) -->
+        <nav class="nav-menu desktop-nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="solutions.html">Solutions</a>
+            <a href="case-studies.html">Case Studies</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </header>
+
+   <!-- Mobile Sidebar (hidden by default, never appears on desktop) -->
+
+<aside class="mobile-sidebar" id="mobileSidebar">
+    <div class="sidebar-header">
+        <button class="close-btn" id="closeSidebar">&times;</button>
+    </div>
+    <nav class="sidebar-nav">
+        <a href="index.html">
+            <img src="/images/home.png" alt="Home Icon">
+            Home
+        </a>
+        <a href="about.html">
+            <img src="/images/about.png" alt="About Icon">
+            About
+        </a>
+        <a href="solutions.html">
+            <img src="/images/solutions.png" alt="Solutions Icon">
+            Solutions
+        </a>
+        <a href="case-studies.html">
+            <img src="/images/case-study.png" alt="Case Study Icon">
+            Case Studies
+        </a>
+        <a href="contact.html">
+            <img src="/images/contact.png" alt="Contact Icon">
+            Contact Us
+        </a>
+    </nav>
+</aside>
+
+
+<section class="hero" id="contact">
+    <img
+        src="/images/filtered-hero-contact.png"
+        alt="Contact Us Background"
+        class="hero-bg"
+        onerror="this.style.backgroundColor='#1b3350'; this.style.opacity='0.8';"
+    />
+    <div class="hero-content">
+        <h1><strong>Contact Us</strong></h1>
+        <p>Lorem ipsum dolor sit amet, conse ctetur adipiscing elit duis sed dapibus leo nisi non rutrum.Lorem ipsum dolor sit amet, conse ctetur adipiscing elit duis sed dapibus leo nisi non rutrumLorem ipsum dolor sit amet, conse ctetur adipiscing elit duis sed dapibus leo nisi non rutrum</p></p>
+    </div>
+</section>
+    </section>
+
+
+    <section class="contact-info">
+    <div class="contact-container">
+        <div class="contact-card">
+            <div class="contact-icon">
+                <img src="/images/location.png" alt="Visit Us Icon">
+            </div>
+            <h3>VISIT US</h3>
+            <p>Lorem ipsum dolor sit amet, conse ctetur adipiscing elit duis sed dapibus leo nisi non rutrum</p>
+            <a href="https://www.google.com/maps/place/7+West+Quay/@-33.9110657,18.4203945,17z/data=!4m6!3m5!1s0x1dcc67554acecfdb:0x39166cb4d11b8a87!8m2!3d-33.9109455!4d18.4218429!16s%2Fg%2F11jgz03lh_!5m1!1e1?entry=ttu&g_ep=EgoyMDI2MDExOS4wIKXMDSoASAFQAw%3D%3D" class="contact-link">7  West quay Waterfront</a>
+        </div>
+
+        <div class="contact-card">
+            <div class="contact-icon">
+                <img src="/images/telephone.png" alt="Call Us Icon">
+            </div>
+            <h3>CALL US</h3>
+            <p>Lorem ipsum dolor sit amet, conse ctetur adipiscing elit duis sed dapibus leo nisi non rutrum</p>
+            <a href="" class="contact-link">+27123456789</a>
+        </div>
+
+        <div class="contact-card">
+            <div class="contact-icon">
+                <img src="/images/mail.png" alt="Contact Us Icon">
+            </div>
+            <h3>CONTACT US</h3>
+            <p>Lorem ipsum dolor sit amet, conse ctetur adipiscing elit duis sed dapibus leo nisi non rutrum</p>
+            <a href="mailto:@info.com" class="contact-link">info@onewater.com</a>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="contact-form-section">
+    <div class="form-container">
+        <div class="form-image">
+            <img src="/images/clean-drop.png" alt="Contact Image">
+        </div>
+        <div class="form-content">
+            <h2>Need support?</h2>
+            <p>Contact us if you need further assistance.</p>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name and surname</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Please enter the details of your request.</label>
+                    <textarea id="message" name="message" rows="6" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">SUBMIT</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+        <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <a href="index.html" class="footer-logo-link" aria-label="OneWater Home">
+                    <img src="images/logo.png" alt="OneWater" class="footer-logo">
+                </a>
+                <p class="footer-office">Head Office (South Africa)</p>
+                <p class="footer-office">Head Office (South Africa)</p>
+            </div>
+
+            <div class="footer-center">
+                <h3 class="footer-heading">Quick Links</h3>
+                <nav class="footer-nav">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="solutions.html">Solutions</a>
+                    <a href="case-studies.html">Case Studies</a>
+                    <a href="contact.html">Contact Us</a>
+                </nav>
+            </div>
+
+            <div class="footer-right">
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <img src="images/instagram.png" alt="Instagram">
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <img src="images/linkedin.png" alt="LinkedIn">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 powered by Ferguson Media</p>
+        </div>
+    </footer>
+
+    <script src="js/contact.js"></script>
+</body>
+</html>

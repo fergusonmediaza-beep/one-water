@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OneWater</title>
+    <!-- Google Font: Text Me One -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Text+Me+One&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/index.css" />
+</head>
+<body>
+    <header class="main-header">
+        <div class="brand">
+            <img src="/images/logo.png" alt="OneWater Logo" />
+        </div>
+
+        <!-- Hamburger for mobile -->
+        <button class="hamburger" aria-label="Toggle menu" id="hamburgerBtn">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+
+        <!-- Desktop Nav (only shown on desktop) -->
+        <nav class="nav-menu desktop-nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="solutions.html">Solutions</a>
+            <a href="case-studies.html">Case Studies</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </header>
+
+   <!-- Mobile Sidebar (hidden by default, never appears on desktop) -->
+
+<aside class="mobile-sidebar" id="mobileSidebar">
+    <div class="sidebar-header">
+        <button class="close-btn" id="closeSidebar">&times;</button>
+    </div>
+    <nav class="sidebar-nav">
+        <a href="index.html">
+            <img src="/images/home.png" alt="Home Icon">
+            Home
+        </a>
+        <a href="about.html">
+            <img src="/images/about.png" alt="About Icon">
+            About
+        </a>
+        <a href="solutions.html">
+            <img src="/images/solutions.png" alt="Solutions Icon">
+            Solutions
+        </a>
+        <a href="case-studies.html">
+            <img src="/images/case-study.png" alt="Case Study Icon">
+            Case Studies
+        </a>
+        <a href="contact.html">
+            <img src="/images/contact.png" alt="Contact Icon">
+            Contact Us
+        </a>
+    </nav>
+</aside>
+
+    <section class="hero" id="home">
+        <img
+            src="/images/hero.jpg"
+            alt="Smart Water Solutions Background"
+            class="hero-bg"
+            onerror="this.style.backgroundColor='#1b3350'; this.style.opacity='0.8';"
+        />
+        <div class="hero-content">
+            <h1>Smart Water Solutions for a Sustainable Future</h1>
+            <a href="contact.html" class="explore-btn">Explore</a>
+        </div>
+    </section>
+
+
+
+    <!-- Features Section -->
+<section class="features-section">
+    <div class="features-container">
+        
+        <div class="feature-card">
+            <div class="feature-icon">
+                <img src="/images/hand.png" alt="Resource Optimisation Icon">
+            </div>
+            <h3>Resource Optimisation</h3>
+        </div>
+
+                <div class="feature-card">
+            <div class="feature-icon">
+                <img src="/images/tap.gif" alt="Smart Monitoring Icon">
+            </div>
+            <h3>Smart Monitoring</h3>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">
+                <img src="/images/analytics.png" alt="Smart Monitoring Icon">
+            </div>
+            <h3>Analytics</h3>
+        </div>
+    </div>
+</section>
+
+   <section class="solutions-hero">
+        <div class="solutions-image-side">
+            <img src="images/hero.jpg" alt="Digital water infrastructure">
+        </div>
+        <div class="solutions-content-side">
+            <div class="solutions-wrapper">
+                <h1>Our Solutions</h1>
+                <p class="solutions-description">
+                    ONE Water deploys digital twins of water distribution systems using Autodesk platforms, enabling utilities to visualise, simulate, and optimise performance in real time. These models integrate hydraulic data, sensor inputs, and operational systems to support proactive decision-making.
+                </p>
+                <a href="solution.html" class="solutions-explore-btn">Explore</a>
+            </div>
+        </div>
+    </section>
+
+     <section class="sectors-section">
+        <h2 class="sectors-title">Serving Water-Critical Sectors</h2>
+        <div class="sectors-divider"></div>
+        
+        <div class="carousel-container">
+            <button class="carousel-btn prev-btn" aria-label="Previous">‹</button>
+            
+            <div class="carousel-wrapper">
+                <div class="carousel-track">
+                    <div class="sector-card">
+                        <h3>Municipal Water Utilities</h3>
+                    </div>
+                    
+                    <div class="sector-card">
+                        <h3>Industrial Water Systems</h3>
+                    </div>
+                    
+                    <div class="sector-card">
+                        <h3>Commercial Property and Estates</h3>
+                    </div>
+                    
+                    <div class="sector-card">
+                        <h3>Mining and Water Management</h3>
+                    </div>
+                    
+                    <div class="sector-card">
+                        <h3>Agricultural Water Solutions</h3>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="carousel-btn next-btn" aria-label="Next">›</button>
+        </div>
+        
+        <div class="carousel-dots">
+            <span class="dot active" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
+            <span class="dot" data-index="3"></span>
+            <span class="dot" data-index="4"></span>
+        </div>
+    </section>
+
+        <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <a href="index.html" class="footer-logo-link" aria-label="OneWater Home">
+                    <img src="images/logo.png" alt="OneWater" class="footer-logo">
+                </a>
+                <p class="footer-office">Head Office (South Africa)</p>
+                <p class="footer-office">Head Office (South Africa)</p>
+            </div>
+
+            <div class="footer-center">
+                <h3 class="footer-heading">Quick Links</h3>
+                <nav class="footer-nav">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="solutions.html">Solutions</a>
+                    <a href="case-studies.html">Case Studies</a>
+                    <a href="contact.html">Contact Us</a>
+                </nav>
+            </div>
+
+            <div class="footer-right">
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <img src="images/instagram.png" alt="Instagram">
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <img src="images/linkedin.png" alt="LinkedIn">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 powered by Ferguson Media</p>
+        </div>
+    </footer>
+
+    <script src="js/index.js"></script>
+</body>
+</html>
