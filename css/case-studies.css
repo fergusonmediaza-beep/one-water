@@ -591,7 +591,7 @@
             }
 
             .cta-container p {
-                font-size: 1.1rem;
+                font-size: 1rem;
             }
 
             .cta-buttons {
@@ -600,7 +600,7 @@
             }
 
             .cta-btn {
-                width: 100%;
+                width: 50%;
             }
 
             .footer-content {
