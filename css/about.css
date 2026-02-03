@@ -5,8 +5,10 @@
    3. Hero Sections
    4. Vision & Mission Section
    5. Value Proposition Section
-   6. Footer
-   7. Media Queries
+   6. Team Section
+   7. Partners Section
+   8. Footer
+   9. Media Queries
    =================================== */
 
 /* ===================================
@@ -391,7 +393,159 @@ body {
 }
 
 /* ===================================
-   6. FOOTER
+   6. TEAM SECTION
+   =================================== */
+.team-section {
+    width: 100%;
+    background: #2c4a5e;
+    padding: 80px 10%;
+}
+
+.team-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: white;
+    margin-bottom: 60px;
+    letter-spacing: 1px;
+}
+
+.team-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.team-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.team-image-container {
+    width: 100%;
+    height: 320px;
+    background: linear-gradient(135deg, #3a5a70 0%, #4a6b7c 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.team-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.team-card-content {
+    padding: 25px;
+    text-align: center;
+}
+
+.team-card h3 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: white;
+    margin-bottom: 8px;
+}
+
+.team-role {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 20px;
+}
+
+.linkedin-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.linkedin-link:hover {
+    background: #0077b5;
+    transform: scale(1.1);
+}
+
+.linkedin-link img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1);
+}
+
+/* ===================================
+   7. PARTNERS SECTION
+   =================================== */
+.partners-section {
+    width: 100%;
+    background: #f5f5f5;
+    padding: 80px 10%;
+}
+
+.partners-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: #333;
+    margin-bottom: 60px;
+    letter-spacing: 1px;
+}
+
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    max-width: 1400px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.partner-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    background: white;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    min-height: 180px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.partner-link:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.partner-link img {
+    max-width: 100%;
+    max-height: 150px;
+    object-fit: contain;
+    /* filter: grayscale(100%); */
+    transition: filter 0.3s ease;
+}
+
+.partner-link:hover img {
+    filter: grayscale(0%);
+}
+
+/* ===================================
+   8. FOOTER
    =================================== */
 .main-footer {
     background: linear-gradient(135deg, #2c4a5e 0%, #3a5a70 100%);
@@ -509,7 +663,7 @@ body {
 }
 
 /* ===================================
-   7. MEDIA QUERIES
+   9. MEDIA QUERIES
    =================================== */
 
 /* Tablet & Mobile - 968px */
@@ -601,6 +755,26 @@ body {
         max-width: 400px;
     }
 
+    /* Team Section */
+    .team-section {
+        padding: 60px 8%;
+    }
+
+    .team-cards-container {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+    }
+
+    /* Partners Section */
+    .partners-section {
+        padding: 60px 8%;
+    }
+
+    .partners-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 35px;
+    }
+
     /* Footer */
     .footer-content {
         flex-direction: column;
@@ -655,6 +829,28 @@ body {
     .vision-right img {
         width: 70%;
         max-width: 300px;
+    }
+
+    /* Team Section */
+    .team-cards-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .team-card {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    /* Partners Section */
+    .partners-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .partner-link {
+        min-height: 150px;
+        padding: 30px;
     }
 }
 
@@ -730,6 +926,52 @@ body {
 
     .value-card p {
         font-size: 0.95rem;
+    }
+
+    /* Team Section */
+    .team-section {
+        padding: 50px 5%;
+    }
+
+    .team-title {
+        font-size: 1.8rem;
+        margin-bottom: 40px;
+    }
+
+    .team-image-container {
+        height: 280px;
+    }
+
+    .team-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .team-role {
+        font-size: 1rem;
+    }
+
+    /* Partners Section */
+    .partners-section {
+        padding: 50px 5%;
+    }
+
+    .partners-title {
+        font-size: 1.8rem;
+        margin-bottom: 40px;
+    }
+
+    .partners-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .partner-link {
+        min-height: 130px;
+        padding: 30px;
+    }
+
+    .partner-link img {
+        max-height: 70px;
     }
 
     /* Footer */
