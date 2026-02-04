@@ -24,3 +24,34 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 })
+
+// Back to Top Button Functionality
+
+// Get or create the back to top button
+let backToTopBtn = document.getElementById('backToTop');
+
+if (!backToTopBtn) {
+    // Create button if it doesn't exist
+    backToTopBtn = document.createElement('button');
+    backToTopBtn.id = 'backToTop';
+    backToTopBtn.className = 'back-to-top';
+    backToTopBtn.setAttribute('aria-label', 'Back to top');
+    document.body.appendChild(backToTopBtn);
+}
+
+// Show/hide button based on scroll position
+window.addEventListener('scroll', function() {
+    if (window.pageYOffset > 300) {
+        backToTopBtn.classList.add('visible');
+    } else {
+        backToTopBtn.classList.remove('visible');
+    }
+});
+
+// Smooth scroll to top when clicked
+backToTopBtn.addEventListener('click', function() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
