@@ -560,7 +560,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(to right, #183b52 0%, transparent 100%);
+    /* background: linear-gradient(to right, #183b52 0%, transparent 100%); */
 }
 
 .solutions-content-side {
