@@ -1071,3 +1071,204 @@ body {
         border-width: 2.5px;
     }
 }
+
+
+
+/* ============================================
+   APPEND THIS TO THE BOTTOM OF css/about.css
+   ============================================ */
+
+/* -----------------------------------------------
+   VALUE PROPOSITION — All 3 cards same height
+   Badge pinned to bottom, doesn't push card taller
+----------------------------------------------- */
+
+/* Make the container stretch all cards to equal height */
+.value-cards-container {
+    align-items: stretch !important;
+}
+
+/* All cards become column flex so we can push badge down */
+.value-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Paragraph fills available space, pushing badge to bottom */
+.value-card p {
+    flex: 1;
+}
+
+.value-card-highlight {
+    border: none;
+}
+
+.value-card-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #2ec4b6;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 20px;
+    margin-top: 20px;
+    /* Does not stretch to full width */
+    align-self: center;
+    flex-shrink: 0;
+}
+
+.value-card-badge svg {
+    flex-shrink: 0;
+    stroke: white;
+}
+
+/* -----------------------------------------------
+   AFRICA POSITIONING SECTION
+----------------------------------------------- */
+.africa-positioning-section {
+    background: #f0fdfc;
+    padding: 100px 5%;
+}
+
+.africa-positioning-container {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.africa-header {
+    text-align: center;
+    max-width: 820px;
+    margin: 0 auto 70px;
+}
+
+.africa-eyebrow {
+    display: inline-block;
+    color: #2ec4b6;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    border-bottom: 2px solid #2ec4b6;
+    padding-bottom: 6px;
+}
+
+.africa-header h2 {
+    font-size: 2.5rem;
+    color: #1a2f3f;
+    font-weight: 400;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.africa-header p {
+    font-size: 1.1rem;
+    color: #475569;
+    line-height: 1.8;
+}
+
+/* Pillars grid */
+.africa-pillars {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+}
+
+.africa-pillar {
+    background: white;
+    border-radius: 16px;
+    padding: 36px 24px;
+    text-align: center;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    border: 1px solid #d1faf5;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.africa-pillar:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(46, 196, 182, 0.15);
+}
+
+/* SVG icon wrapper */
+.pillar-icon-wrap {
+    width: 68px;
+    height: 68px;
+    background: #f0fdfc;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    border: 1.5px solid #b2f5ea;
+    color: #2ec4b6;
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.africa-pillar:hover .pillar-icon-wrap {
+    background: #2ec4b6;
+    border-color: #2ec4b6;
+    color: white;
+}
+
+.africa-pillar h3 {
+    font-size: 1.05rem;
+    color: #1a2f3f;
+    margin-bottom: 12px;
+    font-family: 'Text Me One', sans-serif;
+}
+
+.africa-pillar p {
+    font-size: 0.93rem;
+    color: #64748b;
+    line-height: 1.65;
+}
+
+/* -----------------------------------------------
+   RESPONSIVE
+----------------------------------------------- */
+@media (max-width: 1200px) {
+    .africa-pillars {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .africa-positioning-section {
+        padding: 60px 5%;
+    }
+
+    .africa-header {
+        margin-bottom: 50px;
+    }
+
+    .africa-header h2 {
+        font-size: 1.9rem;
+    }
+
+    .africa-pillars {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .africa-pillar {
+        padding: 28px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .africa-positioning-section {
+        padding: 50px 5%;
+    }
+
+    .africa-header h2 {
+        font-size: 1.6rem;
+    }
+}

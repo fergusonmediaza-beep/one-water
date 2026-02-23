@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>OneWater</title>
-    <!-- Google Font: Text Me One -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Text+Me+One&display=swap" rel="stylesheet" />
@@ -12,23 +11,15 @@
 </head>
 <body>
 
-    
     <header class="main-header">
         <div class="brand">
-    <a href="index.html">
-        <img src="images/logo.png" alt="OneWater Logo" />
-    </a>
-</div>
-
-
-        <!-- Hamburger for mobile -->
+            <a href="index.html"><img src="images/logo.png" alt="OneWater Logo" /></a>
+        </div>
         <button class="hamburger" aria-label="Toggle menu" id="hamburgerBtn">
             <span class="hamburger-line"></span>
             <span class="hamburger-line"></span>
             <span class="hamburger-line"></span>
         </button>
-
-        <!-- Desktop Nav (only shown on desktop) -->
         <nav class="nav-menu desktop-nav">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
@@ -38,84 +29,85 @@
         </nav>
     </header>
 
-   <!-- Mobile Sidebar (hidden by default, never appears on desktop) -->
-
-<aside class="mobile-sidebar" id="mobileSidebar">
-    <div class="sidebar-header">
-        <button class="close-btn" id="closeSidebar">&times;</button>
-    </div>
-    <nav class="sidebar-nav">
-        <a href="index.html">
-            <img src="images/home.png" alt="Home Icon">
-            Home
-        </a>
-        <a href="about.html">
-            <img src="images/about.png" alt="About Icon">
-            About
-        </a>
-        <a href="solutions.html">
-            <img src="images/solutions.png" alt="Solutions Icon">
-            Solutions
-        </a>
-        <a href="case-studies.html">
-            <img src="images/case-study.png" alt="Case Study Icon">
-            Case Studies
-        </a>
-        <a href="contact.html">
-            <img src="images/contact.png" alt="Contact Icon">
-            Contact Us
-        </a>
-    </nav>
-</aside>
-
-
-<section class="hero" id="home">
-    <video
-        autoplay
-        loop
-        muted
-        class="hero-bg"
-        onerror="this.style.backgroundColor='#1b3350'; this.style.opacity='0.8';"
-    >
-        <source src="images/original-hero.mp4" type="video/mp4" />
-    </video>
-            <div class="hero-content">
-            <h1>Smart Water Solutions for a Sustainable Future</h1>
-            <a href="contact.html" class="explore-btn">Explore</a>
+    <aside class="mobile-sidebar" id="mobileSidebar">
+        <div class="sidebar-header">
+            <button class="close-btn" id="closeSidebar">&times;</button>
         </div>
-</section>
+        <nav class="sidebar-nav">
+            <a href="index.html"><img src="images/home.png" alt="Home Icon">Home</a>
+            <a href="about.html"><img src="images/about.png" alt="About Icon">About</a>
+            <a href="solutions.html"><img src="images/solutions.png" alt="Solutions Icon">Solutions</a>
+            <a href="case-studies.html"><img src="images/case-study.png" alt="Case Study Icon">Case Studies</a>
+            <a href="contact.html"><img src="images/contact.png" alt="Contact Icon">Contact Us</a>
+        </nav>
+    </aside>
 
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <video autoplay loop muted class="hero-bg" onerror="this.style.backgroundColor='#1b3350';">
+            <source src="images/original-hero.mp4" type="video/mp4" />
+        </video>
+        <div class="hero-content">
+            <h1>Smart Water Solutions for a Sustainable Future</h1>
+            <!-- REC #4: Specific action-oriented CTAs -->
+            <div class="hero-cta-group">
+                <a href="contact.html" class="hero-cta-primary">Request a Digital Twin Demo</a>
+                <a href="contact.html" class="hero-cta-secondary">Book a Water Infrastructure Assessment</a>
+            </div>
+        </div>
+    </section>
 
-
+    <!-- REC #2: Stats bar with animated counters -->
+    <section class="stats-bar">
+        <div class="stats-container">
+            <div class="stat-item">
+                <span class="stat-number" data-target="15.7">0</span><span class="stat-unit">%</span>
+                <p class="stat-desc">Resource Optimisation</p>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <span class="stat-number" data-target="93">0</span><span class="stat-unit">%</span>
+                <p class="stat-desc">Sustainability Rating</p>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <span class="stat-number" data-target="30">0</span><span class="stat-unit">%</span>
+                <p class="stat-desc">Reduction in Reactive Repairs</p>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <span class="stat-number" data-target="50">0</span><span class="stat-unit">%</span>
+                <p class="stat-desc">NRW Reduction Achieved</p>
+            </div>
+        </div>
+    </section>
 
     <!-- Features Section -->
-<section class="features-section">
-    <div class="features-container">
-        
-        <div class="feature-card">
-            <div class="feature-icon">
-                <img src="images/hand.png" alt="Resource Optimisation Icon">
+    <section class="features-section">
+        <div class="features-container">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <img src="images/hand.png" alt="Resource Optimisation Icon">
+                </div>
+                <h3>Resource Optimisation</h3>
             </div>
-            <h3>Resource Optimisation</h3>
-        </div>
-
-                <div class="feature-card">
-            <div class="feature-icon">
-                <img src="images/tap.gif" alt="Smart Monitoring Icon">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <img src="images/tap.gif" alt="Smart Monitoring Icon">
+                </div>
+                <h3>Smart Monitoring</h3>
             </div>
-            <h3>Smart Monitoring</h3>
-        </div>
-
-        <div class="feature-card">
-            <div class="feature-icon">
-                <img src="images/analytics.png" alt="Smart Monitoring Icon">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <img src="images/analytics.png" alt="Analytics Icon">
+                </div>
+                <h3>Analytics</h3>
             </div>
-            <h3>Analytics</h3>
         </div>
-    </div>
-</section>
+    </section>
 
-   <section class="solutions-hero">
+    <!-- REC #1 + #3: Solutions section — hybrid + NRW callout -->
+    <section class="solutions-hero">
         <div class="solutions-image-side">
             <img src="images/solutions-man.png" alt="Digital water infrastructure">
         </div>
@@ -123,47 +115,108 @@
             <div class="solutions-wrapper">
                 <h1>Our Solutions</h1>
                 <p class="solutions-description">
-                    ONE Water deploys digital twins of water distribution systems using Autodesk platforms, enabling utilities to visualise, simulate, and optimise performance in real time. These models integrate hydraulic data, sensor inputs, and operational systems to support proactive decision-making.
+                    ONE Water combines cutting-edge digital twin technology with hands-on physical engineering — delivering end-to-end water infrastructure management. We deploy digital twins using Autodesk platforms for real-time visualisation, simulation, and predictive decision-making, while our field teams perform <strong>live pipeline repairs under pressure</strong> with <strong>zero system shutdowns</strong>.
                 </p>
-                <a href="solutions.html" class="solutions-explore-btn">Explore</a>
+                <!-- REC #3: NRW callout -->
+                <div class="nrw-callout">
+                    <span class="nrw-badge">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                        </svg>
+                        NRW Specialists
+                    </span>
+                    <p>We explicitly target <strong>Non-Revenue Water (NRW) reduction</strong> through satellite leak detection, acoustic sensors, and proven water balance methodologies — directly addressing the #1 pain point for municipal utilities.</p>
+                </div>
+                <!-- REC #4: Specific CTA -->
+                <a href="solutions.html" class="solutions-explore-btn">Explore All Solutions</a>
             </div>
         </div>
     </section>
 
-     <section class="sectors-section">
+    <!-- REC #1: Hybrid advantage strip — SVG icons, no emojis -->
+    <section class="hybrid-strip">
+        <div class="hybrid-container">
+
+            <div class="hybrid-item">
+                <div class="hybrid-icon-wrap">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="3" width="18" height="18" rx="2"/>
+                        <path d="M9 9h6v6H9z"/>
+                        <path d="M9 1v2M15 1v2M9 21v2M15 21v2M1 9h2M1 15h2M21 9h2M21 15h2"/>
+                    </svg>
+                </div>
+                <h4>Digital Twin Technology</h4>
+                <p>Autodesk-powered hydraulic modelling and real-time simulation</p>
+            </div>
+
+            <div class="hybrid-plus">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                    <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+                </svg>
+            </div>
+
+            <div class="hybrid-item">
+                <div class="hybrid-icon-wrap">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                    </svg>
+                </div>
+                <h4>Live Pipeline Repair</h4>
+                <p>Physical repairs under pressure — zero shutdowns, zero disruptions</p>
+            </div>
+
+            <div class="hybrid-equals">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                    <line x1="5" y1="9" x2="19" y2="9"/><line x1="5" y1="15" x2="19" y2="15"/>
+                </svg>
+            </div>
+
+            <div class="hybrid-item hybrid-result">
+                <div class="hybrid-icon-wrap">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <polyline points="22 4 12 14.01 9 11.01"/>
+                    </svg>
+                </div>
+                <h4>Complete Infrastructure Management</h4>
+                <p>We don't just find the problem digitally — we fix it physically</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Sectors Section -->
+    <section class="sectors-section">
         <h2 class="sectors-title">Serving Water-Critical Sectors</h2>
         <div class="sectors-divider"></div>
-        
         <div class="carousel-container">
-            <button class="carousel-btn prev-btn" aria-label="Previous">‹</button>
-            
+            <button class="carousel-btn prev-btn" aria-label="Previous">&#8249;</button>
             <div class="carousel-wrapper">
                 <div class="carousel-track">
                     <div class="sector-card">
                         <h3>Municipal Water Utilities</h3>
+                        <p class="sector-tag">NRW Reduction &amp; Leak Detection</p>
                     </div>
-                    
                     <div class="sector-card">
                         <h3>Industrial Water Systems</h3>
+                        <p class="sector-tag">Process Optimisation</p>
                     </div>
-                    
                     <div class="sector-card">
                         <h3>Commercial Property and Estates</h3>
+                        <p class="sector-tag">Smart Metering &amp; Monitoring</p>
                     </div>
-                    
                     <div class="sector-card">
                         <h3>Mining and Water Management</h3>
+                        <p class="sector-tag">Compliance &amp; Efficiency</p>
                     </div>
-                    
                     <div class="sector-card">
                         <h3>Agricultural Water Solutions</h3>
+                        <p class="sector-tag">Precision Irrigation</p>
                     </div>
                 </div>
             </div>
-            
-            <button class="carousel-btn next-btn" aria-label="Next">›</button>
+            <button class="carousel-btn next-btn" aria-label="Next">&#8250;</button>
         </div>
-        
         <div class="carousel-dots">
             <span class="dot active" data-index="0"></span>
             <span class="dot" data-index="1"></span>
@@ -173,18 +226,75 @@
         </div>
     </section>
 
-        <footer class="main-footer">
+    <!-- REC #5: Pan-African Vision — SVG icons -->
+    <section class="pan-africa-section">
+        <div class="pan-africa-container">
+            <div class="pan-africa-text">
+                <span class="africa-eyebrow">Our Vision for Africa</span>
+                <h2>Leading Water Transformation Across the Continent</h2>
+                <p>Headquartered in Sandton, South Africa, ONE Water brings <strong>local African expertise combined with global technology standards</strong> — purpose-built for the environmental and infrastructural challenges unique to our region. From arid mining zones to dense urban municipalities, we understand the terrain.</p>
+                <p>Our mission extends beyond South Africa: to lead the digital and physical transformation of water management across Africa, delivering resilient, data-driven water services to communities and industries that need it most.</p>
+                <a href="about.html" class="africa-cta">Learn About Our Mission</a>
+            </div>
+            <div class="pan-africa-visual">
+                <div class="africa-stats-grid">
+                    <div class="africa-stat">
+                        <div class="africa-stat-icon-wrap">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="2" y1="12" x2="22" y2="12"/>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                            </svg>
+                        </div>
+                        <h4>Pan-African Reach</h4>
+                        <p>Scaling solutions across the continent</p>
+                    </div>
+                    <div class="africa-stat">
+                        <div class="africa-stat-icon-wrap">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                        </div>
+                        <h4>Local Expertise</h4>
+                        <p>Deep understanding of African infrastructure challenges</p>
+                    </div>
+                    <div class="africa-stat">
+                        <div class="africa-stat-icon-wrap">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2"/>
+                                <line x1="8" y1="21" x2="16" y2="21"/>
+                                <line x1="12" y1="17" x2="12" y2="21"/>
+                            </svg>
+                        </div>
+                        <h4>Global Standards</h4>
+                        <p>World-class technology adapted for local conditions</p>
+                    </div>
+                    <div class="africa-stat">
+                        <div class="africa-stat-icon-wrap">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+                            </svg>
+                        </div>
+                        <h4>Sustainable Impact</h4>
+                        <p>Long-term water security for communities</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
         <div class="footer-content">
             <div class="footer-left">
                 <a href="index.html" class="footer-logo-link" aria-label="OneWater Home">
                     <img src="images/logo.png" alt="OneWater" class="footer-logo">
                 </a>
                 <p class="footer-office">35 Ferguson Road Illovo<br>
-                                         Sandton 2196 South Africa<br>
-                                         <strong>Phone : +27 11 084 1100</strong>
-                                         <br>Email : info@onewater.co.za</p>
+                    Sandton 2196 South Africa<br>
+                    <strong>Phone : +27 11 084 1100</strong><br>
+                    Email : info@onewater.co.za</p>
             </div>
-
             <div class="footer-center">
                 <h3 class="footer-heading">Quick Links</h3>
                 <nav class="footer-nav">
@@ -195,7 +305,6 @@
                     <a href="contact.html">Contact Us</a>
                 </nav>
             </div>
-
             <div class="footer-right">
                 <div class="social-icons">
                     <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
@@ -207,13 +316,11 @@
                 </div>
             </div>
         </div>
-
         <div class="footer-bottom">
-            <p>&copy; 2026 One Water. All rights reserved. Site by <a href="https://fergusonmedia.co.za" target="_blank" style="color:#007bff;text-decoration:underline;">Ferguson Media </p>
+            <p>&copy; 2026 One Water. All rights reserved. Site by <a href="https://fergusonmedia.co.za" target="_blank" style="color:#007bff;text-decoration:underline;">Ferguson Media</a></p>
         </div>
     </footer>
 
     <script src="js/index.js"></script>
-    
 </body>
 </html>

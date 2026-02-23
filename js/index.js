@@ -390,3 +390,54 @@ backToTopBtn.addEventListener('click', function() {
         behavior: 'smooth'
     });
 });
+
+
+/* ============================================
+   APPEND THIS TO THE BOTTOM OF js/index.js
+   Stats counter animation for the stats bar
+   ============================================ */
+
+// Animated counter for stats bar
+function animateStatCounters() {
+    const statNumbers = document.querySelectorAll('.stat-number[data-target]');
+    
+    statNumbers.forEach(el => {
+        const target = parseFloat(el.getAttribute('data-target'));
+        const isDecimal = target % 1 !== 0;
+        const duration = 2000;
+        const startTime = performance.now();
+
+        function update(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            // Ease out cubic
+            const eased = 1 - Math.pow(1 - progress, 3);
+            const current = target * eased;
+
+            el.textContent = isDecimal ? current.toFixed(1) : Math.floor(current);
+
+            if (progress < 1) {
+                requestAnimationFrame(update);
+            } else {
+                el.textContent = isDecimal ? target.toFixed(1) : target;
+            }
+        }
+
+        requestAnimationFrame(update);
+    });
+}
+
+// Trigger counter when stats bar enters viewport
+const statsBar = document.querySelector('.stats-bar');
+if (statsBar) {
+    const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateStatCounters();
+                statsObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.3 });
+
+    statsObserver.observe(statsBar);
+}
