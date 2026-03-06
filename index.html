@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="google-site-verification" content="6S4u3SzEe0vu9nzN3o8rKQjnfyYcu5iEfrio1ozL-4s" />
-    <title>OneWater</title>
+    <title>OneWater - About Us</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Text+Me+One&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Text+Me+One&family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/loader.css" />
     <link rel="stylesheet" href="css/index.css" />
 </head>
 <body>
 
-    <header class="main-header">
+    <header class="main-header" id="mainHeader">
         <div class="brand">
             <a href="index.html"><img src="images/logo.png" alt="OneWater Logo" /></a>
         </div>
@@ -45,100 +45,220 @@
 
     <!-- HERO -->
     <section class="hero" id="home">
-        <video autoplay loop muted class="hero-bg" onerror="this.style.backgroundColor='#1b3350';">
+        <video autoplay loop muted playsinline class="hero-bg" onerror="this.style.backgroundColor='#0d1f2d';">
             <source src="images/original-hero.mp4" type="video/mp4" />
         </video>
-        <div class="hero-content">
-            <h1>Smart Water Solutions for a Sustainable Future</h1>
-            <!-- REC #4: Specific action-oriented CTAs -->
+        <div class="hero-overlay"></div>
+
+        <div class="hero-badge hero-badge--1">
+            <span class="badge-value">50%</span>
+            <span class="badge-label">NRW Reduction</span>
+        </div>
+
+
+        <div class="hero-content" id="heroContent">
+            <div class="hero-eyebrow-wrap">
+                <span class="hero-eyebrow-line"></span>
+                <span class="hero-eyebrow-text">South Africa's Smart Water Technology Leader</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="hero-word" style="--i:0">Smart</span>
+                <span class="hero-word" style="--i:1">Water</span>
+                <span class="hero-word" style="--i:2">Solutions</span>
+                <br>
+                <span class="hero-word hero-word--teal" style="--i:3">for a Sustainable Future</span>
+            </h1>
+            <p class="hero-subtitle">Digital Twins &nbsp;&middot;&nbsp; AI Analytics &nbsp;&middot;&nbsp; Live Pipeline Repair &nbsp;&middot;&nbsp; Zero Shutdowns</p>
             <div class="hero-cta-group">
                 <a href="contact.html" class="hero-cta-primary">Request a Digital Twin Demo</a>
-                <a href="contact.html" class="hero-cta-secondary">Book a Water Infrastructure Assessment</a>
+                <a href="contact.html" class="hero-cta-secondary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    Book an Infrastructure Assessment
+                </a>
             </div>
+        </div>
+
+        <div class="hero-scroll-indicator">
+            <span class="scroll-label">Scroll</span>
+            <div class="scroll-track"><div class="scroll-thumb"></div></div>
         </div>
     </section>
 
-    <!-- REC #2: Stats bar with animated counters -->
+    <!-- MARQUEE STRIP -->
+    <div class="marquee-strip">
+        <div class="marquee-track">
+            <span class="marquee-item">Digital Twin Technology</span>
+            <span class="marquee-dot"></span>
+            <span class="marquee-item">NRW Reduction Specialists</span>
+            <span class="marquee-dot"></span>
+            <span class="marquee-item">Live Pipeline Repair</span>
+            <span class="marquee-dot"></span>
+            <span class="marquee-item">Zero System Shutdowns</span>
+            <span class="marquee-dot"></span>
+            <span class="marquee-item">AI-Powered Analytics</span>
+            <span class="marquee-dot"></span>
+            <span class="marquee-item">Pan-African Reach</span>
+            <span class="marquee-dot"></span>
+            <span class="marquee-item">Autodesk Integration</span>
+            <span class="marquee-dot"></span>
+            <span class="marquee-item">Predictive Maintenance</span>
+            <span class="marquee-dot"></span>
+            <span class="marquee-item">Digital Twin Technology</span>
+            <span class="marquee-dot"></span>
+            <span class="marquee-item">NRW Reduction Specialists</span>
+            <span class="marquee-dot"></span>
+            <span class="marquee-item">Live Pipeline Repair</span>
+            <span class="marquee-dot"></span>
+            <span class="marquee-item">Zero System Shutdowns</span>
+            <span class="marquee-dot"></span>
+            <span class="marquee-item">AI-Powered Analytics</span>
+            <span class="marquee-dot"></span>
+            <span class="marquee-item">Pan-African Reach</span>
+            <span class="marquee-dot"></span>
+            <span class="marquee-item">Autodesk Integration</span>
+            <span class="marquee-dot"></span>
+            <span class="marquee-item">Predictive Maintenance</span>
+            <span class="marquee-dot"></span>
+        </div>
+    </div>
+
+    <!-- STATS BAR -->
     <section class="stats-bar">
         <div class="stats-container">
-            <div class="stat-item">
-                <span class="stat-number" data-target="15.7">0</span><span class="stat-unit">%</span>
+            <div class="stat-item reveal-up" style="--delay:0s">
+                <div class="stat-value-wrap">
+                    <span class="stat-number" data-target="15.7">0</span><span class="stat-unit">%</span>
+                </div>
                 <p class="stat-desc">Resource Optimisation</p>
             </div>
             <div class="stat-divider"></div>
-            <div class="stat-item">
-                <span class="stat-number" data-target="93">0</span><span class="stat-unit">%</span>
+            <div class="stat-item reveal-up" style="--delay:0.1s">
+                <div class="stat-value-wrap">
+                    <span class="stat-number" data-target="93">0</span><span class="stat-unit">%</span>
+                </div>
                 <p class="stat-desc">Sustainability Rating</p>
             </div>
             <div class="stat-divider"></div>
-            <div class="stat-item">
-                <span class="stat-number" data-target="30">0</span><span class="stat-unit">%</span>
+            <div class="stat-item reveal-up" style="--delay:0.2s">
+                <div class="stat-value-wrap">
+                    <span class="stat-number" data-target="30">0</span><span class="stat-unit">%</span>
+                </div>
                 <p class="stat-desc">Reduction in Reactive Repairs</p>
             </div>
             <div class="stat-divider"></div>
-            <div class="stat-item">
-                <span class="stat-number" data-target="50">0</span><span class="stat-unit">%</span>
+            <div class="stat-item reveal-up" style="--delay:0.3s">
+                <div class="stat-value-wrap">
+                    <span class="stat-number" data-target="50">0</span><span class="stat-unit">%</span>
+                </div>
                 <p class="stat-desc">NRW Reduction Achieved</p>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features-section">
-        <div class="features-container">
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <img src="images/hand.png" alt="Resource Optimisation Icon">
+    <!-- BENTO GRID -->
+    <section class="bento-section">
+        <div class="bento-header reveal-up">
+            <span class="eyebrow">What We Do</span>
+            <h2>End-to-End Water Intelligence</h2>
+            <p>We combine world-class digital platforms with physical field engineering — because detecting a problem is never enough. We fix it.</p>
+        </div>
+        <div class="bento-grid">
+
+            <div class="bento-card bento-card--large reveal-up" style="--delay:0s">
+                <div class="bento-card-icon">
+                    <img src="images/hand.png" alt="Resource Optimisation">
                 </div>
-                <h3>Resource Optimisation</h3>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <img src="images/tap.gif" alt="Smart Monitoring Icon">
+                <div class="bento-card-body">
+                    <h3>Resource Optimisation</h3>
+                    <p>Reduce water waste and operational costs through AI-driven demand forecasting and smart network balancing across your entire infrastructure.</p>
+                    <a href="solutions.html" class="bento-link">
+                        Explore
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </a>
                 </div>
-                <h3>Smart Monitoring</h3>
+                <div class="bento-card-number">01</div>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <img src="images/analytics.png" alt="Analytics Icon">
+
+            <div class="bento-card reveal-up" style="--delay:0.1s">
+                <div class="bento-card-icon">
+                    <img src="images/tap.gif" alt="Smart Monitoring">
                 </div>
-                <h3>Analytics</h3>
+                <div class="bento-card-body">
+                    <h3>Smart Monitoring</h3>
+                    <p>Real-time pressure, flow, and quality monitoring with instant anomaly alerts — so you know before your customers do.</p>
+                </div>
+                <div class="bento-card-number">02</div>
             </div>
+
+            <div class="bento-card bento-card--accent reveal-up" style="--delay:0.15s">
+                <div class="bento-accent-stat">93<span>%</span></div>
+                <p class="bento-accent-label">Sustainability rating across all deployments</p>
+            </div>
+
+            <div class="bento-card reveal-up" style="--delay:0.2s">
+                <div class="bento-card-icon">
+                    <img src="images/analytics.png" alt="Analytics">
+                </div>
+                <div class="bento-card-body">
+                    <h3>Predictive Analytics</h3>
+                    <p>Autodesk-powered digital twins and ML models that simulate your network and predict failures before they happen.</p>
+                </div>
+                <div class="bento-card-number">03</div>
+            </div>
+
+            <div class="bento-card bento-card--wide reveal-up" style="--delay:0.3s">
+                <div class="bento-nrw-badge">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    NRW Specialists
+                </div>
+                <h3>Non-Revenue Water Reduction</h3>
+                <p>We explicitly target NRW through satellite leak detection, acoustic sensors, and proven water balance methodologies — the number one pain point for municipal utilities across Africa.</p>
+                <a href="solutions.html" class="bento-link">
+                    View Solutions
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+            </div>
+
         </div>
     </section>
 
-    <!-- REC #1 + #3: Solutions section — hybrid + NRW callout -->
+    <!-- SOLUTIONS SPLIT -->
     <section class="solutions-hero">
         <div class="solutions-image-side">
             <img src="images/solutions-man.png" alt="Digital water infrastructure">
+            <div class="solutions-image-badge">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                <span>Zero Shutdowns</span>
+            </div>
         </div>
         <div class="solutions-content-side">
             <div class="solutions-wrapper">
-                <h1>Our Solutions</h1>
-                <p class="solutions-description">
+                <span class="eyebrow light">Our Approach</span>
+                <h2 class="solutions-title reveal-left">Our Solutions</h2>
+                <p class="solutions-description reveal-up-delay">
                     ONE Water combines cutting-edge digital twin technology with hands-on physical engineering — delivering end-to-end water infrastructure management. We deploy digital twins using Autodesk platforms for real-time visualisation, simulation, and predictive decision-making, while our field teams perform <strong>live pipeline repairs under pressure</strong> with <strong>zero system shutdowns</strong>.
                 </p>
-                <!-- REC #3: NRW callout -->
-                <div class="nrw-callout">
+                <div class="nrw-callout reveal-up-delay">
                     <span class="nrw-badge">
-                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-                        </svg>
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
                         NRW Specialists
                     </span>
                     <p>We explicitly target <strong>Non-Revenue Water (NRW) reduction</strong> through satellite leak detection, acoustic sensors, and proven water balance methodologies — directly addressing the #1 pain point for municipal utilities.</p>
                 </div>
-                <!-- REC #4: Specific CTA -->
-                <a href="solutions.html" class="solutions-explore-btn">Explore All Solutions</a>
+                <a href="solutions.html" class="solutions-explore-btn reveal-up-delay">Explore All Solutions</a>
             </div>
         </div>
     </section>
 
-    <!-- REC #1: Hybrid advantage strip — SVG icons, no emojis -->
+    <!-- HYBRID STRIP -->
     <section class="hybrid-strip">
+        <div class="hybrid-header reveal-up">
+            <span class="eyebrow">Our Hybrid Edge</span>
+            <h2>Where Digital Meets Physical</h2>
+            <p>Most companies do one or the other. We do both — and that changes everything.</p>
+        </div>
         <div class="hybrid-container">
-
-            <div class="hybrid-item">
+            <div class="hybrid-item reveal-up" style="--delay:0s">
                 <div class="hybrid-icon-wrap">
                     <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                         <rect x="3" y="3" width="18" height="18" rx="2"/>
@@ -150,13 +270,15 @@
                 <p>Autodesk-powered hydraulic modelling and real-time simulation</p>
             </div>
 
-            <div class="hybrid-plus">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
-                    <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
-                </svg>
+            <div class="hybrid-connector reveal-up" style="--delay:0.1s">
+                <div class="hybrid-connector-line"></div>
+                <div class="hybrid-connector-node">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                </div>
+                <div class="hybrid-connector-line"></div>
             </div>
 
-            <div class="hybrid-item">
+            <div class="hybrid-item reveal-up" style="--delay:0.2s">
                 <div class="hybrid-icon-wrap">
                     <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
@@ -166,13 +288,15 @@
                 <p>Physical repairs under pressure — zero shutdowns, zero disruptions</p>
             </div>
 
-            <div class="hybrid-equals">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
-                    <line x1="5" y1="9" x2="19" y2="9"/><line x1="5" y1="15" x2="19" y2="15"/>
-                </svg>
+            <div class="hybrid-connector reveal-up" style="--delay:0.3s">
+                <div class="hybrid-connector-line"></div>
+                <div class="hybrid-connector-node hybrid-connector-node--equals">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="9" x2="19" y2="9"/><line x1="5" y1="15" x2="19" y2="15"/></svg>
+                </div>
+                <div class="hybrid-connector-line"></div>
             </div>
 
-            <div class="hybrid-item hybrid-result">
+            <div class="hybrid-item hybrid-result reveal-up" style="--delay:0.4s">
                 <div class="hybrid-icon-wrap">
                     <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
@@ -182,35 +306,49 @@
                 <h4>Complete Infrastructure Management</h4>
                 <p>We don't just find the problem digitally — we fix it physically</p>
             </div>
-
         </div>
     </section>
 
-    <!-- Sectors Section -->
+    <!-- SECTORS -->
     <section class="sectors-section">
-        <h2 class="sectors-title">Serving Water-Critical Sectors</h2>
-        <div class="sectors-divider"></div>
-        <div class="carousel-container">
+        <h2 class="sectors-title reveal-up">Serving Water-Critical Sectors</h2>
+        <div class="sectors-divider reveal-up"></div>
+        <div class="carousel-container reveal-up">
             <button class="carousel-btn prev-btn" aria-label="Previous">&#8249;</button>
             <div class="carousel-wrapper">
                 <div class="carousel-track">
                     <div class="sector-card">
+                        <div class="sector-icon">
+                            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                        </div>
                         <h3>Municipal Water Utilities</h3>
                         <p class="sector-tag">NRW Reduction &amp; Leak Detection</p>
                     </div>
                     <div class="sector-card">
+                        <div class="sector-icon">
+                            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+                        </div>
                         <h3>Industrial Water Systems</h3>
                         <p class="sector-tag">Process Optimisation</p>
                     </div>
                     <div class="sector-card">
+                        <div class="sector-icon">
+                            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+                        </div>
                         <h3>Commercial Property and Estates</h3>
                         <p class="sector-tag">Smart Metering &amp; Monitoring</p>
                     </div>
                     <div class="sector-card">
+                        <div class="sector-icon">
+                            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        </div>
                         <h3>Mining and Water Management</h3>
                         <p class="sector-tag">Compliance &amp; Efficiency</p>
                     </div>
                     <div class="sector-card">
+                        <div class="sector-icon">
+                            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="6"/><path d="M5 12H2"/><path d="M22 12h-3"/><path d="M6.34 6.34L4.93 4.93"/><path d="M19.07 4.93l-1.41 1.41"/><circle cx="12" cy="12" r="4"/><path d="M12 16v4"/><path d="M8 20h8"/></svg>
+                        </div>
                         <h3>Agricultural Water Solutions</h3>
                         <p class="sector-tag">Precision Irrigation</p>
                     </div>
@@ -227,60 +365,60 @@
         </div>
     </section>
 
-    <!-- REC #5: Pan-African Vision — SVG icons -->
+    <!-- PAN-AFRICA -->
     <section class="pan-africa-section">
         <div class="pan-africa-container">
-            <div class="pan-africa-text">
+            <div class="pan-africa-text reveal-left">
                 <span class="africa-eyebrow">Our Vision for Africa</span>
                 <h2>Leading Water Transformation Across the Continent</h2>
-                <p>Headquartered in Sandton, South Africa, ONE Water brings <strong>local African expertise combined with global technology standards</strong> — purpose-built for the environmental and infrastructural challenges unique to our region. From arid mining zones to dense urban municipalities, we understand the terrain.</p>
+                <p>Headquartered in Sandton, South Africa, ONE Water brings <strong>local African expertise combined with global technology standards</strong> — purpose-built for the environmental and infrastructural challenges unique to our region.</p>
                 <p>Our mission extends beyond South Africa: to lead the digital and physical transformation of water management across Africa, delivering resilient, data-driven water services to communities and industries that need it most.</p>
                 <a href="about.html" class="africa-cta">Learn About Our Mission</a>
             </div>
             <div class="pan-africa-visual">
                 <div class="africa-stats-grid">
-                    <div class="africa-stat">
+                    <div class="africa-stat reveal-up" style="--delay:0s">
                         <div class="africa-stat-icon-wrap">
-                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="10"/>
-                                <line x1="2" y1="12" x2="22" y2="12"/>
-                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                            </svg>
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
                         </div>
                         <h4>Pan-African Reach</h4>
                         <p>Scaling solutions across the continent</p>
                     </div>
-                    <div class="africa-stat">
+                    <div class="africa-stat reveal-up" style="--delay:0.1s">
                         <div class="africa-stat-icon-wrap">
-                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                                <circle cx="12" cy="10" r="3"/>
-                            </svg>
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                         </div>
                         <h4>Local Expertise</h4>
-                        <p>Deep understanding of African infrastructure challenges</p>
+                        <p>Deep understanding of African infrastructure</p>
                     </div>
-                    <div class="africa-stat">
+                    <div class="africa-stat reveal-up" style="--delay:0.2s">
                         <div class="africa-stat-icon-wrap">
-                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="2" y="3" width="20" height="14" rx="2"/>
-                                <line x1="8" y1="21" x2="16" y2="21"/>
-                                <line x1="12" y1="17" x2="12" y2="21"/>
-                            </svg>
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
                         </div>
                         <h4>Global Standards</h4>
-                        <p>World-class technology adapted for local conditions</p>
+                        <p>World-class technology adapted locally</p>
                     </div>
-                    <div class="africa-stat">
+                    <div class="africa-stat reveal-up" style="--delay:0.3s">
                         <div class="africa-stat-icon-wrap">
-                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
-                            </svg>
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
                         </div>
                         <h4>Sustainable Impact</h4>
                         <p>Long-term water security for communities</p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section class="cta-banner">
+        <div class="cta-banner-inner reveal-up">
+            <span class="eyebrow light">Take the Next Step</span>
+            <h2>Ready to Transform Your Water Infrastructure?</h2>
+            <p>Join the municipalities, mines, and industries across Africa already benefiting from ONE Water's hybrid approach.</p>
+            <div class="cta-banner-buttons">
+                <a href="contact.html" class="cta-banner-primary">Get in Touch</a>
+                <a href="case-studies.html" class="cta-banner-secondary">View Case Studies</a>
             </div>
         </div>
     </section>
@@ -308,9 +446,7 @@
             </div>
             <div class="footer-right">
                 <div class="social-icons">
-                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                        <img src="images/instagram.png" alt="Instagram">
-                    </a>
+
                     <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                         <img src="images/linkedin.png" alt="LinkedIn">
                     </a>
@@ -322,6 +458,7 @@
         </div>
     </footer>
 
+    <script src="js/loader.js"></script>
     <script src="js/index.js"></script>
 </body>
 </html>

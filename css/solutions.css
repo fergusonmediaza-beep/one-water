@@ -28,7 +28,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-     padding: 40px 5% 40px 0%; 
+     padding: 40px 5% ; 
     position: relative;
     top: 0;
     left: 0;
@@ -66,9 +66,9 @@ body {
 
 .nav-menu {
     display: flex;
-    gap: 70px;
+    gap: 32px;
     background: rgba(0, 0, 0, 0.2);
-    padding: 5px 30px;
+    padding: 5px 24px;
     border-radius: 50px;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -78,10 +78,11 @@ body {
 .nav-menu a {
     color: white;
     text-decoration: none;
-    font-size: 1.5rem;
-    padding: 6px 12px;
+    font-size: 1.1rem;
+    padding: 6px 10px;
     border-radius: 8px;
     transition: all 0.3s ease;
+    white-space: nowrap;
 }
 
 .nav-menu a:hover {

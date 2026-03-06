@@ -1,0 +1,162 @@
+/* ===================================
+   ONEWATER — PAGE LOADER
+   Include in every page via:
+   <link rel="stylesheet" href="css/loader.css" />
+   =================================== */
+
+/* Overlay covers the full viewport */
+#ow-loader {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(24, 59, 82, 0.55);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+/* Hidden state — added by JS when page is ready */
+#ow-loader.ow-loader--hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* ── Water drop wrap ── */
+.ow-wrap {
+    position: relative;
+    width: 100px;
+    height: 200px;
+}
+
+/* Falling drop */
+.ow-drop {
+    width: 40px;
+    height: 40px;
+    left: 50%;
+    margin-left: -20px;
+    position: absolute;
+    animation: owDrop 2s cubic-bezier(0.55, 0.085, 0.68, 0.53) 0s infinite;
+}
+
+.ow-drop circle {
+    fill: #2ec4b6;
+}
+
+/* Container that masks the drop */
+.ow-drop-outer {
+    position: absolute;
+    box-sizing: border-box;
+    width: 100px;
+    height: 200px;
+    overflow: hidden;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
+    -webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);
+}
+
+/* Ripple group */
+.ow-ripple {
+    position: absolute;
+    box-sizing: border-box;
+    width: 240px;
+    height: 240px;
+    top: 68px;
+    left: -70px;
+    perspective: 100px;
+    transform: rotateX(65deg);
+}
+
+.ow-ripple .ow-ripple-svg {
+    position: absolute;
+    width: 240px;
+    height: 240px;
+    opacity: 0;
+}
+
+.ow-ripple .ow-ripple-svg circle {
+    fill: none;
+    stroke: #2ec4b6;
+    stroke-width: 10px;
+}
+
+/* Ripple 1 */
+.ow-ripple-1 {
+    animation: owRipple 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s infinite;
+}
+.ow-ripple-1 .ow-ripple-svg {
+    animation: owFade 2s linear 0s infinite;
+}
+.ow-ripple-1 .ow-ripple-svg circle {
+    animation: owBorder 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s infinite;
+}
+
+/* Ripple 2 */
+.ow-ripple-2 {
+    animation: owRipple 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s infinite;
+}
+.ow-ripple-2 .ow-ripple-svg {
+    animation: owFade 2s linear 0.2s infinite;
+}
+.ow-ripple-2 .ow-ripple-svg circle {
+    animation: owBorder 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s infinite;
+}
+
+/* Ripple 3 */
+.ow-ripple-3 {
+    animation: owRipple 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.35s infinite;
+}
+.ow-ripple-3 .ow-ripple-svg {
+    animation: owFade 2s linear 0.35s infinite;
+}
+.ow-ripple-3 .ow-ripple-svg circle {
+    animation: owBorder 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.35s infinite;
+}
+
+/* Optional label */
+.ow-loader-label {
+    position: absolute;
+    bottom: -42px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    font-family: 'DM Sans', 'Text Me One', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* ── Keyframes ── */
+@keyframes owDrop {
+    0%   { transform: scale3d(0.01, 0.01, 0.01) translateY(0); }
+    10%  { transform: scale3d(1, 1, 1); }
+    44%  { transform: scale3d(1, 1, 1) translateY(200px); }
+    100% { transform: scale3d(1, 1, 1) translateY(200px); }
+}
+
+@keyframes owFade {
+    0%   { opacity: 0; }
+    42%  { opacity: 0; }
+    52%  { opacity: 1; }
+    65%  { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@keyframes owRipple {
+    0%   { transform: rotateX(65deg) scale3d(0.2, 0.2, 0.2); }
+    42%  { transform: rotateX(65deg) scale3d(0.2, 0.2, 0.2); }
+    100% { transform: rotateX(65deg) scale3d(0.9, 0.9, 0.9); }
+}
+
+@keyframes owBorder {
+    0%   { stroke-width: 6px; }
+    42%  { stroke-width: 6px; }
+    100% { stroke-width: 2px; }
+}
