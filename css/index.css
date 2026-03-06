@@ -338,8 +338,8 @@ body {
     margin-bottom: var(--s-4);
     animation: fadeIn 0.7s var(--ease) 0.1s both;
 }
-.hero-eyebrow-line { display:block; width:32px; height:1px; background:var(--teal); opacity:0.9; }
-.hero-eyebrow-text { font-size:var(--micro-size); letter-spacing:0.22em; text-transform:uppercase; color:var(--teal); font-weight:700; }
+.hero-eyebrow-line { display:block; width:32px; height:1px; background:var(--white); opacity:0.9; }
+.hero-eyebrow-text { font-size:var(--micro-size); letter-spacing:0.22em; text-transform:uppercase; color:var(--white); font-weight:700; }
 
 .hero-title {
     font-size: var(--h1-size);
