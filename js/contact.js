@@ -23,7 +23,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Close sidebar when a nav link is clicked
     document.querySelectorAll('.sidebar-nav a').forEach(function (link) {
         link.addEventListener('click', function () {
             mobileSidebar.classList.remove('open');
@@ -31,7 +30,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Close sidebar when clicking outside of it
     document.addEventListener('click', function (e) {
         if (
             mobileSidebar &&
@@ -46,18 +44,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     /* ----- Contact Form → mailto ----- */
-    const contactForm = document.querySelector('.contact-form');
+    // Button is type="button" so the form never submits natively
+    const submitBtn = document.getElementById('submitBtn');
 
-    if (contactForm) {
-        contactForm.addEventListener('submit', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
+    if (submitBtn) {
+        submitBtn.addEventListener('click', function () {
 
             const name    = document.getElementById('name').value.trim();
             const email   = document.getElementById('email').value.trim();
             const message = document.getElementById('message').value.trim();
 
-            // Basic validation
             if (!name || !email || !message) {
                 alert('Please fill in all fields before submitting.');
                 return;
