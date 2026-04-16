@@ -1,57 +1,73 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const hamburger = document.getElementById('hamburgerBtn');
-    const mobileSidebar = document.getElementById('mobileSidebar');
-    const closeBtn = document.getElementById('closeSidebar');
+/* =============================================
+   contact.js — OneWater Contact Page
+   ============================================= */
 
-    if (hamburger && mobileSidebar && closeBtn) {
-        hamburger.addEventListener('click', () => {
-            mobileSidebar.classList.add('active');
-        });
+/* ----- Mobile Sidebar ----- */
+const hamburgerBtn  = document.getElementById('hamburgerBtn');
+const mobileSidebar = document.getElementById('mobileSidebar');
+const closeSidebar  = document.getElementById('closeSidebar');
 
-        closeBtn.addEventListener('click', () => {
-            mobileSidebar.classList.remove('active');
-        });
-
-        // Close sidebar when clicking outside
-        document.addEventListener('click', (e) => {
-            if (
-                !mobileSidebar.contains(e.target) &&
-                !hamburger.contains(e.target)
-            ) {
-                mobileSidebar.classList.remove('active');
-            }
-        });
-    }
-
-})
-
-// Back to Top Button Functionality
-
-// Get or create the back to top button
-let backToTopBtn = document.getElementById('backToTop');
-
-if (!backToTopBtn) {
-    // Create button if it doesn't exist
-    backToTopBtn = document.createElement('button');
-    backToTopBtn.id = 'backToTop';
-    backToTopBtn.className = 'back-to-top';
-    backToTopBtn.setAttribute('aria-label', 'Back to top');
-    document.body.appendChild(backToTopBtn);
+if (hamburgerBtn) {
+    hamburgerBtn.addEventListener('click', function () {
+        mobileSidebar.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    });
 }
 
-// Show/hide button based on scroll position
-window.addEventListener('scroll', function() {
-    if (window.pageYOffset > 300) {
-        backToTopBtn.classList.add('visible');
-    } else {
-        backToTopBtn.classList.remove('visible');
+if (closeSidebar) {
+    closeSidebar.addEventListener('click', function () {
+        mobileSidebar.classList.remove('open');
+        document.body.style.overflow = '';
+    });
+}
+
+// Close sidebar when a nav link is clicked
+document.querySelectorAll('.sidebar-nav a').forEach(function (link) {
+    link.addEventListener('click', function () {
+        mobileSidebar.classList.remove('open');
+        document.body.style.overflow = '';
+    });
+});
+
+// Close sidebar when clicking outside of it
+document.addEventListener('click', function (e) {
+    if (
+        mobileSidebar.classList.contains('open') &&
+        !mobileSidebar.contains(e.target) &&
+        !hamburgerBtn.contains(e.target)
+    ) {
+        mobileSidebar.classList.remove('open');
+        document.body.style.overflow = '';
     }
 });
 
-// Smooth scroll to top when clicked
-backToTopBtn.addEventListener('click', function() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
+
+/* ----- Contact Form → mailto ----- */
+const contactForm = document.querySelector('.contact-form');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const name    = document.getElementById('name').value.trim();
+        const email   = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
+
+        // Basic validation
+        if (!name || !email || !message) {
+            alert('Please fill in all fields before submitting.');
+            return;
+        }
+
+        const to      = 'info@onewater.co.za';
+        const subject = encodeURIComponent('Enquiry from ' + name);
+        const body    = encodeURIComponent(
+            'Name: '    + name    + '\n' +
+            'Email: '   + email   + '\n\n' +
+            'Message:\n' + message
+        );
+
+        // Open default mail client with fields pre-filled
+        window.location.href = 'mailto:' + to + '?subject=' + subject + '&body=' + body;
     });
-});
+}
