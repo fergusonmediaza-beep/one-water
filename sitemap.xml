@@ -4,20 +4,30 @@
     <loc>https://onewater.co.za/</loc>
     <priority>1.0</priority>
     <changefreq>monthly</changefreq>
+    <lastmod>2026-08-19</lastmod>
   </url>
   <url>
     <loc>https://onewater.co.za/about.html</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
+    <lastmod>2026-08-19</lastmod>
   </url>
   <url>
     <loc>https://onewater.co.za/solutions.html</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
+    <lastmod>2026-08-19</lastmod>
+  </url>
+  <url>
+    <loc>https://onewater.co.za/case-studies.html</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-08-19</lastmod>
   </url>
   <url>
     <loc>https://onewater.co.za/contact.html</loc>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
+    <lastmod>2026-08-19</lastmod>
   </url>
 </urlset>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://onewater.co.za/sitemap.xml
