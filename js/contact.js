@@ -1,57 +1,74 @@
+/* =============================================
+   contact.js — OneWater Contact Page
+   ============================================= */
+
 document.addEventListener('DOMContentLoaded', function () {
-    const hamburger = document.getElementById('hamburgerBtn');
+
+    /* ----- Mobile Sidebar ----- */
+    const hamburgerBtn  = document.getElementById('hamburgerBtn');
     const mobileSidebar = document.getElementById('mobileSidebar');
-    const closeBtn = document.getElementById('closeSidebar');
+    const closeSidebar  = document.getElementById('closeSidebar');
 
-    if (hamburger && mobileSidebar && closeBtn) {
-        hamburger.addEventListener('click', () => {
-            mobileSidebar.classList.add('active');
-        });
-
-        closeBtn.addEventListener('click', () => {
-            mobileSidebar.classList.remove('active');
-        });
-
-        // Close sidebar when clicking outside
-        document.addEventListener('click', (e) => {
-            if (
-                !mobileSidebar.contains(e.target) &&
-                !hamburger.contains(e.target)
-            ) {
-                mobileSidebar.classList.remove('active');
-            }
+    if (hamburgerBtn) {
+        hamburgerBtn.addEventListener('click', function () {
+            mobileSidebar.classList.add('open');
+            document.body.style.overflow = 'hidden';
         });
     }
 
-})
-
-// Back to Top Button Functionality
-
-// Get or create the back to top button
-let backToTopBtn = document.getElementById('backToTop');
-
-if (!backToTopBtn) {
-    // Create button if it doesn't exist
-    backToTopBtn = document.createElement('button');
-    backToTopBtn.id = 'backToTop';
-    backToTopBtn.className = 'back-to-top';
-    backToTopBtn.setAttribute('aria-label', 'Back to top');
-    document.body.appendChild(backToTopBtn);
-}
-
-// Show/hide button based on scroll position
-window.addEventListener('scroll', function() {
-    if (window.pageYOffset > 300) {
-        backToTopBtn.classList.add('visible');
-    } else {
-        backToTopBtn.classList.remove('visible');
+    if (closeSidebar) {
+        closeSidebar.addEventListener('click', function () {
+            mobileSidebar.classList.remove('open');
+            document.body.style.overflow = '';
+        });
     }
-});
 
-// Smooth scroll to top when clicked
-backToTopBtn.addEventListener('click', function() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
+    document.querySelectorAll('.sidebar-nav a').forEach(function (link) {
+        link.addEventListener('click', function () {
+            mobileSidebar.classList.remove('open');
+            document.body.style.overflow = '';
+        });
     });
+
+    document.addEventListener('click', function (e) {
+        if (
+            mobileSidebar &&
+            mobileSidebar.classList.contains('open') &&
+            !mobileSidebar.contains(e.target) &&
+            !hamburgerBtn.contains(e.target)
+        ) {
+            mobileSidebar.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+    });
+
+
+    /* ----- Contact Form → mailto ----- */
+    // Button is type="button" so the form never submits natively
+    const submitBtn = document.getElementById('submitBtn');
+
+    if (submitBtn) {
+        submitBtn.addEventListener('click', function () {
+
+            const name    = document.getElementById('name').value.trim();
+            const email   = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            if (!name || !email || !message) {
+                alert('Please fill in all fields before submitting.');
+                return;
+            }
+
+            const to      = 'info@onewater.co.za';
+            const subject = encodeURIComponent('Enquiry from ' + name);
+            const body    = encodeURIComponent(
+                'Name: '     + name    + '\n' +
+                'Email: '    + email   + '\n\n' +
+                'Message:\n' + message
+            );
+
+            window.location.href = 'mailto:' + to + '?subject=' + subject + '&body=' + body;
+        });
+    }
+
 });
