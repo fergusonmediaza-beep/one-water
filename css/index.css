@@ -435,6 +435,10 @@ body {
 .scroll-track { width:1px; height:44px; background:rgba(255,255,255,0.18); position:relative; overflow:hidden; }
 .scroll-thumb { position:absolute; top:0; left:0; width:1px; height:22px; background:var(--teal); animation:scrollBounce 2.2s ease-in-out infinite; }
 
+@media (max-height: 700px) {
+    .hero-scroll-indicator { display: none; }
+}
+
 
 /* ============================================================
    MARQUEE STRIP
