@@ -1143,12 +1143,10 @@ body {
     .footer-right { justify-content:flex-start; }
     .footer-logo { height:52px; }
 }
-@media (max-width: 1024px) {
-    .desktop-nav { display:none; }
-    .hamburger { display:flex; }
-}
 @media (max-width: 768px) {
     :root { --s-8:80px; --s-9:100px; }
+    .desktop-nav { display:none; }
+    .hamburger { display:flex; }
     .main-header { padding:16px var(--container-px); }
     .hero-content { width:92%; }
     .hero-title { font-size:2.4rem; }

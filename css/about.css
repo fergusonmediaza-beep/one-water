@@ -1026,14 +1026,10 @@ body {
     .ab-section-title { font-size: 2.2rem; }
 }
 
-/* Nav switches to hamburger before the pill overflows */
-@media (max-width: 1024px) {
-    .desktop-nav { display: none; }
-    .hamburger { display: flex; }
-}
-
 /* Mobile — 768px */
 @media (max-width: 768px) {
+    .desktop-nav { display: none; }
+    .hamburger { display: flex; }
 
     .main-header { padding: 20px 5%; }
 

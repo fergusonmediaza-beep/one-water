@@ -719,8 +719,9 @@ body {
     }
 }
 
-/* Nav switches to hamburger before the pill overflows */
-@media (max-width: 1024px) {
+/* Mobile - 768px */
+@media (max-width: 768px) {
+    /* Navigation */
     .desktop-nav {
         display: none;
     }
@@ -728,11 +729,6 @@ body {
     .hamburger {
         display: flex;
     }
-}
-
-/* Mobile - 768px */
-@media (max-width: 768px) {
-    /* Navigation */
 
     /* Header */
     .main-header {
