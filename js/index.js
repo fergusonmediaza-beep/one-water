@@ -3,9 +3,9 @@ document.addEventListener('DOMContentLoaded', function () {
     /* ============================================================
        MOBILE SIDEBAR
     ============================================================ */
-    const hamburger     = document.getElementById('hamburgerBtn');
-    const mobileSidebar = document.getElementById('mobileSidebar');
-    const closeBtn      = document.getElementById('closeSidebar');
+    const hamburger     = document.getElementById('hamburger_btn');
+    const mobileSidebar = document.getElementById('mobile_sidebar');
+    const closeBtn      = document.getElementById('close_sidebar');
 
     if (hamburger && mobileSidebar && closeBtn) {
         hamburger.addEventListener('click', () => mobileSidebar.classList.add('active'));
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
     /* ============================================================
        HEADER — scrolled state
     ============================================================ */
-    const mainHeader = document.getElementById('mainHeader');
+    const mainHeader = document.getElementById('main_header');
     function updateHeader() {
         if (mainHeader) {
             mainHeader.classList.toggle('scrolled', window.pageYOffset > 60);
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
        The key fix: always set the transform, even at scrollY=0,
        so scrolling back up correctly resets to Y=0.
     ============================================================ */
-    const heroContent = document.getElementById('heroContent');
+    const heroContent = document.getElementById('hero_content');
     const hero        = document.querySelector('.hero');
 
     function updateParallax() {
@@ -268,10 +268,10 @@ document.addEventListener('DOMContentLoaded', function () {
     /* ============================================================
        BACK TO TOP
     ============================================================ */
-    let bttBtn = document.getElementById('backToTop');
+    let bttBtn = document.getElementById('back_to_top');
     if (!bttBtn) {
         bttBtn = document.createElement('button');
-        bttBtn.id = 'backToTop';
+        bttBtn.id = 'back_to_top';
         bttBtn.className = 'back-to-top';
         bttBtn.setAttribute('aria-label', 'Back to top');
         document.body.appendChild(bttBtn);

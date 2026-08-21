@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const hamburger = document.getElementById('hamburgerBtn');
-    const mobileSidebar = document.getElementById('mobileSidebar');
-    const closeBtn = document.getElementById('closeSidebar');
+    const hamburger = document.getElementById('hamburger_btn');
+    const mobileSidebar = document.getElementById('mobile_sidebar');
+    const closeBtn = document.getElementById('close_sidebar');
 
     if (hamburger && mobileSidebar && closeBtn) {
         hamburger.addEventListener('click', () => {
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    const mainHeader = document.getElementById('mainHeader');
+    const mainHeader = document.getElementById('main_header');
     function updateHeader() {
         if (mainHeader) {
             mainHeader.classList.toggle('scrolled', window.pageYOffset > 60);
@@ -37,12 +37,12 @@ document.addEventListener('DOMContentLoaded', function () {
 // Back to Top Button Functionality
 
 // Get or create the back to top button
-let backToTopBtn = document.getElementById('backToTop');
+let backToTopBtn = document.getElementById('back_to_top');
 
 if (!backToTopBtn) {
     // Create button if it doesn't exist
     backToTopBtn = document.createElement('button');
-    backToTopBtn.id = 'backToTop';
+    backToTopBtn.id = 'back_to_top';
     backToTopBtn.className = 'back-to-top';
     backToTopBtn.setAttribute('aria-label', 'Back to top');
     document.body.appendChild(backToTopBtn);

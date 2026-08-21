@@ -5,9 +5,9 @@
 document.addEventListener('DOMContentLoaded', function () {
 
     /* ----- Mobile Sidebar ----- */
-    const hamburgerBtn  = document.getElementById('hamburgerBtn');
-    const mobileSidebar = document.getElementById('mobileSidebar');
-    const closeSidebar  = document.getElementById('closeSidebar');
+    const hamburgerBtn  = document.getElementById('hamburger_btn');
+    const mobileSidebar = document.getElementById('mobile_sidebar');
+    const closeSidebar  = document.getElementById('close_sidebar');
 
     if (hamburgerBtn) {
         hamburgerBtn.addEventListener('click', function () {
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     /* ----- Contact Form → mailto ----- */
     // Button is type="button" so the form never submits natively
-    const submitBtn = document.getElementById('submitBtn');
+    const submitBtn = document.getElementById('submit_btn');
 
     if (submitBtn) {
         submitBtn.addEventListener('click', function () {
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     /* ----- Fixed header: switch to solid background once scrolled ----- */
-    const mainHeader = document.getElementById('mainHeader');
+    const mainHeader = document.getElementById('main_header');
     function updateHeader() {
         if (mainHeader) {
             mainHeader.classList.toggle('scrolled', window.pageYOffset > 60);
