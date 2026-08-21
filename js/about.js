@@ -23,6 +23,15 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    const mainHeader = document.getElementById('mainHeader');
+    function updateHeader() {
+        if (mainHeader) {
+            mainHeader.classList.toggle('scrolled', window.pageYOffset > 60);
+        }
+    }
+    window.addEventListener('scroll', updateHeader, { passive: true });
+    updateHeader();
+
 })
 
 // Back to Top Button Functionality

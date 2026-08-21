@@ -20,18 +20,28 @@ html {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 40px 5%;
-            position: relative;
+            padding: 24px 5%;
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
             z-index: 1000;
-            background: linear-gradient(135deg, #1f3b4d 0%, #2d4f62 100%);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            background: transparent;
+            transition: background 0.35s ease, padding 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+            border-bottom: 1px solid transparent;
+        }
+
+        .main-header.scrolled {
+            background: rgba(18,36,56,0.92);
+            backdrop-filter: blur(20px) saturate(1.4);
+            -webkit-backdrop-filter: blur(20px) saturate(1.4);
+            padding: 16px 5%;
+            border-color: rgba(255,255,255,0.1);
+            box-shadow: 0 1px 0 rgba(255,255,255,0.06), 0 4px 24px rgba(0,0,0,0.25);
         }
 
         .brand img {
-            height: 150px;
+            height: 90px;
             width: auto;
         }
 
@@ -146,20 +156,20 @@ html {
         /* HERO SECTION */
         .hero-section {
             padding: 120px 5% 80px;
-            background: #fff;
+            background: linear-gradient(135deg, #1f3b4d 0%, #2d4f62 100%);
             text-align: center;
         }
 
         .hero-section h1 {
             font-size: 4rem;
-            color: #1a2f3f;
+            color: #fff;
             font-weight: 400;
             margin-bottom: 20px;
         }
 
         .hero-section p {
             font-size: 1.4rem;
-            color: #2c4a5e;
+            color: rgba(255, 255, 255, 0.9);
             max-width: 800px;
             margin: 0 auto;
             line-height: 1.6;

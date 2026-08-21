@@ -131,3 +131,15 @@ backToTopBtn.addEventListener('click', function() {
         behavior: 'smooth'
     });
 });
+
+// Fixed header: switch to solid background once scrolled
+(function () {
+    const mainHeader = document.getElementById('mainHeader');
+    function updateHeader() {
+        if (mainHeader) {
+            mainHeader.classList.toggle('scrolled', window.pageYOffset > 60);
+        }
+    }
+    window.addEventListener('scroll', updateHeader, { passive: true });
+    updateHeader();
+})();

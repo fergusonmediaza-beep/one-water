@@ -71,4 +71,14 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    /* ----- Fixed header: switch to solid background once scrolled ----- */
+    const mainHeader = document.getElementById('mainHeader');
+    function updateHeader() {
+        if (mainHeader) {
+            mainHeader.classList.toggle('scrolled', window.pageYOffset > 60);
+        }
+    }
+    window.addEventListener('scroll', updateHeader, { passive: true });
+    updateHeader();
+
 });
