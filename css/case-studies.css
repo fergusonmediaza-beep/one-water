@@ -501,7 +501,8 @@ html {
             }
         }
 
-        @media (max-width: 768px) {
+        /* Nav switches to hamburger before the pill overflows */
+        @media (max-width: 1024px) {
             .desktop-nav {
                 display: none;
             }
@@ -509,7 +510,9 @@ html {
             .hamburger {
                 display: flex;
             }
+        }
 
+        @media (max-width: 768px) {
             .main-header {
                 padding: 20px 5%;
             }
