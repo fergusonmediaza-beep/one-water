@@ -114,7 +114,6 @@ body {
 @keyframes wordReveal   { from { opacity:0; transform:translateY(40px) } to { opacity:1; transform:translateY(0) } }
 @keyframes marqueeScroll{ from { transform:translateX(0) } to { transform:translateX(-50%) } }
 @keyframes scrollBounce { 0%,100%{transform:translateY(0);opacity:1} 50%{transform:translateY(10px);opacity:0.4} }
-@keyframes badgeFloat   { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
 @keyframes glowPulse    { 0%,100%{box-shadow:0 0 20px var(--teal-glow)} 50%{box-shadow:0 0 40px rgba(46,196,182,0.5)} }
 @keyframes connectorGlow{ 0%,100%{opacity:0.5} 50%{opacity:1} }
 @keyframes float        { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-18px)} }
@@ -307,21 +306,6 @@ body {
     z-index: 1;
 }
 
-.hero-badge {
-    position: absolute; z-index: 3;
-    background: rgba(18,36,56,0.75);
-    backdrop-filter: blur(16px) saturate(1.4);
-    border: 1px solid rgba(46,196,182,0.35);
-    border-radius: var(--r-lg);
-    padding: var(--s-2) var(--s-3);
-    display: flex; flex-direction: column; gap: var(--s-1);
-    animation: badgeFloat 4.5s ease-in-out infinite;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.25), 0 0 0 1px rgba(46,196,182,0.08);
-}
-.hero-badge--1 { bottom: 22%; right: 8%; animation-delay: 0s; }
-.hero-badge--2 { bottom: 38%; right: 8%; animation-delay: 1.8s; }
-.badge-value { font-size: 1.9rem; font-weight: 700; color: var(--teal); line-height: 1; letter-spacing: -0.02em; }
-.badge-label { font-size: 0.68rem; color: var(--w-sub); letter-spacing: 0.12em; text-transform: uppercase; }
 
 .hero-content {
     position: absolute;
@@ -1168,7 +1152,6 @@ body {
     .hero-title { font-size:2.4rem; }
     .hero-eyebrow-text { font-size:0.65rem; }
     .hero-subtitle { font-size:0.8rem; letter-spacing:0.14em; }
-    .hero-badge { display:none; }
     .hero-cta-group { flex-direction:column; width:100%; padding:0 12px; }
     .hero-cta-primary, .hero-cta-secondary { width:100%; max-width:300px; font-size:0.93rem; padding:14px 20px; justify-content:center; }
     .bento-grid { grid-template-columns:1fr; }
