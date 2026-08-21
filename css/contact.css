@@ -605,6 +605,11 @@ body {
     color: rgba(255, 255, 255, 0.8);
 }
 
+.credit-link {
+    color: #2ec4b6;
+    text-decoration: underline;
+}
+
 /* ===================================
    7. MEDIA QUERIES
    =================================== */
@@ -718,7 +723,7 @@ body {
 @media (max-width: 768px) {
     /* Navigation */
     .desktop-nav {
-        display: none !important;
+        display: none;
     }
 
     .hamburger {

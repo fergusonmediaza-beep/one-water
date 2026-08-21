@@ -476,6 +476,11 @@ html {
             color: rgba(255, 255, 255, 0.8);
         }
 
+        .credit-link {
+            color: #2ec4b6;
+            text-decoration: underline;
+        }
+
         /* MEDIA QUERIES */
         @media (max-width: 1024px) {
             .case-study-card {
@@ -498,7 +503,7 @@ html {
 
         @media (max-width: 768px) {
             .desktop-nav {
-                display: none !important;
+                display: none;
             }
 
             .hamburger {

@@ -710,6 +710,11 @@ body {
     color: rgba(255, 255, 255, 0.8);
 }
 
+.credit-link {
+    color: #2ec4b6;
+    text-decoration: underline;
+}
+
 /* ===================================
    8. MEDIA QUERIES
    =================================== */
@@ -744,7 +749,7 @@ body {
 /* Mobile - 768px */
 @media (max-width: 768px) {
     .desktop-nav {
-        display: none !important;
+        display: none;
     }
 
     .hamburger {
