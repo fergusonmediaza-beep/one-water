@@ -40,7 +40,7 @@ html {
             box-shadow: 0 1px 0 rgba(255,255,255,0.06), 0 4px 24px rgba(0,0,0,0.25);
         }
 
-        .brand img {
+        .brand-logo {
             height: 90px;
             width: auto;
         }
@@ -76,7 +76,7 @@ html {
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.10);
         }
 
-        .nav-menu a {
+        .nav-link {
             color: white;
             text-decoration: none;
             font-size: 1.1rem;
@@ -86,7 +86,7 @@ html {
             white-space: nowrap;
         }
 
-        .nav-menu a:hover {
+        .nav-link:hover {
             background: rgba(255, 255, 255, 0.15);
         }
 
@@ -130,7 +130,7 @@ html {
             gap: 18px;
         }
 
-        .sidebar-nav a {
+        .sidebar-link {
             display: flex;
             align-items: center;
             gap: 16px;
@@ -142,11 +142,11 @@ html {
             font-size: 1.1rem;
         }
 
-        .sidebar-nav a:hover {
+        .sidebar-link:hover {
             background: rgba(255, 255, 255, 0.1);
         }
 
-        .sidebar-nav img {
+        .sidebar-icon {
             width: 24px;
             height: 24px;
             object-fit: contain;
@@ -426,7 +426,7 @@ html {
             gap: 12px;
         }
 
-        .footer-nav a {
+        .footer-link {
             color: white;
             text-decoration: none;
             font-size: 1.1rem;
@@ -434,7 +434,7 @@ html {
             padding: 5px 0;
         }
 
-        .footer-nav a:hover {
+        .footer-link:hover {
             color: rgba(255, 255, 255, 0.7);
             padding-left: 10px;
         }
@@ -451,7 +451,7 @@ html {
             gap: 20px;
         }
 
-        .social-icons a {
+        .social-link {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -462,12 +462,12 @@ html {
             transition: all 0.3s ease;
         }
 
-        .social-icons a:hover {
+        .social-link:hover {
             background: rgba(255, 255, 255, 0.2);
             transform: translateY(-5px);
         }
 
-        .social-icons img {
+        .social-icon {
             width: 35px;
             height: 35px;
             filter: brightness(0) invert(1);
@@ -481,7 +481,7 @@ html {
             margin-top: 20px;
         }
 
-        .footer-bottom p {
+        .footer-text {
             font-size: 1rem;
             color: rgba(255, 255, 255, 0.8);
         }
