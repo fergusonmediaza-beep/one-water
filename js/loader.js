@@ -7,35 +7,35 @@
    It expects this HTML to already exist in the page
    (injected automatically below if missing):
 
-   <div id="ow-loader"> ... </div>
+   <div id="ow_loader"> ... </div>
    =================================================== */
 
 (function () {
 
     /* ── 1. Inject the loader HTML if it isn't already in the page ── */
-    if (!document.getElementById('ow-loader')) {
+    if (!document.getElementById('ow_loader')) {
         var loaderHTML = `
-        <div id="ow-loader" role="status" aria-label="Loading">
+        <div id="ow_loader" role="status" aria-label="Loading">
             <div class="ow-wrap">
                 <div class="ow-drop-outer">
                     <svg class="ow-drop" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="20" cy="20" r="20"/>
+                        <circle class="ow-circle" cx="20" cy="20" r="20"/>
                     </svg>
                 </div>
 
                 <div class="ow-ripple ow-ripple-1">
                     <svg class="ow-ripple-svg" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="30" cy="30" r="24"/>
+                        <circle class="ow-circle" cx="30" cy="30" r="24"/>
                     </svg>
                 </div>
                 <div class="ow-ripple ow-ripple-2">
                     <svg class="ow-ripple-svg" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="30" cy="30" r="24"/>
+                        <circle class="ow-circle" cx="30" cy="30" r="24"/>
                     </svg>
                 </div>
                 <div class="ow-ripple ow-ripple-3">
                     <svg class="ow-ripple-svg" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="30" cy="30" r="24"/>
+                        <circle class="ow-circle" cx="30" cy="30" r="24"/>
                     </svg>
                 </div>
 
@@ -49,7 +49,7 @@
 
     /* ── 2. Hide the loader once everything is loaded ── */
     function hideLoader() {
-        var loader = document.getElementById('ow-loader');
+        var loader = document.getElementById('ow_loader');
         if (!loader) return;
 
         /* Small minimum display time (600ms) so it never just flashes */
