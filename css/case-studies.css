@@ -160,14 +160,14 @@ html {
             text-align: center;
         }
 
-        .hero-section h1 {
+        .hero-title {
             font-size: 4rem;
             color: #fff;
             font-weight: 400;
             margin-bottom: 20px;
         }
 
-        .hero-section p {
+        .hero-subtitle {
             font-size: 1.4rem;
             color: rgba(255, 255, 255, 0.9);
             max-width: 800px;
@@ -212,7 +212,7 @@ html {
             position: relative;
         }
 
-        .case-study-image img {
+        .case-study-img {
             width: 100%;
             height: 400px;
             max-width: 600px;
@@ -235,7 +235,7 @@ html {
             margin-bottom: 20px;
         }
 
-        .case-study-content h2 {
+        .case-study-title {
             font-size: 2.2rem;
             color: #1a2f3f;
             margin-bottom: 30px;
@@ -246,14 +246,14 @@ html {
             margin-bottom: 25px;
         }
 
-        .study-detail h3 {
+        .study-detail-title {
             font-size: 1.3rem;
             color: #2c4a5e;
             margin-bottom: 10px;
             font-weight: 600;
         }
 
-        .study-detail p {
+        .study-detail-text {
             font-size: 1.1rem;
             color: #4a5a6a;
             line-height: 1.7;
@@ -331,14 +331,14 @@ html {
             margin: 0 auto;
         }
 
-        .cta-container h2 {
+        .cta-title {
             font-size: 2.5rem;
             margin-bottom: 15px;
             font-weight: 400;
             color: #1f3b4d;
         }
 
-        .cta-container p {
+        .cta-text {
             font-size: 1.3rem;
             color: #2c4a5e;
             margin-bottom: 40px;
@@ -506,7 +506,7 @@ html {
                 padding: 40px 30px 40px 0;
             }
 
-            .case-study-content h2 {
+            .case-study-title {
                 font-size: 1.9rem;
             }
         }
@@ -530,11 +530,11 @@ html {
                 padding: 80px 5% 60px;
             }
 
-            .hero-section h1 {
+            .hero-title {
                 font-size: 2.5rem;
             }
 
-            .hero-section p {
+            .hero-subtitle {
                 font-size: 1.1rem;
             }
 
@@ -554,7 +554,7 @@ html {
                 padding: 50px 30px;
             }
 
-            .case-study-image img {
+            .case-study-img {
                 max-width: 250px;
             }
 
@@ -562,15 +562,15 @@ html {
                 padding: 40px 30px;
             }
 
-            .case-study-content h2 {
+            .case-study-title {
                 font-size: 1.7rem;
             }
 
-            .study-detail h3 {
+            .study-detail-title {
                 font-size: 1.2rem;
             }
 
-            .study-detail p {
+            .study-detail-text {
                 font-size: 1rem;
             }
 
@@ -603,11 +603,11 @@ html {
                 padding: 80px 5%;
             }
 
-            .cta-container h2 {
+            .cta-title {
                 font-size: 1.8rem;
             }
 
-            .cta-container p {
+            .cta-text {
                 font-size: 1rem;
             }
 
