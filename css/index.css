@@ -578,7 +578,7 @@ body {
     transition: all var(--t-base) var(--ease);
 }
 
-.hero-cta-secondary svg {
+.hero-cta-icon {
     transition: transform var(--t-base) var(--ease);
     flex-shrink: 0;
 }
@@ -590,7 +590,7 @@ body {
     transform: translateY(-3px);
 }
 
-.hero-cta-secondary:hover svg { transform: translateX(5px); }
+.hero-cta-secondary:hover .hero-cta-icon { transform: translateX(5px); }
 
 .hero-scroll-indicator {
     position: absolute;
@@ -766,7 +766,7 @@ body {
     text-align: center; position: relative; z-index: 1;
 }
 
-.bento-header h2 {
+.bento-title {
     font-size: var(--h2-size);
     font-weight: 700;
     color: var(--navy-1);
@@ -775,7 +775,7 @@ body {
     line-height: 1.15;
 }
 
-.bento-header p {
+.bento-subtitle {
     font-size:var(--body-size);
     color:var(--text-muted);
     line-height:var(--lh-relaxed);
@@ -869,14 +869,14 @@ body {
     border-color:rgba(46,196,182,0.48);
 }
 
-.bento-card-icon img {
+.bento-icon {
     width:38px;
     height:38px;
     object-fit:contain;
     filter:invert(55%) sepia(80%) saturate(400%) hue-rotate(140deg) brightness(85%);
 }
 
-.bento-card-body h3 {
+.bento-title-sm {
     font-size: var(--h3-size);
     font-weight: 600;
     color: var(--navy-1);
@@ -885,7 +885,7 @@ body {
     letter-spacing: -0.01em;
 }
 
-.bento-card-body p {
+.bento-text {
     font-size: 0.95rem;
     color: var(--text-muted);
     line-height: var(--lh-body);
@@ -924,7 +924,7 @@ body {
     letter-spacing: -0.05em;
 }
 
-.bento-accent-stat span { font-size: 2.8rem; }
+.bento-accent-unit { font-size: 2.8rem; }
 
 .bento-accent-label {
     font-size: var(--small-size);
@@ -950,7 +950,7 @@ body {
     width:fit-content;
 }
 
-.bento-card--wide h3 {
+.bento-wide-title {
     font-size: var(--h3-size);
     font-weight: 600;
     color: var(--navy-1);
@@ -959,7 +959,7 @@ body {
     line-height: var(--lh-heading);
 }
 
-.bento-card--wide p {
+.bento-wide-text {
     font-size: 0.95rem;
     color: var(--text-muted);
     line-height: var(--lh-body);
@@ -985,7 +985,7 @@ body {
     overflow:hidden;
 }
 
-.solutions-image-side img {
+.solutions-img {
     width:100%;
     height:100%;
     object-fit:cover;
@@ -993,7 +993,7 @@ body {
     transition:transform 0.8s var(--ease);
 }
 
-.solutions-hero:hover .solutions-image-side img { transform: scale(1.03); }
+.solutions-hero:hover .solutions-img { transform: scale(1.03); }
 
 .solutions-image-side::after {
     content: ''; position:absolute; inset:0;
@@ -1075,12 +1075,12 @@ body {
     margin-bottom:var(--s-2);
 }
 
-.nrw-badge svg {
+.nrw-icon {
     stroke:white;
     flex-shrink:0;
 }
 
-.solutions-wrapper .nrw-callout p {
+.solutions-wrapper .nrw-text {
     font-size: 0.95rem;
     color: var(--w-body);
     line-height: var(--lh-body);
@@ -1136,7 +1136,7 @@ body {
     z-index:1;
 }
 
-.hybrid-header h2 {
+.hybrid-title {
     font-size: var(--h2-size);
     font-weight: 700;
     color: white;
@@ -1145,7 +1145,7 @@ body {
     line-height: 1.1;
 }
 
-.hybrid-header p {
+.hybrid-subtitle {
     font-size:var(--body-size);
     color:rgba(255,255,255,0.65);
     max-width:400px;
@@ -1191,7 +1191,7 @@ body {
     box-shadow:var(--shadow-teal-lg);
 }
 
-.hybrid-item.hybrid-result h4, .hybrid-item.hybrid-result p { color:white; }
+.hybrid-result .hybrid-item-title, .hybrid-result .hybrid-item-text { color:white; }
 
 .hybrid-item.hybrid-result .hybrid-icon-wrap {
     background:rgba(255,255,255,0.2);
@@ -1218,19 +1218,19 @@ body {
     border-color:rgba(46,196,182,0.5);
 }
 
-.hybrid-item h4 {
+.hybrid-item-title {
     font-size: 0.95rem; font-weight: 600; color: white;
     margin-bottom: var(--s-1); line-height: var(--lh-heading);
     letter-spacing: 0.01em;
 }
 
-.hybrid-item p {
+.hybrid-item-text {
     font-size: 0.88rem;
     color: rgba(255,255,255,0.78);   /* brighter than before */
     line-height: var(--lh-body);
 }
 
-.hybrid-item.hybrid-result p { color: rgba(255,255,255,0.92); }
+.hybrid-result .hybrid-item-text { color: rgba(255,255,255,0.92); }
 
 .hybrid-connector {
     display:flex;
@@ -1374,7 +1374,7 @@ body {
     opacity:1;
 }
 
-.sector-card h3 {
+.sector-title {
     font-size: 1.05rem; font-weight: 600; color: white;
     text-align: center;
     line-height: var(--lh-heading);
@@ -1486,7 +1486,7 @@ body {
     background: currentColor; border-radius: 2px;
 }
 
-.pan-africa-text h2 {
+.pan-africa-title {
     font-size: var(--h2-size);
     font-weight: 700;
     line-height: 1.1;
@@ -1495,7 +1495,7 @@ body {
     color: var(--navy-1);
 }
 
-.pan-africa-text p {
+.pan-africa-text-p {
     font-size: 0.95rem;
     line-height: var(--lh-relaxed);
     color: var(--text-muted);
@@ -1558,7 +1558,7 @@ body {
     color: var(--teal);
 }
 
-.africa-stat h4 {
+.africa-stat-title {
     font-size: 0.78rem;
     font-weight: 700;
     color: var(--navy-1);
@@ -1567,7 +1567,7 @@ body {
     text-transform: uppercase;
 }
 
-.africa-stat p {
+.africa-stat-text {
     font-size: 0.88rem;
     color: var(--text-muted);
     line-height: var(--lh-snug);
@@ -1610,7 +1610,7 @@ body {
     margin:0 auto;
 }
 
-.cta-banner-inner h2 {
+.cta-banner-title {
     font-size: clamp(2.2rem, 4vw, 3.2rem);
     font-weight: 700;
     color: white;
@@ -1619,7 +1619,7 @@ body {
     letter-spacing: -0.03em;
 }
 
-.cta-banner-inner p {
+.cta-banner-text {
     font-size: 1.05rem;
     color: var(--w-sub);
     margin-bottom: var(--s-6);
@@ -1993,11 +1993,11 @@ body {
         font-size:1.5rem;
     }
 
-    .pan-africa-text h2 { font-size:1.9rem; }
+    .pan-africa-title { font-size:1.9rem; }
 
     .africa-stats-grid { grid-template-columns:1fr 1fr; }
 
-    .cta-banner-inner h2 { font-size:1.9rem; }
+    .cta-banner-title { font-size:1.9rem; }
 
     .cta-banner-buttons {
         flex-direction:column;
