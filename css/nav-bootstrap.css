@@ -1,0 +1,261 @@
+/* =========================================================
+   OneWater — shared Bootstrap chrome (used on every page)
+   Navbar pill nav on desktop, full-screen offcanvas menu
+   with contact details below the lg breakpoint, and the
+   shared site footer.
+   ========================================================= */
+
+:root {
+    --bs-primary: #2ec4b6;
+    --bs-primary-rgb: 46, 196, 182;
+    --bs-link-color: #2ec4b6;
+    --bs-link-hover-color: #25a89d;
+    --bs-body-font-family: 'Text Me One', sans-serif;
+    --bs-heading-font-family: 'Text Me One', sans-serif;
+    --ow-navy: #1f3b4d;
+    --ow-navy-2: #2c4a5e;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+body {
+    font-family: var(--bs-body-font-family);
+}
+
+/* ---- Shared page hero (plain gradient, centered title/subtitle) ---- */
+.ow-page-hero {
+    background: linear-gradient(135deg, var(--ow-navy) 0%, var(--ow-navy-2) 100%);
+    padding-top: 8.5rem;
+    padding-bottom: 4rem;
+}
+
+.ow-page-hero-text {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* ---- Max-width utilities (avoid inline style="max-width:...") ---- */
+.ow-mw-600 { max-width: 600px; }
+.ow-mw-640 { max-width: 640px; }
+.ow-mw-680 { max-width: 680px; }
+.ow-mw-720 { max-width: 720px; }
+.ow-mw-780 { max-width: 780px; }
+
+/* ---- Navbar ---- */
+.ow-navbar {
+    font-family: 'Text Me One', sans-serif;
+    background: linear-gradient(135deg, var(--ow-navy) 0%, var(--ow-navy-2) 100%);
+    padding-top: 0.9rem;
+    padding-bottom: 0.9rem;
+}
+
+.ow-brand-logo {
+    height: 56px;
+    width: auto;
+}
+
+.ow-nav-pill {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    padding: 0.35rem 0.5rem;
+    gap: 0.35rem;
+}
+
+.ow-nav-pill .nav-link {
+    color: rgba(255, 255, 255, 0.85);
+    border-radius: 50px;
+    padding: 0.5rem 1.1rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.ow-nav-pill .nav-link:hover,
+.ow-nav-pill .nav-link.active {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+}
+
+/* ---- Full-screen mobile menu (offcanvas below the lg breakpoint) ---- */
+@media (max-width: 991.98px) {
+    .offcanvas.offcanvas-end.ow-mobile-menu {
+        width: 100vw;
+        max-width: 100vw;
+        background: linear-gradient(160deg, var(--ow-navy) 0%, var(--ow-navy-2) 100%);
+        border: none;
+    }
+
+    .ow-mobile-menu .offcanvas-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .ow-mobile-menu .ow-nav-pill {
+        background: transparent;
+        padding: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .ow-mobile-menu .nav-item {
+        width: 100%;
+    }
+
+    .ow-mobile-menu .ow-nav-pill .nav-link {
+        display: block;
+        padding: 1rem 1rem;
+        font-size: 1.75rem;
+        border-radius: 0;
+    }
+
+    .ow-mobile-menu .ow-nav-pill .nav-link:hover,
+    .ow-mobile-menu .ow-nav-pill .nav-link.active {
+        background: transparent;
+        color: var(--bs-primary);
+    }
+
+    .ow-mobile-menu-details {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+        margin-top: 2.5rem;
+        padding-top: 1.75rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .ow-mobile-menu-line {
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 0.95rem;
+        text-decoration: none;
+        text-align: center;
+    }
+
+    .ow-mobile-menu-line:hover {
+        color: #fff;
+    }
+
+    .ow-mobile-social {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        margin-top: 0.25rem;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        transition: background-color 0.2s ease;
+    }
+
+    .ow-mobile-social:hover {
+        background: rgba(255, 255, 255, 0.2);
+    }
+
+    .ow-mobile-social img {
+        filter: brightness(0) invert(1);
+    }
+
+    .ow-menu-close {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        opacity: 0.9;
+        transform: scale(1.4);
+    }
+
+    .ow-menu-close:hover {
+        opacity: 1;
+    }
+}
+
+/* ---- Footer ---- */
+.ow-footer {
+    background: linear-gradient(135deg, var(--ow-navy-2) 0%, #3a5a70 100%);
+}
+
+.ow-footer-logo {
+    height: 44px;
+    width: auto;
+}
+
+.ow-footer-text {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.ow-footer-link {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.ow-footer-link:hover {
+    color: #fff;
+}
+
+.ow-social-icon {
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+}
+
+.ow-social-icon:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.ow-social-icon img {
+    filter: brightness(0) invert(1);
+}
+
+.ow-footer-divider {
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.ow-credit-link {
+    color: var(--bs-primary);
+}
+
+/* ---- Back to top button ---- */
+.back-to-top {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #2ec4b6 0%, #25a89d 100%);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    z-index: 999;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(46, 196, 182, 0.4);
+}
+
+.back-to-top:active {
+    transform: translateY(-2px);
+}
+
+.back-to-top::before {
+    content: '';
+    width: 12px;
+    height: 12px;
+    border-top: 3px solid white;
+    border-right: 3px solid white;
+    transform: rotate(-45deg);
+    margin-top: 5px;
+}

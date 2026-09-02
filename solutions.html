@@ -38,463 +38,451 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Text+Me+One&family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/loader.css" />
-    <link rel="stylesheet" href="css/solutions.css" />
+    <link rel="stylesheet" href="css/nav-bootstrap.css" />
+    <link rel="stylesheet" href="css/file.css" />
 </head>
 <body>
-    <header class="main-header" id="main_header">
-        <div class="brand">
-    <a href="index.html">
-        <img class="brand-logo" src="images/logo.webp" alt="OneWater Logo" />
-    </a>
-</div>
+    <!-- ===== NAVBAR (Bootstrap navbar component) ===== -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top ow-navbar" id="main_header">
+        <div class="container-fluid px-4 px-lg-5">
+            <a class="navbar-brand" href="index.html">
+                <img class="ow-brand-logo" src="images/logo.webp" alt="OneWater Logo" />
+            </a>
+            <button class="navbar-toggler ow-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#owMobileMenu" aria-controls="owMobileMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end ow-mobile-menu" tabindex="-1" id="owMobileMenu" aria-labelledby="owMobileMenuLabel">
+                <div class="offcanvas-header d-lg-none">
+                    <span class="visually-hidden" id="owMobileMenuLabel">Menu</span>
+                    <button type="button" class="btn-close btn-close-white ow-menu-close" data-bs-dismiss="offcanvas" data-bs-target="#owMobileMenu" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body justify-content-lg-end">
+                    <ul class="navbar-nav ow-nav-pill">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="solutions.html">Solutions</a></li>
+                        <li class="nav-item"><a class="nav-link" href="case-studies.html">Case Studies</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                    </ul>
+                    <div class="ow-mobile-menu-details d-lg-none">
+                        <a href="https://www.google.com/maps/place/35+Ferguson+Rd,+Illovo,+Sandton,+2196/@-26.1240527,28.0442193,17z/data=!3m1!4b1!4m6!3m5!1s0x1e950cc66f12708b:0xdec98442b3339e98!8m2!3d-26.1240527!4d28.0467942!16s%2Fg%2F11c26fxff5!5m1!1e1?entry=ttu&g_ep=EgoyMDI2MDIwMS4wIKXMDSoASAFQAw%3D%3D" class="ow-mobile-menu-line">35 Ferguson Road Illovo, Sandton 2196</a>
+                        <a href="tel:+27110841100" class="ow-mobile-menu-line">+27 11 084 1100</a>
+                        <a class="ow-mobile-social" href="https://www.linkedin.com/company/one-water-ai/posts/?feedView=all" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <img loading="lazy" decoding="async" src="images/linkedin.webp" alt="LinkedIn" width="18" height="18">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-
-        <button class="hamburger" aria-label="Toggle menu" id="hamburger_btn">
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-        </button>
-
-        <nav class="nav-menu desktop-nav">
-            <a class="nav-link" href="index.html">Home</a>
-            <a class="nav-link" href="about.html">About</a>
-            <a class="nav-link" href="solutions.html">Solutions</a>
-            <a class="nav-link" href="case-studies.html">Case Studies</a>
-            <a class="nav-link" href="contact.html">Contact Us</a>
-        </nav>
+    <!-- ===== HERO ===== -->
+    <header class="ow-page-hero text-white text-center">
+        <div class="container">
+            <h1 class="display-5 fw-semibold mb-3">Intelligent Water Solutions</h1>
+            <p class="lead mx-auto ow-page-hero-text ow-mw-600">Advanced technology for sustainable water management</p>
+        </div>
     </header>
 
-    <aside class="mobile-sidebar" id="mobile_sidebar">
-        <div class="sidebar-header">
-            <button class="close-btn" id="close_sidebar">&times;</button>
-        </div>
-        <nav class="sidebar-nav">
-            <a class="sidebar-link" href="index.html">
-                <img class="sidebar-icon" loading="lazy" decoding="async" src="/images/home.webp" alt="Home Icon">
-                Home
-            </a>
-            <a class="sidebar-link" href="about.html">
-                <img class="sidebar-icon" loading="lazy" decoding="async" src="/images/about.webp" alt="About Icon">
-                About
-            </a>
-            <a class="sidebar-link" href="solutions.html">
-                <img class="sidebar-icon" loading="lazy" decoding="async" src="/images/solutions.webp" alt="Solutions Icon">
-                Solutions
-            </a>
-            <a class="sidebar-link" href="case-studies.html">
-                <img class="sidebar-icon" loading="lazy" decoding="async" src="/images/case-study.webp" alt="Case Study Icon">
-                Case Studies
-            </a>
-            <a class="sidebar-link" href="contact.html">
-                <img class="sidebar-icon" loading="lazy" decoding="async" src="/images/contact.webp" alt="Contact Icon">
-                Contact Us
-            </a>
-        </nav>
-    </aside>
+    <!-- ===== SOLUTIONS ===== -->
+    <section class="py-5">
+        <div class="container py-4">
 
-    <section class="hero-section">
-        <div class="hero-container">
-            <h1 class="hero-title">Intelligent Water Solutions</h1>
-            <p class="hero-subtitle">Advanced technology for sustainable water management</p>
-        </div>
-        <div class="wave-divider">
-            <svg class="wave-divider-svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M0,0 C300,80 600,80 900,40 C1050,20 1150,0 1200,0 L1200,120 L0,120 Z" fill="#fff"/>
-            </svg>
-        </div>
-    </section>
-
-    <section class="solutions-section">
-        <div class="solutions-container">
-            
             <!-- Solution 1 -->
-            <div class="solution-card" data-number="01" id="smart-digital-water-management">
-                <div class="section-number">01</div>
-                <div class="solution-header">
-                    <div class="icon-badge">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <div class="ow-sol-card p-4 p-lg-5 mb-4" id="smart-digital-water-management">
+                <div class="d-flex align-items-center gap-3 gap-md-4 mb-4">
+                    <div class="ow-sol-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
                         </svg>
                     </div>
-                    <div class="solution-title-block">
-                        <h2 class="solution-title">Smart Digital Water Management</h2>
-                        <p class="solution-subtitle">Real-time monitoring and intelligent control for optimal water distribution</p>
+                    <div class="flex-grow-1">
+                        <h2 class="h3 ow-sol-title mb-1">Smart Digital Water Management</h2>
+                        <p class="text-muted mb-0">Real-time monitoring and intelligent control for optimal water distribution</p>
+                    </div>
+                    <span class="ow-sol-number d-none d-md-inline">01</span>
+                </div>
+                <div class="row g-4 align-items-center">
+                    <div class="col-lg-7">
+                        <div class="ow-sol-block mb-3">
+                            <span class="ow-sol-block-label">Problem</span>
+                            <p class="mb-0">Inefficient water distribution leads to waste and higher costs.</p>
+                        </div>
+                        <div class="ow-sol-block ow-sol-block--highlight mb-3">
+                            <span class="ow-sol-block-label">How We Solve It</span>
+                            <p class="mb-0">Real-time monitoring and automated control systems optimize water flow across your entire network, providing instant visibility and control.</p>
+                        </div>
+                        <div class="ow-sol-block ow-sol-block--impact mb-4">
+                            <span class="ow-sol-block-label">Impact</span>
+                            <p class="mb-0">Reduced water loss and operational costs with improved system reliability.</p>
+                        </div>
+                        <div class="row g-3">
+                            <div class="col-6 col-sm-auto">
+                                <div class="ow-sol-chip">
+                                    <span class="ow-sol-chip-number">15.7%</span>
+                                    <span class="ow-sol-chip-label">Water Savings</span>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-auto">
+                                <div class="ow-sol-chip">
+                                    <span class="ow-sol-chip-number">24/7</span>
+                                    <span class="ow-sol-chip-label">Monitoring</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <img class="ow-sol-img" loading="lazy" decoding="async" src="images/smart.webp" alt="Smart Water Management">
                     </div>
                 </div>
-
-                <div class="solution-content">
-                    <div class="solution-text">
-                        <div class="text-block">
-                            <span class="block-label">Problem</span>
-                            <p class="text-block-text">Inefficient water distribution leads to waste and higher costs.</p>
-                        </div>
-                        <div class="text-block highlight">
-                            <span class="block-label">How We Solve It</span>
-                            <p class="text-block-text">Real-time monitoring and automated control systems optimize water flow across your entire network, providing instant visibility and control.</p>
-                        </div>
-                        <div class="text-block impact">
-                            <span class="block-label">Impact</span>
-                            <p class="text-block-text">Reduced water loss and operational costs with improved system reliability.</p>
-                        </div>
-                        
-                        <div class="stat-chips">
-                            <div class="stat-chip">
-                                <span class="stat-number">15.7%</span>
-                                <span class="stat-label">Water Savings</span>
-                            </div>
-                            <div class="stat-chip">
-                                <span class="stat-number">24/7</span>
-                                <span class="stat-label">Monitoring</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="solution-image">
-                        <img class="solution-img" loading="lazy" decoding="async" src="images/smart.webp" alt="Smart Water Management">
-                        <div class="image-overlay"></div>
-                    </div>
-                </div>
-                <a href="contact.html" class="learn-more">Learn more →</a>
+                <a href="contact.html" class="ow-sol-learn-more d-inline-block mt-4">Learn more &rarr;</a>
             </div>
 
-            <!-- Solution 2 - Reversed -->
-            <div class="solution-card reverse" data-number="02" id="ai-powered-water-analytics">
-                <div class="section-number">02</div>
-                <div class="solution-header">
-                    <div class="icon-badge">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <!-- Solution 2 -->
+            <div class="ow-sol-card p-4 p-lg-5 mb-4" id="ai-powered-water-analytics">
+                <div class="d-flex align-items-center gap-3 gap-md-4 mb-4">
+                    <div class="ow-sol-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <rect x="3" y="3" width="18" height="18" rx="2"/>
                             <path d="M9 9h6v6H9z"/>
                         </svg>
                     </div>
-                    <div class="solution-title-block">
-                        <h2 class="solution-title">AI-Powered Water Analytics</h2>
-                        <p class="solution-subtitle">Predictive insights that transform data into actionable intelligence</p>
+                    <div class="flex-grow-1">
+                        <h2 class="h3 ow-sol-title mb-1">AI-Powered Water Analytics</h2>
+                        <p class="text-muted mb-0">Predictive insights that transform data into actionable intelligence</p>
+                    </div>
+                    <span class="ow-sol-number d-none d-md-inline">02</span>
+                </div>
+                <div class="row g-4 align-items-center flex-lg-row-reverse">
+                    <div class="col-lg-7">
+                        <div class="ow-sol-block mb-3">
+                            <span class="ow-sol-block-label">Problem</span>
+                            <p class="mb-0">Lack of actionable insights from water system data.</p>
+                        </div>
+                        <div class="ow-sol-block ow-sol-block--highlight mb-3">
+                            <span class="ow-sol-block-label">How We Solve It</span>
+                            <p class="mb-0">Advanced machine learning models predict issues and recommend actions before problems occur, turning your data into a strategic asset.</p>
+                        </div>
+                        <div class="ow-sol-block ow-sol-block--impact mb-4">
+                            <span class="ow-sol-block-label">Impact</span>
+                            <p class="mb-0">Proactive maintenance and optimized water usage patterns.</p>
+                        </div>
+                        <div class="row g-3">
+                            <div class="col-6 col-sm-auto">
+                                <div class="ow-sol-chip">
+                                    <span class="ow-sol-chip-number">30%</span>
+                                    <span class="ow-sol-chip-label">Fewer Repairs</span>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-auto">
+                                <div class="ow-sol-chip">
+                                    <span class="ow-sol-chip-number">AI</span>
+                                    <span class="ow-sol-chip-label">Predictions</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <img class="ow-sol-img" loading="lazy" decoding="async" src="images/water-analytics.webp" alt="AI Water Analytics">
                     </div>
                 </div>
-
-                <div class="solution-content">
-                    <div class="solution-image">
-                        <img class="solution-img" loading="lazy" decoding="async" src="images/water-analytics.webp" alt="AI Water Analytics">
-                        <div class="image-overlay"></div>
-                    </div>
-                    <div class="solution-text">
-                        <div class="text-block">
-                            <span class="block-label">Problem</span>
-                            <p class="text-block-text">Lack of actionable insights from water system data.</p>
-                        </div>
-                        <div class="text-block highlight">
-                            <span class="block-label">How We Solve It</span>
-                            <p class="text-block-text">Advanced machine learning models predict issues and recommend actions before problems occur, turning your data into a strategic asset.</p>
-                        </div>
-                        <div class="text-block impact">
-                            <span class="block-label">Impact</span>
-                            <p class="text-block-text">Proactive maintenance and optimized water usage patterns.</p>
-                        </div>
-                        
-                        <div class="stat-chips">
-                            <div class="stat-chip">
-                                <span class="stat-number">30%</span>
-                                <span class="stat-label">Fewer Repairs</span>
-                            </div>
-                            <div class="stat-chip">
-                                <span class="stat-number">AI</span>
-                                <span class="stat-label">Predictions</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <a href="contact.html" class="learn-more">Learn more →</a>
+                <a href="contact.html" class="ow-sol-learn-more d-inline-block mt-4">Learn more &rarr;</a>
             </div>
 
-            <!-- Highlight Section -->
-            <div class="highlight-section">
-                <div class="highlight-content">
-                    <h3 class="highlight-title">Complete Infrastructure Visibility</h3>
-                    <p class="highlight-text">From detection to repair, our integrated solutions provide end-to-end water network management that protects revenue and ensures continuous service delivery.</p>
-                </div>
+            <!-- Highlight -->
+            <div class="ow-sol-highlight p-4 p-lg-5 text-center mb-4">
+                <h3 class="ow-sol-highlight-title mb-2">Complete Infrastructure Visibility</h3>
+                <p class="ow-sol-highlight-text mb-0 mx-auto ow-mw-640">From detection to repair, our integrated solutions provide end-to-end water network management that protects revenue and ensures continuous service delivery.</p>
             </div>
 
             <!-- Solution 3 -->
-            <div class="solution-card" data-number="03" id="leak-detection-condition-assessment">
-                <div class="section-number">03</div>
-                <div class="solution-header">
-                    <div class="icon-badge">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <div class="ow-sol-card p-4 p-lg-5 mb-4" id="leak-detection-condition-assessment">
+                <div class="d-flex align-items-center gap-3 gap-md-4 mb-4">
+                    <div class="ow-sol-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <circle cx="12" cy="12" r="10"/>
                             <path d="M12 6v6l4 2"/>
                         </svg>
                     </div>
-                    <div class="solution-title-block">
-                        <h2 class="solution-title">Leak Detection & Condition Assessment</h2>
-                        <p class="solution-subtitle">Advanced sensing technology for early issue identification</p>
+                    <div class="flex-grow-1">
+                        <h2 class="h3 ow-sol-title mb-1">Leak Detection &amp; Condition Assessment</h2>
+                        <p class="text-muted mb-0">Advanced sensing technology for early issue identification</p>
+                    </div>
+                    <span class="ow-sol-number d-none d-md-inline">03</span>
+                </div>
+                <div class="row g-4 align-items-center">
+                    <div class="col-lg-7">
+                        <div class="ow-sol-block mb-3">
+                            <span class="ow-sol-block-label">Problem</span>
+                            <p class="mb-0">Hidden leaks and asset deterioration lead to catastrophic failures and revenue loss.</p>
+                        </div>
+                        <div class="ow-sol-block ow-sol-block--highlight mb-3">
+                            <span class="ow-sol-block-label">How We Solve It</span>
+                            <p class="mb-0">Identify hidden leaks and asset deterioration early using advanced sensing technologies &mdash; satellite detection, acoustic sensors, and inline inspection &mdash; before failures occur.</p>
+                        </div>
+                        <div class="ow-sol-block ow-sol-block--impact mb-4">
+                            <span class="ow-sol-block-label">Impact</span>
+                            <p class="mb-0">Prevent catastrophic failures and protect revenue through early intervention.</p>
+                        </div>
+                        <div class="row g-3">
+                            <div class="col-6 col-sm-auto">
+                                <div class="ow-sol-chip">
+                                    <span class="ow-sol-chip-number">93%</span>
+                                    <span class="ow-sol-chip-label">Detection Rate</span>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-auto">
+                                <div class="ow-sol-chip">
+                                    <span class="ow-sol-chip-number">3x</span>
+                                    <span class="ow-sol-chip-label">Faster Response</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <img class="ow-sol-img" loading="lazy" decoding="async" src="images/leak.webp" alt="Leak Detection">
                     </div>
                 </div>
-
-                <div class="solution-content">
-                    <div class="solution-text">
-                        <div class="text-block">
-                            <span class="block-label">Problem</span>
-                            <p class="text-block-text">Hidden leaks and asset deterioration lead to catastrophic failures and revenue loss.</p>
-                        </div>
-                        <div class="text-block highlight">
-                            <span class="block-label">How We Solve It</span>
-                            <p class="text-block-text">Identify hidden leaks and asset deterioration early using advanced sensing technologies — satellite detection, acoustic sensors, and inline inspection — before failures occur.</p>
-                        </div>
-                        <div class="text-block impact">
-                            <span class="block-label">Impact</span>
-                            <p class="text-block-text">Prevent catastrophic failures and protect revenue through early intervention.</p>
-                        </div>
-                        
-                        <div class="stat-chips">
-                            <div class="stat-chip">
-                                <span class="stat-number">93%</span>
-                                <span class="stat-label">Detection Rate</span>
-                            </div>
-                            <div class="stat-chip">
-                                <span class="stat-number">3x</span>
-                                <span class="stat-label">Faster Response</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="solution-image">
-                        <img class="solution-img" loading="lazy" decoding="async" src="images/leak.webp" alt="Leak Detection">
-                        <div class="image-overlay"></div>
-                    </div>
-                </div>
-                <a href="contact.html" class="learn-more">Learn more →</a>
+                <a href="contact.html" class="ow-sol-learn-more d-inline-block mt-4">Learn more &rarr;</a>
             </div>
 
-            <!-- Solution 4 - Reversed -->
-            <div class="solution-card reverse" data-number="04">
-                <div class="section-number">04</div>
-                <div class="solution-header">
-                    <div class="icon-badge">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <!-- Solution 4 -->
+            <div class="ow-sol-card p-4 p-lg-5 mb-4">
+                <div class="d-flex align-items-center gap-3 gap-md-4 mb-4">
+                    <div class="ow-sol-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
                         </svg>
                     </div>
-                    <div class="solution-title-block">
-                        <h2 class="solution-title">Pipeline Repair Under Pressure</h2>
-                        <p class="solution-subtitle">Live repairs with zero shutdowns and continuous service</p>
+                    <div class="flex-grow-1">
+                        <h2 class="h3 ow-sol-title mb-1">Pipeline Repair Under Pressure</h2>
+                        <p class="text-muted mb-0">Live repairs with zero shutdowns and continuous service</p>
+                    </div>
+                    <span class="ow-sol-number d-none d-md-inline">04</span>
+                </div>
+                <div class="row g-4 align-items-center flex-lg-row-reverse">
+                    <div class="col-lg-7">
+                        <div class="ow-sol-block mb-3">
+                            <span class="ow-sol-block-label">Challenge</span>
+                            <p class="mb-0">Traditional repairs require system shutdowns, disrupting water supply and causing revenue loss.</p>
+                        </div>
+                        <div class="ow-sol-block ow-sol-block--highlight mb-3">
+                            <span class="ow-sol-block-label">How We Solve It</span>
+                            <p class="mb-0">Live repairs with zero shutdowns. Maintain continuous water supply while performing critical pipeline repairs &mdash; no system restarts, no disruption.</p>
+                        </div>
+                        <div class="ow-sol-block ow-sol-block--impact mb-4">
+                            <span class="ow-sol-block-label">Impact</span>
+                            <p class="mb-0">50% reduction in NRW, revenue protection, and enhanced network efficiency.</p>
+                        </div>
+                        <div class="row g-3">
+                            <div class="col-6 col-sm-auto">
+                                <div class="ow-sol-chip">
+                                    <span class="ow-sol-chip-number">50%</span>
+                                    <span class="ow-sol-chip-label">NRW Reduction</span>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-auto">
+                                <div class="ow-sol-chip">
+                                    <span class="ow-sol-chip-number">0</span>
+                                    <span class="ow-sol-chip-label">Shutdowns</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <img class="ow-sol-img" loading="lazy" decoding="async" src="images/pipe.webp" alt="Pipeline Repair">
                     </div>
                 </div>
-
-                <div class="solution-content">
-                    <div class="solution-image">
-                        <img class="solution-img" loading="lazy" decoding="async" src="images/pipe.webp" alt="Pipeline Repair">
-                        <div class="image-overlay"></div>
-                    </div>
-                    <div class="solution-text">
-                        <div class="text-block">
-                            <span class="block-label">Challenge</span>
-                            <p class="text-block-text">Traditional repairs require system shutdowns, disrupting water supply and causing revenue loss.</p>
-                        </div>
-                        <div class="text-block highlight">
-                            <span class="block-label">How We Solve It</span>
-                            <p class="text-block-text">Live repairs with zero shutdowns. Maintain continuous water supply while performing critical pipeline repairs — no system restarts, no disruption.</p>
-                        </div>
-                        <div class="text-block impact">
-                            <span class="block-label">Impact</span>
-                            <p class="text-block-text">50% reduction in NRW, revenue protection, and enhanced network efficiency.</p>
-                        </div>
-                        
-                        <div class="stat-chips">
-                            <div class="stat-chip">
-                                <span class="stat-number">50%</span>
-                                <span class="stat-label">NRW Reduction</span>
-                            </div>
-                            <div class="stat-chip">
-                                <span class="stat-number">0</span>
-                                <span class="stat-label">Shutdowns</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <a href="contact.html" class="learn-more">Learn more →</a>
+                <a href="contact.html" class="ow-sol-learn-more d-inline-block mt-4">Learn more &rarr;</a>
             </div>
 
             <!-- Solution 5 -->
-            <div class="solution-card" data-number="05">
-                <div class="section-number">05</div>
-                <div class="solution-header">
-                    <div class="icon-badge">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <div class="ow-sol-card p-4 p-lg-5 mb-4">
+                <div class="d-flex align-items-center gap-3 gap-md-4 mb-4">
+                    <div class="ow-sol-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
                             <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
                         </svg>
                     </div>
-                    <div class="solution-title-block">
-                        <h2 class="solution-title">Smart Asset Management & 3D Modelling</h2>
-                        <p class="solution-subtitle">Transform static infrastructure into intelligent, connected assets</p>
+                    <div class="flex-grow-1">
+                        <h2 class="h3 ow-sol-title mb-1">Smart Asset Management &amp; 3D Modelling</h2>
+                        <p class="text-muted mb-0">Transform static infrastructure into intelligent, connected assets</p>
+                    </div>
+                    <span class="ow-sol-number d-none d-md-inline">05</span>
+                </div>
+                <div class="row g-4 align-items-center">
+                    <div class="col-lg-7">
+                        <div class="ow-sol-block mb-3">
+                            <span class="ow-sol-block-label">Problem</span>
+                            <p class="mb-0">Static infrastructure data limits operational intelligence and maintenance efficiency.</p>
+                        </div>
+                        <div class="ow-sol-block ow-sol-block--highlight mb-3">
+                            <span class="ow-sol-block-label">How We Solve It</span>
+                            <p class="mb-0">Transform static infrastructure into intelligent, connected assets by combining engineering data with interactive 3D models and seamless CMMS/EAM integration.</p>
+                        </div>
+                        <div class="ow-sol-block ow-sol-block--impact mb-4">
+                            <span class="ow-sol-block-label">Impact</span>
+                            <p class="mb-0">Enhanced maintenance workflows and improved operational decision-making.</p>
+                        </div>
+                        <div class="row g-3">
+                            <div class="col-6 col-sm-auto">
+                                <div class="ow-sol-chip">
+                                    <span class="ow-sol-chip-number">3D</span>
+                                    <span class="ow-sol-chip-label">Digital Twins</span>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-auto">
+                                <div class="ow-sol-chip">
+                                    <span class="ow-sol-chip-number">100%</span>
+                                    <span class="ow-sol-chip-label">Asset Visibility</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <img class="ow-sol-img" loading="lazy" decoding="async" src="images/3d.webp" alt="3D Asset Management">
                     </div>
                 </div>
-
-                <div class="solution-content">
-                    <div class="solution-text">
-                        <div class="text-block">
-                            <span class="block-label">Problem</span>
-                            <p class="text-block-text">Static infrastructure data limits operational intelligence and maintenance efficiency.</p>
-                        </div>
-                        <div class="text-block highlight">
-                            <span class="block-label">How We Solve It</span>
-                            <p class="text-block-text">Transform static infrastructure into intelligent, connected assets by combining engineering data with interactive 3D models and seamless CMMS/EAM integration.</p>
-                        </div>
-                        <div class="text-block impact">
-                            <span class="block-label">Impact</span>
-                            <p class="text-block-text">Enhanced maintenance workflows and improved operational decision-making.</p>
-                        </div>
-                        
-                        <div class="stat-chips">
-                            <div class="stat-chip">
-                                <span class="stat-number">3D</span>
-                                <span class="stat-label">Digital Twins</span>
-                            </div>
-                            <div class="stat-chip">
-                                <span class="stat-number">100%</span>
-                                <span class="stat-label">Asset Visibility</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="solution-image">
-                        <img class="solution-img" loading="lazy" decoding="async" src="images/3d.webp" alt="3D Asset Management">
-                        <div class="image-overlay"></div>
-                    </div>
-                </div>
-                <a href="contact.html" class="learn-more">Learn more →</a>
+                <a href="contact.html" class="ow-sol-learn-more d-inline-block mt-4">Learn more &rarr;</a>
             </div>
 
-            <!-- Highlight Section -->
-            <div class="highlight-section">
-                <div class="highlight-content">
-                    <h3 class="highlight-title">Data-Driven Revenue Protection</h3>
-                    <p class="highlight-text">Our comprehensive approach to non-revenue water reduction combines proven methodologies with cutting-edge technology to protect your bottom line.</p>
-                </div>
+            <!-- Highlight -->
+            <div class="ow-sol-highlight p-4 p-lg-5 text-center mb-4">
+                <h3 class="ow-sol-highlight-title mb-2">Data-Driven Revenue Protection</h3>
+                <p class="ow-sol-highlight-text mb-0 mx-auto ow-mw-640">Our comprehensive approach to non-revenue water reduction combines proven methodologies with cutting-edge technology to protect your bottom line.</p>
             </div>
 
-            <!-- Solution 6 - Reversed -->
-            <div class="solution-card reverse" data-number="06" id="water-loss-reduction-nrw">
-                <div class="section-number">06</div>
-                <div class="solution-header">
-                    <div class="icon-badge">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <!-- Solution 6 -->
+            <div class="ow-sol-card p-4 p-lg-5 mb-4" id="water-loss-reduction-nrw">
+                <div class="d-flex align-items-center gap-3 gap-md-4 mb-4">
+                    <div class="ow-sol-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <line x1="12" y1="2" x2="12" y2="22"/>
                             <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
                         </svg>
                     </div>
-                    <div class="solution-title-block">
-                        <h2 class="solution-title">Water Loss Reduction (NRW)</h2>
-                        <p class="solution-subtitle">Proven methodologies for quantifying and reducing non-revenue water</p>
+                    <div class="flex-grow-1">
+                        <h2 class="h3 ow-sol-title mb-1">Water Loss Reduction (NRW)</h2>
+                        <p class="text-muted mb-0">Proven methodologies for quantifying and reducing non-revenue water</p>
+                    </div>
+                    <span class="ow-sol-number d-none d-md-inline">06</span>
+                </div>
+                <div class="row g-4 align-items-center flex-lg-row-reverse">
+                    <div class="col-lg-7">
+                        <div class="ow-sol-block mb-3">
+                            <span class="ow-sol-block-label">Challenge</span>
+                            <p class="mb-0">Non-revenue water drains resources and undermines financial sustainability.</p>
+                        </div>
+                        <div class="ow-sol-block ow-sol-block--highlight mb-3">
+                            <span class="ow-sol-block-label">How We Solve It</span>
+                            <p class="mb-0">Quantify, analyse, and reduce non-revenue water using proven water balance methodologies and DMA analytics with targeted intervention strategies.</p>
+                        </div>
+                        <div class="ow-sol-block ow-sol-block--impact mb-4">
+                            <span class="ow-sol-block-label">Impact</span>
+                            <p class="mb-0">Accurate water balance analysis, DMA-level loss visibility, and measurable revenue recovery.</p>
+                        </div>
+                        <div class="row g-3">
+                            <div class="col-6 col-sm-auto">
+                                <div class="ow-sol-chip">
+                                    <span class="ow-sol-chip-number">40%</span>
+                                    <span class="ow-sol-chip-label">NRW Reduction</span>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-auto">
+                                <div class="ow-sol-chip">
+                                    <span class="ow-sol-chip-number">ROI</span>
+                                    <span class="ow-sol-chip-label">Rapid Payback</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <img class="ow-sol-img" loading="lazy" decoding="async" src="images/nrw.webp" alt="Water Loss Reduction">
                     </div>
                 </div>
-
-                <div class="solution-content">
-                    <div class="solution-image">
-                        <img class="solution-img" loading="lazy" decoding="async" src="images/nrw.webp" alt="Water Loss Reduction">
-                        <div class="image-overlay"></div>
-                    </div>
-                    <div class="solution-text">
-                        <div class="text-block">
-                            <span class="block-label">Challenge</span>
-                            <p class="text-block-text">Non-revenue water drains resources and undermines financial sustainability.</p>
-                        </div>
-                        <div class="text-block highlight">
-                            <span class="block-label">How We Solve It</span>
-                            <p class="text-block-text">Quantify, analyse, and reduce non-revenue water using proven water balance methodologies and DMA analytics with targeted intervention strategies.</p>
-                        </div>
-                        <div class="text-block impact">
-                            <span class="block-label">Impact</span>
-                            <p class="text-block-text">Accurate water balance analysis, DMA-level loss visibility, and measurable revenue recovery.</p>
-                        </div>
-                        
-                        <div class="stat-chips">
-                            <div class="stat-chip">
-                                <span class="stat-number">40%</span>
-                                <span class="stat-label">NRW Reduction</span>
-                            </div>
-                            <div class="stat-chip">
-                                <span class="stat-number">ROI</span>
-                                <span class="stat-label">Rapid Payback</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <a href="contact.html" class="learn-more">Learn more →</a>
+                <a href="contact.html" class="ow-sol-learn-more d-inline-block mt-4">Learn more &rarr;</a>
             </div>
 
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-final">
-        <div class="cta-final-container">
-            <h2 class="cta-final-title">Ready to Transform Your Water Infrastructure?</h2>
-            <p class="cta-intro">Partner with OneWater for intelligent, sustainable water management</p>
-            
-            <div class="cta-benefits">
-                <div class="benefit-item">
-                    <svg class="benefit-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <!-- ===== FINAL CTA ===== -->
+    <section class="ow-sol-cta py-5">
+        <div class="container py-4 text-center">
+            <h2 class="fw-semibold mb-2">Ready to Transform Your Water Infrastructure?</h2>
+            <p class="ow-sol-cta-intro mb-4">Partner with OneWater for intelligent, sustainable water management</p>
+
+            <div class="d-flex flex-column gap-3 mx-auto mb-5 ow-sol-cta-benefits">
+                <div class="d-flex align-items-center gap-3 ow-sol-benefit">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
                         <polyline points="22 4 12 14.01 9 11.01"/>
                     </svg>
                     <span>Proven track record across multiple continents</span>
                 </div>
-                <div class="benefit-item">
-                    <svg class="benefit-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <div class="d-flex align-items-center gap-3 ow-sol-benefit">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
                         <polyline points="22 4 12 14.01 9 11.01"/>
                     </svg>
                     <span>End-to-end solutions from detection to repair</span>
                 </div>
-                <div class="benefit-item">
-                    <svg class="benefit-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <div class="d-flex align-items-center gap-3 ow-sol-benefit">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
                         <polyline points="22 4 12 14.01 9 11.01"/>
                     </svg>
                     <span>Advanced AI and sensing technology</span>
                 </div>
             </div>
-            
-            <a href="contact.html" class="cta-primary-btn">Get Started Today</a>
+
+            <a href="contact.html" class="btn ow-sol-cta-btn">Get Started Today</a>
         </div>
     </section>
 
-    <!-- ===== FOOTER (UNTOUCHED) ===== -->
-    <footer class="main-footer">
-        <div class="footer-content">
-            <div class="footer-left">
-                <a href="index.html" class="footer-logo-link" aria-label="OneWater Home">
-                    <img loading="lazy" decoding="async" src="images/logo.webp" alt="OneWater" class="footer-logo">
-                </a>
-                <p class="footer-office">35 Ferguson Road Illovo<br>
-                    Sandton 2196 South Africa<br>
-                    <strong>Phone : +27 11 084 1100</strong><br>
-                    Email : info@onewater.co.za</p>
-            </div>
-            <div class="footer-center">
-                <h3 class="footer-heading">Quick Links</h3>
-                <nav class="footer-nav">
-                    <a class="footer-link" href="index.html">Home</a>
-                    <a class="footer-link" href="about.html">About</a>
-                    <a class="footer-link" href="solutions.html">Solutions</a>
-                    <a class="footer-link" href="case-studies.html">Case Studies</a>
-                    <a class="footer-link" href="contact.html">Contact Us</a>
-                </nav>
-            </div>
-            <div class="footer-right">
-                <div class="social-icons">
-                    <a class="social-link" href="https://www.linkedin.com/company/one-water-ai/posts/?feedView=all" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                        <img class="social-icon" loading="lazy" decoding="async" src="images/linkedin.webp" alt="LinkedIn">
+    <!-- ===== FOOTER ===== -->
+    <footer class="ow-footer text-white pt-5 pb-4">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-md-4">
+                    <a href="index.html" aria-label="OneWater Home">
+                        <img loading="lazy" decoding="async" src="images/logo.webp" alt="OneWater" class="ow-footer-logo mb-3">
+                    </a>
+                    <p class="ow-footer-text">
+                        35 Ferguson Road Illovo<br>
+                        Sandton 2196 South Africa<br>
+                        <strong>Phone: +27 11 084 1100</strong><br>
+                        Email: info@onewater.co.za
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <h3 class="h6 text-uppercase fw-bold mb-3">Quick Links</h3>
+                    <nav class="nav flex-column">
+                        <a class="nav-link ow-footer-link px-0" href="index.html">Home</a>
+                        <a class="nav-link ow-footer-link px-0" href="about.html">About</a>
+                        <a class="nav-link ow-footer-link px-0" href="solutions.html">Solutions</a>
+                        <a class="nav-link ow-footer-link px-0" href="case-studies.html">Case Studies</a>
+                        <a class="nav-link ow-footer-link px-0" href="contact.html">Contact Us</a>
+                    </nav>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <a class="d-inline-flex align-items-center justify-content-center ow-social-icon" href="https://www.linkedin.com/company/one-water-ai/posts/?feedView=all" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <img loading="lazy" decoding="async" src="images/linkedin.webp" alt="LinkedIn" width="20" height="20">
                     </a>
                 </div>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p class="footer-text">&copy; 2026 One Water. All rights reserved. Site by <a href="https://fergusonmedia.co.za" target="_blank" class="credit-link">Ferguson Media</a></p>
+            <hr class="ow-footer-divider my-4" />
+            <p class="text-center small ow-footer-text mb-0">&copy; 2026 One Water. All rights reserved. Site by <a href="https://fergusonmedia.co.za" target="_blank" rel="noopener noreferrer" class="ow-credit-link">Ferguson Media</a></p>
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/loader.js"></script>
-    <script src="js/solutions.js"></script>
+    <script src="js/nav-bootstrap.js"></script>
+    <script src="js/file.js"></script>
 </body>
 </html>

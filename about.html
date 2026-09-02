@@ -38,337 +38,330 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Text+Me+One&family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/loader.css" />
-    <link rel="stylesheet" href="css/about.css" />
+    <link rel="stylesheet" href="css/nav-bootstrap.css" />
+    <link rel="stylesheet" href="css/file.css" />
 </head>
 <body>
 
-    <!-- ===== NAVBAR (UNTOUCHED) ===== -->
-    <header class="main-header" id="main_header">
-        <div class="brand">
-            <a href="index.html"><img class="brand-logo" src="images/logo.webp" alt="OneWater Logo" /></a>
+    <!-- ===== NAVBAR (Bootstrap navbar component) ===== -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top ow-navbar" id="main_header">
+        <div class="container-fluid px-4 px-lg-5">
+            <a class="navbar-brand" href="index.html">
+                <img class="ow-brand-logo" src="images/logo.webp" alt="OneWater Logo" />
+            </a>
+            <button class="navbar-toggler ow-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#owMobileMenu" aria-controls="owMobileMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end ow-mobile-menu" tabindex="-1" id="owMobileMenu" aria-labelledby="owMobileMenuLabel">
+                <div class="offcanvas-header d-lg-none">
+                    <span class="visually-hidden" id="owMobileMenuLabel">Menu</span>
+                    <button type="button" class="btn-close btn-close-white ow-menu-close" data-bs-dismiss="offcanvas" data-bs-target="#owMobileMenu" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body justify-content-lg-end">
+                    <ul class="navbar-nav ow-nav-pill">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="solutions.html">Solutions</a></li>
+                        <li class="nav-item"><a class="nav-link" href="case-studies.html">Case Studies</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                    </ul>
+                    <div class="ow-mobile-menu-details d-lg-none">
+                        <a href="https://www.google.com/maps/place/35+Ferguson+Rd,+Illovo,+Sandton,+2196/@-26.1240527,28.0442193,17z/data=!3m1!4b1!4m6!3m5!1s0x1e950cc66f12708b:0xdec98442b3339e98!8m2!3d-26.1240527!4d28.0467942!16s%2Fg%2F11c26fxff5!5m1!1e1?entry=ttu&g_ep=EgoyMDI2MDIwMS4wIKXMDSoASAFQAw%3D%3D" class="ow-mobile-menu-line">35 Ferguson Road Illovo, Sandton 2196</a>
+                        <a href="tel:+27110841100" class="ow-mobile-menu-line">+27 11 084 1100</a>
+                        <a class="ow-mobile-social" href="https://www.linkedin.com/company/one-water-ai/posts/?feedView=all" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <img loading="lazy" decoding="async" src="images/linkedin.webp" alt="LinkedIn" width="18" height="18">
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <button class="hamburger" aria-label="Toggle menu" id="hamburger_btn">
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-        </button>
-        <nav class="nav-menu desktop-nav">
-            <a class="nav-link" href="index.html">Home</a>
-            <a class="nav-link" href="about.html">About</a>
-            <a class="nav-link" href="solutions.html">Solutions</a>
-            <a class="nav-link" href="case-studies.html">Case Studies</a>
-            <a class="nav-link" href="contact.html">Contact Us</a>
-        </nav>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <header class="ow-ab-hero text-white">
+        <img src="images/filtered-hero.webp" alt="Digital water infrastructure" class="ow-ab-hero-bg" />
+        <div class="ow-ab-hero-overlay"></div>
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6">
+                    <span class="ow-ab-eyebrow">South Africa's Smart Water Company</span>
+                    <h1 class="display-4 fw-semibold my-3">About<br><em class="text-white-50">ONE Water</em></h1>
+                    <p class="lead ow-ab-hero-intro">Advanced digital, AI-enabled solutions and engineering excellence transforming water infrastructure across Africa.</p>
+                </div>
+                <div class="col-lg-6 d-flex flex-column gap-3">
+                    <div class="ow-ab-hero-card">
+                        <span class="ow-ab-hero-card-label">Who We Are</span>
+                        <p class="ow-ab-hero-card-text mt-2">A South African smart water technology and services company delivering digital twin ecosystems, predictive analytics, and hands-on engineering to utilities, municipalities, and industrial clients.</p>
+                    </div>
+                    <div class="ow-ab-hero-card">
+                        <span class="ow-ab-hero-card-label">What Makes Us Different</span>
+                        <p class="ow-ab-hero-card-text mt-2">Our <strong>hybrid capability</strong> combines world-class digital platforms with physical field engineering live pipeline repairs under pressure, zero shutdowns, continuous service delivery, and measurable NRW reduction.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </header>
 
-    <!-- ===== SIDEBAR (UNTOUCHED) ===== -->
-    <aside class="mobile-sidebar" id="mobile_sidebar">
-        <div class="sidebar-header">
-            <button class="close-btn" id="close_sidebar">&times;</button>
-        </div>
-        <nav class="sidebar-nav">
-            <a class="sidebar-link" href="index.html"><img class="sidebar-icon" loading="lazy" decoding="async" src="images/home.webp" alt="Home Icon">Home</a>
-            <a class="sidebar-link" href="about.html"><img class="sidebar-icon" loading="lazy" decoding="async" src="images/about.webp" alt="About Icon">About</a>
-            <a class="sidebar-link" href="solutions.html"><img class="sidebar-icon" loading="lazy" decoding="async" src="images/solutions.webp" alt="Solutions Icon">Solutions</a>
-            <a class="sidebar-link" href="case-studies.html"><img class="sidebar-icon" loading="lazy" decoding="async" src="images/case-study.webp" alt="Case Study Icon">Case Studies</a>
-            <a class="sidebar-link" href="contact.html"><img class="sidebar-icon" loading="lazy" decoding="async" src="images/contact.webp" alt="Contact Icon">Contact Us</a>
-        </nav>
-    </aside>
-
-    <!-- ============================================================
-         SECTION 1 — HERO
-         ============================================================ -->
-    <section class="ab-hero">
-        <div class="ab-hero__bg">
-            <img src="images/filtered-hero.webp" alt="Digital water infrastructure" class="ab-hero__img" />
-            <div class="ab-hero__overlay"></div>
-        </div>
-        <div class="ab-hero__content">
-            <div class="ab-hero__left">
-                <span class="ab-eyebrow">South Africa's Smart Water Company</span>
-                <h1 class="ab-hero__title">About<br><em class="ab-hero__title-accent">ONE Water</em></h1>
-                <p class="ab-hero__intro">Advanced digital, AI-enabled solutions and engineering excellence transforming water infrastructure across Africa.</p>
+    <!-- ===== VISION / MISSION / VALUES ===== -->
+    <section class="ow-ab-vmv py-5">
+        <div class="container py-4">
+            <div class="text-center mx-auto mb-5 ow-mw-640">
+                <span class="ow-ab-eyebrow">What Drives Us</span>
+                <h2 class="ow-ab-section-title h1 mt-2">Our Purpose &amp; Principles</h2>
             </div>
-            <div class="ab-hero__right">
-                <div class="ab-hero__card">
-                    <span class="ab-hero__card-label">Who We Are</span>
-                    <p class="ab-hero__card-text">A South African smart water technology and services company delivering digital twin ecosystems, predictive analytics, and hands-on engineering to utilities, municipalities, and industrial clients.</p>
-                </div>
-                <div class="ab-hero__card">
-                    <span class="ab-hero__card-label">What Makes Us Different</span>
-                    <p class="ab-hero__card-text">Our <strong class="ab-hero__card-highlight">hybrid capability</strong> combines world-class digital platforms with physical field engineering live pipeline repairs under pressure, zero shutdowns, continuous service delivery, and measurable NRW reduction.</p>
-                </div>
-            </div>
-        </div>
-        <div class="ab-hero__scroll-cue" aria-hidden="true">
-            <span class="ab-hero__scroll-dot"></span>
-        </div>
-    </section>
-
-    <!-- ============================================================
-         SECTION 2 — VISION / MISSION / VALUES
-         ============================================================ -->
-    <section class="ab-vmv">
-        <div class="ab-vmv__inner">
-            <div class="ab-section-head">
-                <span class="ab-eyebrow ab-eyebrow--dark">What Drives Us</span>
-                <h2 class="ab-section-title">Our Purpose &amp; Principles</h2>
-            </div>
-            <div class="ab-vmv__grid">
-
-                <div class="ab-vmv__card">
-                    <div class="ab-vmv__icon-wrap">
-                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="3"/>
-                            <path d="M2 12s3.636-7 10-7 10 7 10 7-3.636 7-10 7-10-7-10-7z"/>
-                        </svg>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="ow-ab-vmv-card">
+                        <div class="ow-ab-vmv-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="3"/>
+                                <path d="M2 12s3.636-7 10-7 10 7 10 7-3.636 7-10 7-10-7-10-7z"/>
+                            </svg>
+                        </div>
+                        <span class="ow-ab-vmv-tag">Vision</span>
+                        <h3 class="h4 ow-ab-vmv-title">Leading Africa's Water Transformation</h3>
+                        <p class="ow-ab-vmv-body">To lead the transformation of water management across Africa through intelligent digital solutions, real-time performance monitoring, and responsive field services delivering local African expertise combined with global technology standards.</p>
                     </div>
-                    <span class="ab-vmv__tag">Vision</span>
-                    <h3 class="ab-vmv__title">Leading Africa's Water Transformation</h3>
-                    <p class="ab-vmv__body">To lead the transformation of water management across Africa through intelligent digital solutions, real-time performance monitoring, and responsive field services delivering local African expertise combined with global technology standards.</p>
                 </div>
-
-                <div class="ab-vmv__card ab-vmv__card--accent">
-                    <div class="ab-vmv__icon-wrap">
-                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="10"/>
-                            <polyline points="12 6 12 12 16 14"/>
-                        </svg>
+                <div class="col-lg-6">
+                    <div class="ow-ab-vmv-card ow-ab-vmv-card--accent">
+                        <div class="ow-ab-vmv-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                        </div>
+                        <span class="ow-ab-vmv-tag">Mission</span>
+                        <h3 class="h4 ow-ab-vmv-title">Integrated Smart Water Solutions</h3>
+                        <p class="ow-ab-vmv-body">To deliver integrated smart water solutions that empower utilities and industrial clients with reliable infrastructure, predictive insight, and cost-effective operations from detection through to physical repair.</p>
                     </div>
-                    <span class="ab-vmv__tag">Mission</span>
-                    <h3 class="ab-vmv__title">Integrated Smart Water Solutions</h3>
-                    <p class="ab-vmv__body">To deliver integrated smart water solutions that empower utilities and industrial clients with reliable infrastructure, predictive insight, and cost-effective operations from detection through to physical repair.</p>
                 </div>
-
-                <div class="ab-vmv__card">
-                    <div class="ab-vmv__icon-wrap">
-                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            </div>
+            <div class="ow-ab-values-band mt-4">
+                <div class="ow-ab-values-band-head">
+                    <div class="ow-ab-vmv-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                             <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
                         </svg>
                     </div>
-                    <span class="ab-vmv__tag">Core Values</span>
-                    <h3 class="ab-vmv__title">Principles That Guide Every Project</h3>
-                    <ul class="ab-vmv__list">
-                        <li class="ab-vmv__list-item">Innovation in water &amp; digital technologies</li>
-                        <li class="ab-vmv__list-item">Operational excellence and safety</li>
-                        <li class="ab-vmv__list-item">Sustainability and resource efficiency</li>
-                        <li class="ab-vmv__list-item">Local expertise with global standard delivery</li>
-                    </ul>
+                    <div class="ow-ab-values-band-head-text">
+                        <span class="ow-ab-vmv-tag">Core Values</span>
+                        <h3 class="h4 ow-ab-vmv-title mb-0">Principles That Guide Every Project</h3>
+                    </div>
                 </div>
-
+                <ul class="ow-ab-vmv-list ow-ab-values-band-list">
+                    <li>Innovation in water &amp; digital technologies</li>
+                    <li>Operational excellence and safety</li>
+                    <li>Sustainability and resource efficiency</li>
+                    <li>Local expertise with global standard delivery</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <!-- ============================================================
-         SECTION 3 — AFRICAN ADVANTAGE
-         ============================================================ -->
-    <section class="ab-africa">
-        <div class="ab-africa__inner">
-            <div class="ab-section-head">
-                <span class="ab-eyebrow">Our African Advantage</span>
-                <h2 class="ab-section-title ab-section-title--light">Purpose-Built for Africa's Water Challenges</h2>
-                <p class="ab-section-sub">The water infrastructure challenges facing African municipalities, mines, and agricultural operators are unique. Ageing networks, high NRW rates, arid climates, and rapid urbanisation demand solutions that combine technological sophistication with deep local knowledge.</p>
+    <!-- ===== AFRICAN ADVANTAGE ===== -->
+    <section class="ow-ab-africa py-5">
+        <div class="container py-4">
+            <div class="text-center mx-auto mb-5 ow-mw-680">
+                <span class="ow-ab-eyebrow">Our African Advantage</span>
+                <h2 class="ow-ab-section-title ow-ab-section-title--light h1 mt-2">Purpose-Built for Africa's Water Challenges</h2>
+                <p class="ow-ab-section-sub mt-3">The water infrastructure challenges facing African municipalities, mines, and agricultural operators are unique. Ageing networks, high NRW rates, arid climates, and rapid urbanisation demand solutions that combine technological sophistication with deep local knowledge.</p>
             </div>
-            <div class="ab-africa__grid">
-
-                <div class="ab-africa__card">
-                    <div class="ab-africa__num">01</div>
-                    <div class="ab-africa__icon-wrap">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="10"/>
-                            <line x1="2" y1="12" x2="22" y2="12"/>
-                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                        </svg>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="ow-ab-africa-card">
+                        <span class="ow-ab-africa-num">01</span>
+                        <div class="ow-ab-africa-icon">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="2" y1="12" x2="22" y2="12"/>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                            </svg>
+                        </div>
+                        <h3 class="h5 ow-ab-africa-card-title">Pan-African Reach</h3>
+                        <p class="ow-ab-africa-card-text">Operating from our Sandton headquarters, our vision and capacity extends across Sub-Saharan Africa and beyond actively scaling our footprint continent-wide.</p>
                     </div>
-                    <h3 class="ab-africa__card-title">Pan-African Reach</h3>
-                    <p class="ab-africa__card-text">Operating from our Sandton headquarters, our vision and capacity extends across Sub-Saharan Africa and beyond actively scaling our footprint continent-wide.</p>
                 </div>
-
-                <div class="ab-africa__card">
-                    <div class="ab-africa__num">02</div>
-                    <div class="ab-africa__icon-wrap">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                            <circle cx="12" cy="10" r="3"/>
-                        </svg>
+                <div class="col-md-6">
+                    <div class="ow-ab-africa-card">
+                        <span class="ow-ab-africa-num">02</span>
+                        <div class="ow-ab-africa-icon">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                        </div>
+                        <h3 class="h5 ow-ab-africa-card-title">Local Market Expertise</h3>
+                        <p class="ow-ab-africa-card-text">Our teams understand the regulatory, environmental, and infrastructural realities of operating in Africa. We adapt world-class technology to local conditions not the other way around.</p>
                     </div>
-                    <h3 class="ab-africa__card-title">Local Market Expertise</h3>
-                    <p class="ab-africa__card-text">Our teams understand the regulatory, environmental, and infrastructural realities of operating in Africa. We adapt world-class technology to local conditions not the other way around.</p>
                 </div>
-
-                <div class="ab-africa__card">
-                    <div class="ab-africa__num">03</div>
-                    <div class="ab-africa__icon-wrap">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="2" y="3" width="20" height="14" rx="2"/>
-                            <line x1="8" y1="21" x2="16" y2="21"/>
-                            <line x1="12" y1="17" x2="12" y2="21"/>
-                        </svg>
+                <div class="col-md-6">
+                    <div class="ow-ab-africa-card">
+                        <span class="ow-ab-africa-num">03</span>
+                        <div class="ow-ab-africa-icon">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2"/>
+                                <line x1="8" y1="21" x2="16" y2="21"/>
+                                <line x1="12" y1="17" x2="12" y2="21"/>
+                            </svg>
+                        </div>
+                        <h3 class="h5 ow-ab-africa-card-title">Global Technology Standards</h3>
+                        <p class="ow-ab-africa-card-text">Autodesk-powered digital twins, AI analytics, and satellite detection technologies meeting international best practice giving African utilities access to the same tools as their global counterparts.</p>
                     </div>
-                    <h3 class="ab-africa__card-title">Global Technology Standards</h3>
-                    <p class="ab-africa__card-text">Autodesk-powered digital twins, AI analytics, and satellite detection technologies meeting international best practice giving African utilities access to the same tools as their global counterparts.</p>
                 </div>
-
-                <div class="ab-africa__card">
-                    <div class="ab-africa__num">04</div>
-                    <div class="ab-africa__icon-wrap">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
-                        </svg>
+                <div class="col-md-6">
+                    <div class="ow-ab-africa-card">
+                        <span class="ow-ab-africa-num">04</span>
+                        <div class="ow-ab-africa-icon">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+                            </svg>
+                        </div>
+                        <h3 class="h5 ow-ab-africa-card-title">Community Water Security</h3>
+                        <p class="ow-ab-africa-card-text">Reducing NRW, preventing infrastructure failure, and enabling continuous supply directly improves quality of life at scale for African communities.</p>
                     </div>
-                    <h3 class="ab-africa__card-title">Community Water Security</h3>
-                    <p class="ab-africa__card-text">Reducing NRW, preventing infrastructure failure, and enabling continuous supply directly improves quality of life at scale for African communities.</p>
                 </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================================
-         SECTION 4 — VALUE PROPOSITION
-         ============================================================ -->
-    <section class="ab-value">
-        <div class="ab-value__inner">
-            <div class="ab-section-head">
-                <span class="ab-eyebrow ab-eyebrow--dark">Why ONE Water</span>
-                <h2 class="ab-section-title">Our Value Proposition</h2>
-            </div>
-            <div class="ab-value__grid">
-
-                <div class="ab-value__col">
-                    <div class="ab-value__icon-wrap">
-                        <img class="ab-value__icon" loading="lazy" decoding="async" src="images/digital.webp" alt="Digital Intelligence" />
-                    </div>
-                    <h3 class="ab-value__heading">Digital Intelligence</h3>
-                    <div class="ab-value__divider"></div>
-                    <p class="ab-value__body">AI-driven analytics, digital twins, and real-time monitoring give operators the insight needed for informed, proactive decisions before problems become failures.</p>
-                </div>
-
-                <div class="ab-value__col ab-value__col--featured">
-                    <div class="ab-value__badge">
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
-                        </svg>
-                        Hybrid Advantage
-                    </div>
-                    <div class="ab-value__icon-wrap">
-                        <img class="ab-value__icon" loading="lazy" decoding="async" src="images/infrastructure.webp" alt="Physical Engineering" />
-                    </div>
-                    <h3 class="ab-value__heading">Physical Engineering</h3>
-                    <div class="ab-value__divider"></div>
-                    <p class="ab-value__body">Live pipeline repairs under pressure, leak detection, and condition assessment zero shutdowns, uninterrupted supply, and zero revenue loss during intervention.</p>
-                </div>
-
-                <div class="ab-value__col">
-                    <div class="ab-value__icon-wrap">
-                        <img class="ab-value__icon" loading="lazy" decoding="async" src="images/end.webp" alt="End-to-End Integration" />
-                    </div>
-                    <h3 class="ab-value__heading">End-to-End Integration</h3>
-                    <div class="ab-value__divider"></div>
-                    <p class="ab-value__body">Seamless integration of engineering data, 3D models, and maintenance systems for complete infrastructure visibility from the data layer to the field team.</p>
-                </div>
-
             </div>
         </div>
     </section>
 
-    <!-- ============================================================
-         SECTION 5 — PARTNERS
-         Row 1: [AI Campus] [EPF Tech Fund] [Empire]
-         Row 2:     [Itakane ICT]  [SmartView]
-         ============================================================ -->
-    <section class="ab-partners">
-        <div class="ab-partners__inner">
-            <div class="ab-section-head">
-                <span class="ab-eyebrow ab-eyebrow--dark">Ecosystem</span>
-                <h2 class="ab-section-title">Our Trusted Partners</h2>
+    <!-- ===== VALUE PROPOSITION ===== -->
+    <section class="ow-ab-value py-5">
+        <div class="container py-4">
+            <div class="text-center mx-auto mb-5 ow-mw-640">
+                <span class="ow-ab-eyebrow">Why ONE Water</span>
+                <h2 class="ow-ab-section-title h1 mt-2">Our Value Proposition</h2>
             </div>
-            <div class="ab-partners__grid">
-
-                <!-- Row 1 — 3 cards -->
-                <div class="ab-partner">
-                    <img class="ab-partner__logo" loading="lazy" decoding="async" src="images/AI.webp" alt="AI Campus" />
-                    <div class="ab-partner__bio">
-                        <p class="ab-partner__text">South Africa's leading AI education and innovation hub, equipping professionals and organisations with practical artificial intelligence skills.</p>
-                        <a class="ab-partner__link" href="https://aicampus.co.za/" target="_blank" rel="noopener noreferrer">Visit AI Campus &rarr;</a>
+            <div class="row g-0 ow-ab-value-grid">
+                <div class="col-lg-4">
+                    <div class="ow-ab-value-col">
+                        <div class="ow-ab-value-icon-wrap">
+                            <img class="ow-ab-value-icon" loading="lazy" decoding="async" src="images/digital.webp" alt="Digital Intelligence" />
+                        </div>
+                        <h3 class="h4 ow-ab-value-heading">Digital Intelligence</h3>
+                        <div class="ow-ab-value-divider"></div>
+                        <p class="ow-ab-value-body">AI-driven analytics, digital twins, and real-time monitoring give operators the insight needed for informed, proactive decisions before problems become failures.</p>
                     </div>
                 </div>
-
-                <div class="ab-partner">
-                    <img class="ab-partner__logo" loading="lazy" decoding="async" src="images/epf.webp" alt="EPF Tech Fund" />
-                    <div class="ab-partner__bio">
-                        <p class="ab-partner__text">Supporting emerging technology ventures across Africa with early-stage capital and strategic resources to founders driving digital transformation.</p>
-                        <a class="ab-partner__link" href="https://epftechfund.org/" target="_blank" rel="noopener noreferrer">Visit EPF Tech Fund &rarr;</a>
+                <div class="col-lg-4">
+                    <div class="ow-ab-value-col ow-ab-value-col--featured">
+                        <span class="ow-ab-value-badge">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                            </svg>
+                            Hybrid Advantage
+                        </span>
+                        <div class="ow-ab-value-icon-wrap">
+                            <img class="ow-ab-value-icon" loading="lazy" decoding="async" src="images/infrastructure.webp" alt="Physical Engineering" />
+                        </div>
+                        <h3 class="h4 ow-ab-value-heading">Physical Engineering</h3>
+                        <div class="ow-ab-value-divider"></div>
+                        <p class="ow-ab-value-body">Live pipeline repairs under pressure, leak detection, and condition assessment zero shutdowns, uninterrupted supply, and zero revenue loss during intervention.</p>
                     </div>
                 </div>
-
-                <div class="ab-partner">
-                    <img class="ab-partner__logo" loading="lazy" decoding="async" src="images/empire.webp" alt="Empire Partner Foundation" />
-                    <div class="ab-partner__bio">
-                        <p class="ab-partner__text">Accelerating high-impact African businesses through mentorship, investment networks, and corporate partnership programmes.</p>
-                        <a class="ab-partner__link" href="https://empirepartnerfoundation.org/" target="_blank" rel="noopener noreferrer">Visit Empire Partner Foundation &rarr;</a>
+                <div class="col-lg-4">
+                    <div class="ow-ab-value-col">
+                        <div class="ow-ab-value-icon-wrap">
+                            <img class="ow-ab-value-icon" loading="lazy" decoding="async" src="images/end.webp" alt="End-to-End Integration" />
+                        </div>
+                        <h3 class="h4 ow-ab-value-heading">End-to-End Integration</h3>
+                        <div class="ow-ab-value-divider"></div>
+                        <p class="ow-ab-value-body">Seamless integration of engineering data, 3D models, and maintenance systems for complete infrastructure visibility from the data layer to the field team.</p>
                     </div>
                 </div>
-
-                <!-- Row 2 — 2 cards centred (offset by 0.5 col on each side) -->
-                <div class="ab-partner ab-partner--row2">
-                    <img class="ab-partner__logo" loading="lazy" decoding="async" src="images/ITAKANE.webp" alt="Itakane ICT" />
-                    <div class="ab-partner__bio">
-                        <p class="ab-partner__text">Delivering end-to-end technology solutions from infrastructure and connectivity to managed services enabling African enterprises to operate at full digital capacity.</p>
-                        <a class="ab-partner__link" href="https://itakaneict.com/" target="_blank" rel="noopener noreferrer">Visit Itakane ICT &rarr;</a>
-                    </div>
-                </div>
-
-                <div class="ab-partner ab-partner--row2">
-                    <img class="ab-partner__logo" loading="lazy" decoding="async" src="images/smartview.webp" alt="SmartView Technology" />
-                    <div class="ab-partner__bio">
-                        <p class="ab-partner__text">Specialising in advanced remote monitoring and IoT solutions for water, energy, and environmental infrastructure across Southern Africa.</p>
-                        <a class="ab-partner__link" href="https://www.smartviewtechnology.co.za/" target="_blank" rel="noopener noreferrer">Visit SmartView Technology &rarr;</a>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
 
-    <!-- ===== FOOTER (UNTOUCHED) ===== -->
-    <footer class="main-footer">
-        <div class="footer-content">
-            <div class="footer-left">
-                <a href="index.html" class="footer-logo-link" aria-label="OneWater Home">
-                    <img loading="lazy" decoding="async" src="images/logo.webp" alt="OneWater" class="footer-logo">
-                </a>
-                <p class="footer-office">35 Ferguson Road Illovo<br>
-                    Sandton 2196 South Africa<br>
-                    <strong>Phone : +27 11 084 1100</strong><br>
-                    Email : info@onewater.co.za</p>
+    <!-- ===== PARTNERS ===== -->
+    <section class="ow-ab-partners py-5">
+        <div class="container py-4">
+            <div class="text-center mx-auto mb-5 ow-mw-640">
+                <span class="ow-ab-eyebrow">Ecosystem</span>
+                <h2 class="ow-ab-section-title h1 mt-2">Our Trusted Partners</h2>
             </div>
-            <div class="footer-center">
-                <h3 class="footer-heading">Quick Links</h3>
-                <nav class="footer-nav">
-                    <a class="footer-link" href="index.html">Home</a>
-                    <a class="footer-link" href="about.html">About</a>
-                    <a class="footer-link" href="solutions.html">Solutions</a>
-                    <a class="footer-link" href="case-studies.html">Case Studies</a>
-                    <a class="footer-link" href="contact.html">Contact Us</a>
-                </nav>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <div class="ow-ab-partner-card">
+                        <img class="ow-ab-partner-logo" loading="lazy" decoding="async" src="images/AI.webp" alt="AI Campus" />
+                        <p class="ow-ab-partner-text">South Africa's leading AI education and innovation hub, equipping professionals and organisations with practical artificial intelligence skills.</p>
+                        <a class="ow-ab-partner-link" href="https://aicampus.co.za/" target="_blank" rel="noopener noreferrer">Visit AI Campus &rarr;</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="ow-ab-partner-card">
+                        <img class="ow-ab-partner-logo" loading="lazy" decoding="async" src="images/epf.webp" alt="EPF Tech Fund" />
+                        <p class="ow-ab-partner-text">Supporting emerging technology ventures across Africa with early-stage capital and strategic resources to founders driving digital transformation.</p>
+                        <a class="ow-ab-partner-link" href="https://epftechfund.org/" target="_blank" rel="noopener noreferrer">Visit EPF Tech Fund &rarr;</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="ow-ab-partner-card">
+                        <img class="ow-ab-partner-logo" loading="lazy" decoding="async" src="images/empire.webp" alt="Empire Partner Foundation" />
+                        <p class="ow-ab-partner-text">Accelerating high-impact African businesses through mentorship, investment networks, and corporate partnership programmes.</p>
+                        <a class="ow-ab-partner-link" href="https://empirepartnerfoundation.org/" target="_blank" rel="noopener noreferrer">Visit Empire Partner Foundation &rarr;</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="ow-ab-partner-card">
+                        <img class="ow-ab-partner-logo" loading="lazy" decoding="async" src="images/ITAKANE.webp" alt="Itakane ICT" />
+                        <p class="ow-ab-partner-text">Delivering end-to-end technology solutions from infrastructure and connectivity to managed services enabling African enterprises to operate at full digital capacity.</p>
+                        <a class="ow-ab-partner-link" href="https://itakaneict.com/" target="_blank" rel="noopener noreferrer">Visit Itakane ICT &rarr;</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="ow-ab-partner-card">
+                        <img class="ow-ab-partner-logo" loading="lazy" decoding="async" src="images/smartview.webp" alt="SmartView Technology" />
+                        <p class="ow-ab-partner-text">Specialising in advanced remote monitoring and IoT solutions for water, energy, and environmental infrastructure across Southern Africa.</p>
+                        <a class="ow-ab-partner-link" href="https://www.smartviewtechnology.co.za/" target="_blank" rel="noopener noreferrer">Visit SmartView Technology &rarr;</a>
+                    </div>
+                </div>
             </div>
-            <div class="footer-right">
-                <div class="social-icons">
-                    <a class="social-link" href="https://www.linkedin.com/company/one-water-ai/posts/?feedView=all" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                        <img class="social-icon" loading="lazy" decoding="async" src="images/linkedin.webp" alt="LinkedIn">
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="ow-footer text-white pt-5 pb-4">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-md-4">
+                    <a href="index.html" aria-label="OneWater Home">
+                        <img loading="lazy" decoding="async" src="images/logo.webp" alt="OneWater" class="ow-footer-logo mb-3">
+                    </a>
+                    <p class="ow-footer-text">
+                        35 Ferguson Road Illovo<br>
+                        Sandton 2196 South Africa<br>
+                        <strong>Phone: +27 11 084 1100</strong><br>
+                        Email: info@onewater.co.za
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <h3 class="h6 text-uppercase fw-bold mb-3">Quick Links</h3>
+                    <nav class="nav flex-column">
+                        <a class="nav-link ow-footer-link px-0" href="index.html">Home</a>
+                        <a class="nav-link ow-footer-link px-0" href="about.html">About</a>
+                        <a class="nav-link ow-footer-link px-0" href="solutions.html">Solutions</a>
+                        <a class="nav-link ow-footer-link px-0" href="case-studies.html">Case Studies</a>
+                        <a class="nav-link ow-footer-link px-0" href="contact.html">Contact Us</a>
+                    </nav>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <a class="d-inline-flex align-items-center justify-content-center ow-social-icon" href="https://www.linkedin.com/company/one-water-ai/posts/?feedView=all" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <img loading="lazy" decoding="async" src="images/linkedin.webp" alt="LinkedIn" width="20" height="20">
                     </a>
                 </div>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p class="footer-text">&copy; 2026 One Water. All rights reserved. Site by <a href="https://fergusonmedia.co.za" target="_blank" class="credit-link">Ferguson Media</a></p>
+            <hr class="ow-footer-divider my-4" />
+            <p class="text-center small ow-footer-text mb-0">&copy; 2026 One Water. All rights reserved. Site by <a href="https://fergusonmedia.co.za" target="_blank" rel="noopener noreferrer" class="ow-credit-link">Ferguson Media</a></p>
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/loader.js"></script>
-    <script src="js/about.js"></script>
+    <script src="js/nav-bootstrap.js"></script>
+    <script src="js/file.js"></script>
 </body>
 </html>

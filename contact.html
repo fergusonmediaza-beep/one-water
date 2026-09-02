@@ -38,178 +38,171 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Text+Me+One&family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+    <!-- Bootstrap 5 -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
     <link rel="stylesheet" href="css/loader.css" />
-    <link rel="stylesheet" href="css/contact.css" />
+    <link rel="stylesheet" href="css/nav-bootstrap.css" />
+    <link rel="stylesheet" href="css/file.css" />
 </head>
 <body>
-    <header class="main-header" id="main_header">
-        <div class="brand">
-    <a href="index.html">
-        <img class="brand-logo" src="images/logo.webp" alt="OneWater Logo" />
-    </a>
-</div>
+    <!-- ===== NAVBAR (Bootstrap navbar component) ===== -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top ow-navbar" id="main_header">
+        <div class="container-fluid px-4 px-lg-5">
+            <a class="navbar-brand" href="index.html">
+                <img class="ow-brand-logo" src="images/logo.webp" alt="OneWater Logo" />
+            </a>
+            <button class="navbar-toggler ow-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#owMobileMenu" aria-controls="owMobileMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end ow-mobile-menu" tabindex="-1" id="owMobileMenu" aria-labelledby="owMobileMenuLabel">
+                <div class="offcanvas-header d-lg-none">
+                    <span class="visually-hidden" id="owMobileMenuLabel">Menu</span>
+                    <button type="button" class="btn-close btn-close-white ow-menu-close" data-bs-dismiss="offcanvas" data-bs-target="#owMobileMenu" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body justify-content-lg-end">
+                    <ul class="navbar-nav ow-nav-pill">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="solutions.html">Solutions</a></li>
+                        <li class="nav-item"><a class="nav-link" href="case-studies.html">Case Studies</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="contact.html">Contact Us</a></li>
+                    </ul>
+                    <div class="ow-mobile-menu-details d-lg-none">
+                        <a href="https://www.google.com/maps/place/35+Ferguson+Rd,+Illovo,+Sandton,+2196/@-26.1240527,28.0442193,17z/data=!3m1!4b1!4m6!3m5!1s0x1e950cc66f12708b:0xdec98442b3339e98!8m2!3d-26.1240527!4d28.0467942!16s%2Fg%2F11c26fxff5!5m1!1e1?entry=ttu&g_ep=EgoyMDI2MDIwMS4wIKXMDSoASAFQAw%3D%3D" class="ow-mobile-menu-line">35 Ferguson Road Illovo, Sandton 2196</a>
+                        <a href="tel:+27110841100" class="ow-mobile-menu-line">+27 11 084 1100</a>
+                        <a class="ow-mobile-social" href="https://www.linkedin.com/company/one-water-ai/posts/?feedView=all" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <img loading="lazy" decoding="async" src="images/linkedin.webp" alt="LinkedIn" width="18" height="18">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-
-        <!-- Hamburger for mobile -->
-        <button class="hamburger" aria-label="Toggle menu" id="hamburger_btn">
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-        </button>
-
-        <!-- Desktop Nav (only shown on desktop) -->
-        <nav class="nav-menu desktop-nav">
-            <a class="nav-link" href="index.html">Home</a>
-            <a class="nav-link" href="about.html">About</a>
-            <a class="nav-link" href="solutions.html">Solutions</a>
-            <a class="nav-link" href="case-studies.html">Case Studies</a>
-            <a class="nav-link" href="contact.html">Contact Us</a>
-        </nav>
+    <!-- ===== HERO ===== -->
+    <header class="ow-hero d-flex align-items-center text-white text-center" id="contact">
+        <img src="images/filtered-hero-contact.webp" alt="Contact Us Background" class="ow-hero-bg"
+             onerror="this.style.backgroundColor='#1b3350'; this.style.opacity='0.8';" />
+        <div class="ow-hero-overlay"></div>
+        <div class="container position-relative">
+            <h1 class="display-4 fw-semibold mb-3">Contact Us</h1>
+            <p class="lead mx-auto ow-hero-text ow-mw-780">We’re here to help with all your water management, treatment, and infrastructure needs. Whether you require technical support, project consultation, or general enquiries, our team is ready to assist you. Reach out to us and we’ll respond promptly.</p>
+        </div>
     </header>
 
-   <!-- Mobile Sidebar (hidden by default, never appears on desktop) -->
-
-<aside class="mobile-sidebar" id="mobile_sidebar">
-    <div class="sidebar-header">
-        <button class="close-btn" id="close_sidebar">&times;</button>
-    </div>
-    <nav class="sidebar-nav">
-        <a class="sidebar-link" href="index.html">
-            <img class="sidebar-icon" loading="lazy" decoding="async" src="images/home.webp" alt="Home Icon">
-            Home
-        </a>
-        <a class="sidebar-link" href="about.html">
-            <img class="sidebar-icon" loading="lazy" decoding="async" src="images/about.webp" alt="About Icon">
-            About
-        </a>
-        <a class="sidebar-link" href="solutions.html">
-            <img class="sidebar-icon" loading="lazy" decoding="async" src="images/solutions.webp" alt="Solutions Icon">
-            Solutions
-        </a>
-        <a class="sidebar-link" href="case-studies.html">
-            <img class="sidebar-icon" loading="lazy" decoding="async" src="images/case-study.webp" alt="Case Study Icon">
-            Case Studies
-        </a>
-        <a class="sidebar-link" href="contact.html">
-            <img class="sidebar-icon" loading="lazy" decoding="async" src="images/contact.webp" alt="Contact Icon">
-            Contact Us
-        </a>
-    </nav>
-</aside>
-
-
-<section class="hero" id="contact">
-    <img
-        src="images/filtered-hero-contact.webp"
-        alt="Contact Us Background"
-        class="hero-bg"
-        onerror="this.style.backgroundColor='#1b3350'; this.style.opacity='0.8';"
-    />
-    <div class="hero-content">
-        <h1 class="hero-title"><strong>Contact Us</strong></h1>
-        <p class="hero-subtitle">We’re here to help with all your water management, treatment, and infrastructure needs. Whether you require technical support, project consultation, or general enquiries, our team is ready to assist you. Reach out to us and we’ll respond promptly.</p>
-    </div>
-</section>
+    <!-- ===== CONTACT CARDS ===== -->
+    <section class="py-5 ow-section-alt">
+        <div class="container py-4">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 text-center border-0 shadow-sm ow-card p-3">
+                        <div class="card-body">
+                            <img class="ow-card-icon mb-3" loading="lazy" decoding="async" src="images/location.webp" alt="Visit Us Icon">
+                            <h2 class="h6 text-uppercase fw-bold ow-card-title">Visit Us</h2>
+                            <p class="text-muted small">Visit our offices for consultations, project discussions, or technical support. Our team is available during standard business hours to assist with your water treatment and infrastructure requirements.</p>
+                            <a href="https://www.google.com/maps/place/35+Ferguson+Rd,+Illovo,+Sandton,+2196/@-26.1240527,28.0442193,17z/data=!3m1!4b1!4m6!3m5!1s0x1e950cc66f12708b:0xdec98442b3339e98!8m2!3d-26.1240527!4d28.0467942!16s%2Fg%2F11c26fxff5!5m1!1e1?entry=ttu&g_ep=EgoyMDI2MDIwMS4wIKXMDSoASAFQAw%3D%3D" class="ow-link fw-semibold">35 Ferguson Road Illovo, Sandton 2196</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 text-center border-0 shadow-sm ow-card p-3">
+                        <div class="card-body">
+                            <img class="ow-card-icon mb-3" loading="lazy" decoding="async" src="images/telephone.webp" alt="Call Us Icon">
+                            <h2 class="h6 text-uppercase fw-bold ow-card-title">Call Us</h2>
+                            <p class="text-muted small">Speak directly with our support or technical team for urgent enquiries, project updates, or service information. We aim to provide fast and reliable assistance.</p>
+                            <a href="tel:+27110841100" class="ow-link fw-semibold">+27 11 084 1100</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 text-center border-0 shadow-sm ow-card p-3">
+                        <div class="card-body">
+                            <img class="ow-card-icon mb-3" loading="lazy" decoding="async" src="images/mail.webp" alt="Contact Us Icon">
+                            <h2 class="h6 text-uppercase fw-bold ow-card-title">Contact Us</h2>
+                            <p class="text-muted small">Send us your questions, partnership enquiries, or service requests via email. Our team will respond within one business day.</p>
+                            <a href="mailto:info@onewater.co.za" class="ow-link fw-semibold">info@onewater.co.za</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-
-    <section class="contact-info">
-    <div class="contact-container">
-        <div class="contact-card">
-            <div class="contact-icon">
-                <img class="contact-icon-img" loading="lazy" decoding="async" src="images/location.webp" alt="Visit Us Icon">
-            </div>
-            <h3 class="contact-card-title">VISIT US</h3>
-            <p class="contact-card-text">Visit our offices for consultations, project discussions, or technical support. Our team is available during standard business hours to assist with your water treatment and infrastructure requirements.</p>
-            <a href="https://www.google.com/maps/place/35+Ferguson+Rd,+Illovo,+Sandton,+2196/@-26.1240527,28.0442193,17z/data=!3m1!4b1!4m6!3m5!1s0x1e950cc66f12708b:0xdec98442b3339e98!8m2!3d-26.1240527!4d28.0467942!16s%2Fg%2F11c26fxff5!5m1!1e1?entry=ttu&g_ep=EgoyMDI2MDIwMS4wIKXMDSoASAFQAw%3D%3D" class="contact-link">35 Ferguson Road Illovo
-Sandton 2196</a>
-        </div>
-
-        <div class="contact-card">
-            <div class="contact-icon">
-                <img class="contact-icon-img" loading="lazy" decoding="async" src="images/telephone.webp" alt="Call Us Icon">
-            </div>
-            <h3 class="contact-card-title">CALL US</h3>
-            <p class="contact-card-text">Speak directly with our support or technical team for urgent enquiries, project updates, or service information. We aim to provide fast and reliable assistance.</p>
-            <a href="tel:+27110841100" class="contact-link">+27 11 084 1100</a>
-        </div>
-
-        <div class="contact-card">
-            <div class="contact-icon">
-                <img class="contact-icon-img" loading="lazy" decoding="async" src="images/mail.webp" alt="Contact Us Icon">
-            </div>
-            <h3 class="contact-card-title">CONTACT US</h3>
-            <p class="contact-card-text">Send us your questions, partnership enquiries, or service requests via email. Our team will respond within one business day.</p>
-            <a href="mailto:info@onewater.co.za" class="contact-link">info@onewater.co.za</a>
-        </div>
-    </div>
-</section>
-
-
-
-<section class="contact-form-section">
-    <div class="form-container">
-        <div class="form-image">
-            <img class="form-img" loading="lazy" decoding="async" src="images/clean-drop.webp" alt="Contact Image">
-        </div>
-        <div class="form-content">
-            <h2 class="form-title">Need support?</h2>
-            <p class="form-text">Need assistance or want to discuss a project? Complete the form below and one of our specialists will get back to you shortly.</p>
-            <form class="contact-form">
-                <div class="form-group">
-                    <label class="form-label" for="name">Name and surname</label>
-                    <input class="form-input" type="text" id="name" name="name" required>
+    <!-- ===== CONTACT FORM ===== -->
+    <section class="py-5">
+        <div class="container py-4">
+            <div class="row g-4 g-lg-5 align-items-center">
+                <div class="col-lg-5 d-none d-lg-block text-center">
+                    <img class="img-fluid" loading="lazy" decoding="async" src="images/clean-drop.webp" alt="Contact Image">
                 </div>
-                <div class="form-group">
-                    <label class="form-label" for="email">Email</label>
-                    <input class="form-input" type="email" id="email" name="email" required>
+                <div class="col-lg-7">
+                    <h2 class="ow-form-title mb-2">Need support?</h2>
+                    <p class="text-muted mb-4">Need assistance or want to discuss a project? Complete the form below and one of our specialists will get back to you shortly.</p>
+                    <form class="row g-3">
+                        <div class="col-12">
+                            <label for="name" class="form-label">Name and surname</label>
+                            <input type="text" class="form-control ow-input" id="name" name="name" required>
+                        </div>
+                        <div class="col-12">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control ow-input" id="email" name="email" required>
+                        </div>
+                        <div class="col-12">
+                            <label for="message" class="form-label">Tell us how we can assist you, including project details, service enquiries, or technical support requirements.</label>
+                            <textarea class="form-control ow-input" id="message" name="message" rows="6" required></textarea>
+                        </div>
+                        <div class="col-12">
+                            <button type="button" id="submit_btn" class="btn ow-btn-primary px-4 py-2">Submit</button>
+                        </div>
+                    </form>
                 </div>
-                <div class="form-group">
-                    <label class="form-label" for="message">Tell us how we can assist you, including project details, service enquiries, or technical support requirements.</label>
-                    <textarea class="form-textarea" id="message" name="message" rows="6" required></textarea>
-                </div>
-           <button type="button" id="submit_btn" class="submit-btn">SUBMIT</button>
-            </form>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-    <!-- ===== FOOTER (UNTOUCHED) ===== -->
-    <footer class="main-footer">
-        <div class="footer-content">
-            <div class="footer-left">
-                <a href="index.html" class="footer-logo-link" aria-label="OneWater Home">
-                    <img loading="lazy" decoding="async" src="images/logo.webp" alt="OneWater" class="footer-logo">
-                </a>
-                <p class="footer-office">35 Ferguson Road Illovo<br>
-                    Sandton 2196 South Africa<br>
-                    <strong>Phone : +27 11 084 1100</strong><br>
-                    Email : info@onewater.co.za</p>
-            </div>
-            <div class="footer-center">
-                <h3 class="footer-heading">Quick Links</h3>
-                <nav class="footer-nav">
-                    <a class="footer-link" href="index.html">Home</a>
-                    <a class="footer-link" href="about.html">About</a>
-                    <a class="footer-link" href="solutions.html">Solutions</a>
-                    <a class="footer-link" href="case-studies.html">Case Studies</a>
-                    <a class="footer-link" href="contact.html">Contact Us</a>
-                </nav>
-            </div>
-            <div class="footer-right">
-                <div class="social-icons">
-                    <a class="social-link" href="https://www.linkedin.com/company/one-water-ai/posts/?feedView=all" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                        <img class="social-icon" loading="lazy" decoding="async" src="images/linkedin.webp" alt="LinkedIn">
+    <!-- ===== FOOTER ===== -->
+    <footer class="ow-footer text-white pt-5 pb-4">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-md-4">
+                    <a href="index.html" aria-label="OneWater Home">
+                        <img loading="lazy" decoding="async" src="images/logo.webp" alt="OneWater" class="ow-footer-logo mb-3">
+                    </a>
+                    <p class="ow-footer-text">
+                        35 Ferguson Road Illovo<br>
+                        Sandton 2196 South Africa<br>
+                        <strong>Phone: +27 11 084 1100</strong><br>
+                        Email: info@onewater.co.za
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <h3 class="h6 text-uppercase fw-bold mb-3">Quick Links</h3>
+                    <nav class="nav flex-column">
+                        <a class="nav-link ow-footer-link px-0" href="index.html">Home</a>
+                        <a class="nav-link ow-footer-link px-0" href="about.html">About</a>
+                        <a class="nav-link ow-footer-link px-0" href="solutions.html">Solutions</a>
+                        <a class="nav-link ow-footer-link px-0" href="case-studies.html">Case Studies</a>
+                        <a class="nav-link ow-footer-link px-0" href="contact.html">Contact Us</a>
+                    </nav>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <a class="d-inline-flex align-items-center justify-content-center ow-social-icon" href="https://www.linkedin.com/company/one-water-ai/posts/?feedView=all" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <img loading="lazy" decoding="async" src="images/linkedin.webp" alt="LinkedIn" width="20" height="20">
                     </a>
                 </div>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p class="footer-text">&copy; 2026 One Water. All rights reserved. Site by <a href="https://fergusonmedia.co.za" target="_blank" class="credit-link">Ferguson Media</a></p>
+            <hr class="ow-footer-divider my-4" />
+            <p class="text-center small ow-footer-text mb-0">&copy; 2026 One Water. All rights reserved. Site by <a href="https://fergusonmedia.co.za" target="_blank" rel="noopener noreferrer" class="ow-credit-link">Ferguson Media</a></p>
         </div>
     </footer>
 
+    <!-- Bootstrap 5 JS bundle (handles navbar collapse toggle) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/loader.js"></script>
-    <script src="js/contact.js"></script>
+    <script src="js/nav-bootstrap.js"></script>
+    <script src="js/file.js"></script>
 </body>
 </html>

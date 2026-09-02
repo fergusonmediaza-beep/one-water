@@ -38,8 +38,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Text+Me+One&family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/loader.css" />
-    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/nav-bootstrap.css" />
+    <link rel="stylesheet" href="css/file.css" />
 
     <script type="application/ld+json">
     {
@@ -54,42 +57,45 @@
     }
     </script>
 </head>
-<body>
+<body class="ow-idx-body">
 
-    <header class="main-header" id="main_header">
-        <div class="brand">
-            <a href="index.html"><img class="brand-logo" src="images/logo.webp" alt="OneWater Logo" /></a>
+    <!-- ===== NAVBAR (Bootstrap navbar component) ===== -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top ow-navbar" id="main_header">
+        <div class="container-fluid px-4 px-lg-5">
+            <a class="navbar-brand" href="index.html">
+                <img class="ow-brand-logo" src="images/logo.webp" alt="OneWater Logo" />
+            </a>
+            <button class="navbar-toggler ow-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#owMobileMenu" aria-controls="owMobileMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end ow-mobile-menu" tabindex="-1" id="owMobileMenu" aria-labelledby="owMobileMenuLabel">
+                <div class="offcanvas-header d-lg-none">
+                    <span class="visually-hidden" id="owMobileMenuLabel">Menu</span>
+                    <button type="button" class="btn-close btn-close-white ow-menu-close" data-bs-dismiss="offcanvas" data-bs-target="#owMobileMenu" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body justify-content-lg-end">
+                    <ul class="navbar-nav ow-nav-pill">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="solutions.html">Solutions</a></li>
+                        <li class="nav-item"><a class="nav-link" href="case-studies.html">Case Studies</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                    </ul>
+                    <div class="ow-mobile-menu-details d-lg-none">
+                        <a href="https://www.google.com/maps/place/35+Ferguson+Rd,+Illovo,+Sandton,+2196/@-26.1240527,28.0442193,17z/data=!3m1!4b1!4m6!3m5!1s0x1e950cc66f12708b:0xdec98442b3339e98!8m2!3d-26.1240527!4d28.0467942!16s%2Fg%2F11c26fxff5!5m1!1e1?entry=ttu&g_ep=EgoyMDI2MDIwMS4wIKXMDSoASAFQAw%3D%3D" class="ow-mobile-menu-line">35 Ferguson Road Illovo, Sandton 2196</a>
+                        <a href="tel:+27110841100" class="ow-mobile-menu-line">+27 11 084 1100</a>
+                        <a class="ow-mobile-social" href="https://www.linkedin.com/company/one-water-ai/posts/?feedView=all" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <img loading="lazy" decoding="async" src="images/linkedin.webp" alt="LinkedIn" width="18" height="18">
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <button class="hamburger" aria-label="Toggle menu" id="hamburger_btn">
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-        </button>
-        <nav class="nav-menu desktop-nav">
-            <a class="nav-link" href="index.html">Home</a>
-            <a class="nav-link" href="about.html">About</a>
-            <a class="nav-link" href="solutions.html">Solutions</a>
-            <a class="nav-link" href="case-studies.html">Case Studies</a>
-            <a class="nav-link" href="contact.html">Contact Us</a>
-        </nav>
-    </header>
-
-    <aside class="mobile-sidebar" id="mobile_sidebar">
-        <div class="sidebar-header">
-            <button class="close-btn" id="close_sidebar">&times;</button>
-        </div>
-        <nav class="sidebar-nav">
-            <a class="sidebar-link" href="index.html"><img class="sidebar-icon" loading="lazy" decoding="async" src="images/home.webp" alt="Home Icon">Home</a>
-            <a class="sidebar-link" href="about.html"><img class="sidebar-icon" loading="lazy" decoding="async" src="images/about.webp" alt="About Icon">About</a>
-            <a class="sidebar-link" href="solutions.html"><img class="sidebar-icon" loading="lazy" decoding="async" src="images/solutions.webp" alt="Solutions Icon">Solutions</a>
-            <a class="sidebar-link" href="case-studies.html"><img class="sidebar-icon" loading="lazy" decoding="async" src="images/case-study.webp" alt="Case Study Icon">Case Studies</a>
-            <a class="sidebar-link" href="contact.html"><img class="sidebar-icon" loading="lazy" decoding="async" src="images/contact.webp" alt="Contact Icon">Contact Us</a>
-        </nav>
-    </aside>
+    </nav>
 
     <!-- HERO -->
     <section class="hero" id="home">
-        <video autoplay loop muted playsinline class="hero-bg" onerror="this.style.backgroundColor='#0d1f2d';">
+        <video autoplay loop muted playsinline poster="images/hero-poster.webp" class="hero-bg" onerror="this.style.backgroundColor='#0d1f2d';">
             <source src="images/original-hero.mp4" type="video/mp4" />
         </video>
         <div class="hero-overlay"></div>
@@ -313,7 +319,7 @@
                         <path d="M9 1v2M15 1v2M9 21v2M15 21v2M1 9h2M1 15h2M21 9h2M21 15h2"/>
                     </svg>
                 </div>
-                <h4 class="hybrid-item-title">Digital Twin Technology</h4>
+                <h3 class="hybrid-item-title">Digital Twin Technology</h3>
                 <p class="hybrid-item-text">Autodesk-powered hydraulic modelling and real-time simulation</p>
             </div>
 
@@ -331,7 +337,7 @@
                         <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
                     </svg>
                 </div>
-                <h4 class="hybrid-item-title">Live Pipeline Repair</h4>
+                <h3 class="hybrid-item-title">Live Pipeline Repair</h3>
                 <p class="hybrid-item-text">Physical repairs under pressure — zero shutdowns, zero disruptions</p>
             </div>
 
@@ -350,7 +356,7 @@
                         <polyline points="22 4 12 14.01 9 11.01"/>
                     </svg>
                 </div>
-                <h4 class="hybrid-item-title">Complete Infrastructure Management</h4>
+                <h3 class="hybrid-item-title">Complete Infrastructure Management</h3>
                 <p class="hybrid-item-text">We don't just find the problem digitally — we fix it physically</p>
             </div>
         </div>
@@ -404,11 +410,11 @@
             <button class="carousel-btn next-btn" aria-label="Next">&#8250;</button>
         </div>
         <div class="carousel-dots">
-            <span class="dot active" data-index="0"></span>
-            <span class="dot" data-index="1"></span>
-            <span class="dot" data-index="2"></span>
-            <span class="dot" data-index="3"></span>
-            <span class="dot" data-index="4"></span>
+            <button type="button" class="dot active" data-index="0" aria-label="Go to Municipal Water Utilities slide"></button>
+            <button type="button" class="dot" data-index="1" aria-label="Go to Industrial Water Systems slide"></button>
+            <button type="button" class="dot" data-index="2" aria-label="Go to Commercial Property and Estates slide"></button>
+            <button type="button" class="dot" data-index="3" aria-label="Go to Mining and Water Management slide"></button>
+            <button type="button" class="dot" data-index="4" aria-label="Go to Agricultural Water Solutions slide"></button>
         </div>
     </section>
 
@@ -428,28 +434,28 @@
                         <div class="africa-stat-icon-wrap">
                             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
                         </div>
-                        <h4 class="africa-stat-title">Pan-African Reach</h4>
+                        <h3 class="africa-stat-title">Pan-African Reach</h3>
                         <p class="africa-stat-text">Scaling solutions across the continent</p>
                     </div>
                     <div class="africa-stat reveal-up delay-100">
                         <div class="africa-stat-icon-wrap">
                             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                         </div>
-                        <h4 class="africa-stat-title">Local Expertise</h4>
+                        <h3 class="africa-stat-title">Local Expertise</h3>
                         <p class="africa-stat-text">Deep understanding of African infrastructure</p>
                     </div>
                     <div class="africa-stat reveal-up delay-200">
                         <div class="africa-stat-icon-wrap">
                             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
                         </div>
-                        <h4 class="africa-stat-title">Global Standards</h4>
+                        <h3 class="africa-stat-title">Global Standards</h3>
                         <p class="africa-stat-text">World-class technology adapted locally</p>
                     </div>
                     <div class="africa-stat reveal-up delay-300">
                         <div class="africa-stat-icon-wrap">
                             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
                         </div>
-                        <h4 class="africa-stat-title">Sustainable Impact</h4>
+                        <h3 class="africa-stat-title">Sustainable Impact</h3>
                         <p class="africa-stat-text">Long-term water security for communities</p>
                     </div>
                 </div>
@@ -470,42 +476,45 @@
         </div>
     </section>
 
-    <!-- ===== FOOTER (UNTOUCHED) ===== -->
-    <footer class="main-footer">
-        <div class="footer-content">
-            <div class="footer-left">
-                <a href="index.html" class="footer-logo-link" aria-label="OneWater Home">
-                    <img loading="lazy" decoding="async" src="images/logo.webp" alt="OneWater" class="footer-logo">
-                </a>
-                <p class="footer-office">35 Ferguson Road Illovo<br>
-                    Sandton 2196 South Africa<br>
-                    <strong>Phone : +27 11 084 1100</strong><br>
-                    Email : info@onewater.co.za</p>
-            </div>
-            <div class="footer-center">
-                <h3 class="footer-heading">Quick Links</h3>
-                <nav class="footer-nav">
-                    <a class="footer-link" href="index.html">Home</a>
-                    <a class="footer-link" href="about.html">About</a>
-                    <a class="footer-link" href="solutions.html">Solutions</a>
-                    <a class="footer-link" href="case-studies.html">Case Studies</a>
-                    <a class="footer-link" href="contact.html">Contact Us</a>
-                </nav>
-            </div>
-            <div class="footer-right">
-                <div class="social-icons">
-                    <a class="social-link" href="https://www.linkedin.com/company/one-water-ai/posts/?feedView=all" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                        <img class="social-icon" loading="lazy" decoding="async" src="images/linkedin.webp" alt="LinkedIn">
+    <!-- ===== FOOTER ===== -->
+    <footer class="ow-footer text-white pt-5 pb-4">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-md-4">
+                    <a href="index.html" aria-label="OneWater Home">
+                        <img loading="lazy" decoding="async" src="images/logo.webp" alt="OneWater" class="ow-footer-logo mb-3">
+                    </a>
+                    <p class="ow-footer-text">
+                        35 Ferguson Road Illovo<br>
+                        Sandton 2196 South Africa<br>
+                        <strong>Phone: +27 11 084 1100</strong><br>
+                        Email: info@onewater.co.za
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <h3 class="h6 text-uppercase fw-bold mb-3">Quick Links</h3>
+                    <nav class="nav flex-column">
+                        <a class="nav-link ow-footer-link px-0" href="index.html">Home</a>
+                        <a class="nav-link ow-footer-link px-0" href="about.html">About</a>
+                        <a class="nav-link ow-footer-link px-0" href="solutions.html">Solutions</a>
+                        <a class="nav-link ow-footer-link px-0" href="case-studies.html">Case Studies</a>
+                        <a class="nav-link ow-footer-link px-0" href="contact.html">Contact Us</a>
+                    </nav>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <a class="d-inline-flex align-items-center justify-content-center ow-social-icon" href="https://www.linkedin.com/company/one-water-ai/posts/?feedView=all" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <img loading="lazy" decoding="async" src="images/linkedin.webp" alt="LinkedIn" width="20" height="20">
                     </a>
                 </div>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p class="footer-text">&copy; 2026 One Water. All rights reserved. Site by <a href="https://fergusonmedia.co.za" target="_blank" class="credit-link">Ferguson Media</a></p>
+            <hr class="ow-footer-divider my-4" />
+            <p class="text-center small ow-footer-text mb-0">&copy; 2026 One Water. All rights reserved. Site by <a href="https://fergusonmedia.co.za" target="_blank" rel="noopener noreferrer" class="ow-credit-link">Ferguson Media</a></p>
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/loader.js"></script>
-    <script src="js/index.js"></script>
+    <script src="js/nav-bootstrap.js"></script>
+    <script src="js/file.js"></script>
 </body>
 </html>
