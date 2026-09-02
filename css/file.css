@@ -6,8 +6,8 @@
    so loading this one file everywhere is safe and avoids
    duplicating rules across four separate files.
 
-   Truly shared chrome (navbar, footer, mobile menu, back-to-top
-   button, page-hero base) lives separately in nav-bootstrap.css.
+   Truly shared chrome (navbar, footer, mobile menu, page-hero
+   base) lives separately in nav-bootstrap.css.
    ========================================================= */
 
 /* =========================================================
@@ -718,45 +718,465 @@
 
 .ow-ab-partners {
     background: #eef3f7;
+    overflow: hidden;
 }
 
-.ow-ab-partner-card {
+/* ===========================================================
+   Living river: partners as tributaries feeding a central "ONE
+   Water" spine. The spine is a real animated SVG stroke (glow
+   layer + dashed core) with traveling light particles riding it
+   continuously; each branch connector stays dim until its card
+   scrolls into view, then lights up with its own traveling dot —
+   the river visibly "reaching" each partner in turn.
+   =========================================================== */
+.ow-ab-flow {
+    position: relative;
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+/* Soft atmospheric glow blobs behind the whole diagram — pure
+   depth/mood, never interactive, drift very slowly. */
+.ow-ab-flow-atmosphere {
+    position: absolute;
+    z-index: 0;
+    top: 8%;
+    left: -8%;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(46, 196, 182, 0.16) 0%, rgba(46, 196, 182, 0) 70%);
+    filter: blur(6px);
+    pointer-events: none;
+}
+
+.ow-ab-flow-atmosphere--2 {
+    top: 55%;
+    left: auto;
+    right: -10%;
+    width: 220px;
+    height: 220px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .ow-ab-flow-atmosphere {
+        animation: ow-atmosphere-drift 15s ease-in-out infinite alternate;
+    }
+    .ow-ab-flow-atmosphere--2 {
+        animation-duration: 19s;
+        animation-direction: alternate-reverse;
+    }
+}
+
+@keyframes ow-atmosphere-drift {
+    from { transform: translate(0, 0); }
+    to   { transform: translate(16px, -20px); }
+}
+
+.ow-ab-flow-source {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1.5rem;
+}
+
+.ow-ab-flow-source-badge {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(160deg, var(--ow-navy) 0%, var(--ow-navy-2) 100%);
+    color: var(--bs-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 26px -10px rgba(31, 59, 77, 0.5);
+}
+
+/* Expanding ripple rings — the source of the river. Staggered so
+   they never pulse in unison. */
+.ow-ab-flow-source-badge::before,
+.ow-ab-flow-source-badge::after {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(46, 196, 182, 0.55);
+    opacity: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .ow-ab-flow-source-badge {
+        animation: ow-source-pulse 3.2s ease-in-out infinite;
+    }
+    .ow-ab-flow-source-badge::before {
+        animation: ow-source-ripple 3s ease-out infinite;
+    }
+    .ow-ab-flow-source-badge::after {
+        animation: ow-source-ripple 3s ease-out infinite 1.5s;
+    }
+}
+
+@keyframes ow-source-pulse {
+    0%, 100% { transform: scale(1); }
+    50%      { transform: scale(1.045); }
+}
+
+@keyframes ow-source-ripple {
+    0%   { transform: scale(0.85); opacity: 0.6; }
+    100% { transform: scale(1.9); opacity: 0; }
+}
+
+.ow-ab-flow-rows {
+    position: relative;
+}
+
+/* The river spine itself: a real SVG stroke, not a CSS background
+   trick — a soft blurred glow layer plus a crisp dashed core that
+   continuously runs, so the section is visibly moving at rest. */
+.ow-ab-flow-spine-svg {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 18px;
+    height: 100%;
+    transform: translateX(-50%);
+    overflow: visible;
+    z-index: 0;
+}
+
+.ow-ab-flow-spine-glow {
+    stroke: var(--bs-primary);
+    stroke-width: 5;
+    opacity: 0.3;
+}
+
+.ow-ab-flow-spine-core {
+    stroke: var(--bs-primary);
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-dasharray: 9 11;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .ow-ab-flow-spine-core {
+        animation: ow-spine-flow 1.4s linear infinite;
+    }
+    .ow-ab-flow-spine-glow {
+        animation: ow-spine-glow-pulse 4s ease-in-out infinite;
+    }
+}
+
+@keyframes ow-spine-flow {
+    to { stroke-dashoffset: -20; }
+}
+
+@keyframes ow-spine-glow-pulse {
+    0%, 100% { opacity: 0.22; }
+    50%      { opacity: 0.42; }
+}
+
+/* Small glowing highlights that travel the full length of the spine,
+   varying in size/speed/opacity so they read as real water rather
+   than a mechanically repeating loop. */
+.ow-ab-flow-particle {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: var(--size, 6px);
+    height: var(--size, 6px);
+    border-radius: 50%;
+    background: radial-gradient(circle, #fff 0%, var(--bs-primary) 70%);
+    box-shadow: 0 0 9px 2px rgba(46, 196, 182, 0.6);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .ow-ab-flow-particle {
+        animation: ow-particle-flow var(--dur, 5.4s) cubic-bezier(0.45, 0, 0.55, 1) infinite;
+        animation-delay: var(--delay, 0s);
+    }
+}
+
+@keyframes ow-particle-flow {
+    0%   { top: 0%;   opacity: 0; }
+    8%   { opacity: 0.95; }
+    45%  { opacity: 0.6; }
+    55%  { opacity: 0.95; }
+    92%  { opacity: 0.95; }
+    100% { top: 100%; opacity: 0; }
+}
+
+.ow-ab-flow-row {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 64px 1fr;
+    align-items: center;
+    min-height: 168px;
+}
+
+.ow-ab-flow-row--last {
+    min-height: 148px;
+}
+
+.ow-ab-flow-gutter {
+    height: 100%;
+}
+
+.ow-ab-flow-gutter svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    overflow: visible;
+}
+
+/* Branches stay dim/idle until the river "reaches" that partner
+   (its gutter crosses into view via the shared scroll observer),
+   then brighten and their traveling dot fades in — the connector
+   visibly activating rather than just fading into place. */
+.ow-ab-flow-branch {
+    fill: none;
+    stroke: var(--bs-primary);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-dasharray: 5 7;
+    opacity: 0.3;
+    transition: opacity 0.5s var(--ease);
+}
+
+.ow-ab-flow-gutter.in-view .ow-ab-flow-branch {
+    opacity: 1;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .ow-ab-flow-branch {
+        animation: ow-branch-flow 1.7s linear infinite;
+    }
+}
+
+@keyframes ow-branch-flow {
+    to { stroke-dashoffset: -24; }
+}
+
+.ow-ab-flow-branch-dot {
+    fill: #fff;
+    filter: drop-shadow(0 0 3px rgba(46, 196, 182, 0.95));
+    opacity: 0;
+    transition: opacity 0.5s var(--ease) 0.15s;
+}
+
+.ow-ab-flow-gutter.in-view .ow-ab-flow-branch-dot {
+    opacity: 1;
+}
+
+.ow-ab-flow-card {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem;
     background: #fff;
     border: 1px solid #dde7ef;
     border-radius: 1rem;
-    padding: 2rem;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(15, 45, 60, 0.05);
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.4s ease;
+}
+
+/* One-shot "the river just reached this card" flourish: a soft
+   teal glow blooms around the card and settles back to normal. */
+@media (prefers-reduced-motion: no-preference) {
+    .ow-ab-flow-card.in-view {
+        animation: ow-card-activate 1.3s var(--ease) both;
+    }
+    .ow-ab-flow-card.in-view .ow-ab-flow-badge {
+        animation: ow-badge-ripple 0.9s var(--ease) 0.2s both;
+    }
+}
+
+@keyframes ow-card-activate {
+    0%   { box-shadow: 0 1px 2px rgba(15, 45, 60, 0.05); }
+    35%  { box-shadow: 0 0 0 6px rgba(46, 196, 182, 0.16), 0 14px 26px -14px rgba(46, 196, 182, 0.5); }
+    100% { box-shadow: 0 1px 2px rgba(15, 45, 60, 0.05); }
+}
+
+@keyframes ow-badge-ripple {
+    0%   { box-shadow: 0 0 0 0 rgba(46, 196, 182, 0.55); }
+    100% { box-shadow: 0 0 0 11px rgba(46, 196, 182, 0); }
+}
+
+/* Hover shine sweep — a soft diagonal highlight crossing the card,
+   like light catching moving water. Clipped by the card's own
+   overflow:hidden above. */
+.ow-ab-flow-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -60%;
+    width: 40%;
     height: 100%;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transform: skewX(-20deg) translateX(0);
+    transition: transform 0.75s ease;
+    pointer-events: none;
 }
 
-.ow-ab-partner-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
-    border-color: var(--bs-primary);
+.ow-ab-partners .ow-ab-flow-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 36px -16px rgba(46, 196, 182, 0.4), 0 8px 16px -10px rgba(15, 45, 60, 0.12);
+    border-color: #cdeae6;
 }
 
-.ow-ab-partner-logo {
-    max-height: 70px;
-    max-width: 100%;
+.ow-ab-partners .ow-ab-flow-card:hover::before {
+    transform: skewX(-20deg) translateX(340%);
+}
+
+.ow-ab-flow-card--left {
+    flex-direction: row-reverse;
+    text-align: right;
+    justify-self: end;
+}
+
+.ow-ab-flow-card--right {
+    justify-self: start;
+}
+
+.ow-ab-flow-text {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.ow-ab-flow-badge {
+    flex-shrink: 0;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, #f2fbfa 0%, #eaf7f6 55%, #ddf3f0 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ow-ab-flow-badge img {
+    max-height: 26px;
+    max-width: 60%;
     object-fit: contain;
-    margin-bottom: 1.25rem;
+    transition: transform 0.35s var(--ease);
 }
 
-.ow-ab-partner-text {
+.ow-ab-partners .ow-ab-flow-card:hover .ow-ab-flow-badge img {
+    transform: scale(1.1);
+}
+
+.ow-ab-flow-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--ow-navy-2);
+    margin-bottom: 0.3rem;
+}
+
+.ow-ab-flow-desc {
+    font-size: 0.82rem;
     color: #4a5c68;
-    font-size: 0.92rem;
+    margin-bottom: 0.5rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Below ~700px the desktop river concept (spine, branch connectors,
+   alternating sides, particles, atmosphere) is dropped entirely in
+   favour of a plain, readable vertical stack — only a small
+   drifting connector between cards keeps a trace of the water
+   concept, kept deliberately simple. */
+@media (max-width: 700px) {
+    .ow-ab-flow-spine-svg,
+    .ow-ab-flow-particle,
+    .ow-ab-flow-gutter,
+    .ow-ab-flow-atmosphere {
+        display: none;
+    }
+
+    .ow-ab-flow-row {
+        display: block;
+        min-height: 0;
+    }
+
+    .ow-ab-flow-row:not(:last-child) {
+        position: relative;
+        padding-bottom: 1.5rem;
+    }
+
+    .ow-ab-flow-row:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        width: 2px;
+        height: 1.25rem;
+        transform: translateX(-50%);
+        background: repeating-linear-gradient(180deg, var(--bs-primary) 0 6px, transparent 6px 12px);
+        background-size: 100% 18px;
+        opacity: 0.5;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+        .ow-ab-flow-row:not(:last-child)::after {
+            animation: ow-flow-drift-mobile 1.6s linear infinite;
+        }
+    }
+
+    .ow-ab-flow-row > div:empty {
+        display: none;
+    }
+
+    .ow-ab-flow-card,
+    .ow-ab-flow-card--left,
+    .ow-ab-flow-card--right {
+        flex-direction: row;
+        text-align: left;
+        justify-self: stretch;
+        width: 100%;
+    }
+
+    .ow-ab-flow-card--left .ow-ab-flow-badge {
+        order: -1;
+    }
+}
+
+@keyframes ow-flow-drift-mobile {
+    from { background-position-y: 0; }
+    to   { background-position-y: 18px; }
 }
 
 .ow-ab-partner-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
     color: var(--bs-primary);
     font-weight: 600;
     font-size: 0.85rem;
     text-decoration: none;
+    transition: color 0.25s ease;
 }
 
 .ow-ab-partner-link:hover {
     color: var(--bs-link-hover-color);
+}
+
+.ow-ab-partner-link-arrow {
+    display: inline-block;
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.ow-ab-partner-link:hover .ow-ab-partner-link-arrow {
+    transform: translateX(4px);
 }
 
 /* =========================================================
@@ -960,7 +1380,7 @@
 /* ============================================================
    SCROLL REVEAL
    ============================================================ */
-.reveal-up, .reveal-left {
+.reveal-up, .reveal-left, .reveal-right {
     opacity: 0;
     transition: opacity var(--t-slow) var(--ease), transform var(--t-slow) var(--ease);
 }
@@ -969,9 +1389,21 @@
 
 .reveal-left { transform: translateX(-32px); }
 
-.reveal-up.in-view, .reveal-left.in-view {
+.reveal-right { transform: translateX(32px); }
+
+.reveal-up.in-view, .reveal-left.in-view, .reveal-right.in-view {
     opacity: 1;
     transform: translateY(0) translateX(0);
+}
+
+/* Ecosystem section: with reduced motion, drop the slide-in offset
+   and just fade — content still reveals, nothing slides. */
+@media (prefers-reduced-motion: reduce) {
+    .ow-ab-partners .reveal-up,
+    .ow-ab-partners .reveal-left,
+    .ow-ab-partners .reveal-right {
+        transform: none;
+    }
 }
 
 .delay-0.in-view   { transition-delay: 0s; }

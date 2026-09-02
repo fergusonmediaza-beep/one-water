@@ -1,24 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-    /* ----- Back to top button (all pages) ----- */
-    let backToTopBtn = document.getElementById('back_to_top');
-
-    if (!backToTopBtn) {
-        backToTopBtn = document.createElement('button');
-        backToTopBtn.id = 'back_to_top';
-        backToTopBtn.className = 'back-to-top';
-        backToTopBtn.setAttribute('aria-label', 'Back to top');
-        document.body.appendChild(backToTopBtn);
-    }
-
-    window.addEventListener('scroll', function () {
-        backToTopBtn.classList.toggle('visible', window.pageYOffset > 300);
-    }, { passive: true });
-
-    backToTopBtn.addEventListener('click', function () {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
     /* ----- Contact form -> mailto (contact.html only) ----- */
     const submitBtn = document.getElementById('submit_btn');
 
@@ -70,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     /* ----- Scroll reveal (index.html only) — .reveal-up / .reveal-left / .reveal-up-delay ----- */
-    const revealEls = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-up-delay');
+    const revealEls = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right, .reveal-up-delay, .ow-ab-flow-gutter');
 
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -82,6 +63,13 @@ document.addEventListener('DOMContentLoaded', function () {
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
     revealEls.forEach(el => revealObserver.observe(el));
+
+    /* ----- Ecosystem river: strip SMIL dot motion under reduced
+       motion (about.html only) — SMIL <animateMotion> has no CSS
+       media-query hook, so this has to happen in JS. ----- */
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.querySelectorAll('.ow-ab-flow-branch-dot animateMotion').forEach(el => el.remove());
+    }
 
     const solutionsTitle = document.querySelector('.solutions-title');
     if (solutionsTitle) {
