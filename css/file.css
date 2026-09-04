@@ -99,6 +99,10 @@
 /* =========================================================
    CASE STUDIES — cards, Challenge/Solution/Outcome accordion, CTA
    ========================================================= */
+.ow-cs-section {
+    background: #eef3f7;
+}
+
 .ow-cs-card {
     border-radius: 1.25rem;
     overflow: hidden;
@@ -182,16 +186,18 @@
     padding: 0 0 1rem;
 }
 
-.ow-cs-cta {
+/* Shared final-CTA style, reused as-is by case-studies.html and
+   about.html rather than duplicated per page. */
+.ow-page-cta {
     background: #fff;
 }
 
-.ow-cs-cta-title {
+.ow-page-cta-title {
     color: var(--ow-navy);
     font-weight: 500;
 }
 
-.ow-cs-cta-btn {
+.ow-page-cta-btn {
     background: transparent;
     color: var(--ow-navy);
     border: 2px solid var(--ow-navy);
@@ -201,7 +207,7 @@
     transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
-.ow-cs-cta-btn:hover {
+.ow-page-cta-btn:hover {
     background: var(--ow-navy);
     color: #fff;
     transform: translateY(-3px);
@@ -626,96 +632,6 @@
     margin-bottom: 0;
 }
 
-.ow-ab-value {
-    background: #f7f9fb;
-}
-
-.ow-ab-value-grid {
-    border-radius: 1.25rem;
-    overflow: hidden;
-    border: 1px solid #dde7ef;
-    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.07);
-}
-
-.ow-ab-value-col {
-    background: #fff;
-    padding: 2.75rem 2.25rem;
-    height: 100%;
-}
-
-.ow-ab-value-col--featured {
-    background: linear-gradient(160deg, #1a2f3f, var(--ow-navy-2));
-    color: #fff;
-}
-
-.ow-ab-value-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    background: var(--bs-primary);
-    color: #fff;
-    font-size: 0.68rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding: 0.35rem 0.9rem;
-    border-radius: 50px;
-    margin-bottom: 1.5rem;
-}
-
-.ow-ab-value-icon-wrap {
-    width: 72px;
-    height: 72px;
-    background: #f0fdfc;
-    border: 1.5px solid #d0f5f2;
-    border-radius: 1.125rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1.5rem;
-}
-
-.ow-ab-value-col--featured .ow-ab-value-icon-wrap {
-    background: rgba(46, 196, 182, 0.12);
-    border-color: rgba(46, 196, 182, 0.25);
-}
-
-.ow-ab-value-icon {
-    height: 38px;
-    width: auto;
-    object-fit: contain;
-}
-
-.ow-ab-value-heading {
-    font-weight: 500;
-    color: var(--ow-navy);
-}
-
-.ow-ab-value-col--featured .ow-ab-value-heading {
-    color: #fff;
-}
-
-.ow-ab-value-divider {
-    width: 36px;
-    height: 3px;
-    background: var(--bs-primary);
-    border-radius: 2px;
-    margin: 1rem 0;
-}
-
-.ow-ab-value-col--featured .ow-ab-value-divider {
-    background: rgba(46, 196, 182, 0.5);
-}
-
-.ow-ab-value-body {
-    color: #4a5c68;
-    margin-bottom: 0;
-}
-
-.ow-ab-value-col--featured .ow-ab-value-body {
-    color: rgba(255, 255, 255, 0.8);
-}
-
 .ow-ab-partners {
     background: #eef3f7;
     overflow: hidden;
@@ -733,44 +649,6 @@
     position: relative;
     max-width: 760px;
     margin: 0 auto;
-}
-
-/* Soft atmospheric glow blobs behind the whole diagram — pure
-   depth/mood, never interactive, drift very slowly. */
-.ow-ab-flow-atmosphere {
-    position: absolute;
-    z-index: 0;
-    top: 8%;
-    left: -8%;
-    width: 260px;
-    height: 260px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(46, 196, 182, 0.16) 0%, rgba(46, 196, 182, 0) 70%);
-    filter: blur(6px);
-    pointer-events: none;
-}
-
-.ow-ab-flow-atmosphere--2 {
-    top: 55%;
-    left: auto;
-    right: -10%;
-    width: 220px;
-    height: 220px;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-    .ow-ab-flow-atmosphere {
-        animation: ow-atmosphere-drift 15s ease-in-out infinite alternate;
-    }
-    .ow-ab-flow-atmosphere--2 {
-        animation-duration: 19s;
-        animation-direction: alternate-reverse;
-    }
-}
-
-@keyframes ow-atmosphere-drift {
-    from { transform: translate(0, 0); }
-    to   { transform: translate(16px, -20px); }
 }
 
 .ow-ab-flow-source {
@@ -1091,15 +969,14 @@
 }
 
 /* Below ~700px the desktop river concept (spine, branch connectors,
-   alternating sides, particles, atmosphere) is dropped entirely in
-   favour of a plain, readable vertical stack — only a small
-   drifting connector between cards keeps a trace of the water
-   concept, kept deliberately simple. */
+   alternating sides, particles) is dropped entirely in favour of a
+   plain, readable vertical stack — only a small drifting connector
+   between cards keeps a trace of the water concept, kept
+   deliberately simple. */
 @media (max-width: 700px) {
     .ow-ab-flow-spine-svg,
     .ow-ab-flow-particle,
-    .ow-ab-flow-gutter,
-    .ow-ab-flow-atmosphere {
+    .ow-ab-flow-gutter {
         display: none;
     }
 
@@ -1159,7 +1036,12 @@
     display: inline-flex;
     align-items: center;
     gap: 0.35rem;
-    color: var(--bs-primary);
+    /* Darkened from var(--bs-primary)/var(--bs-link-hover-color) —
+       the brand teal is ~2.2:1 on white and fails WCAG AA (4.5:1) for
+       text this size. Scoped locally rather than changing the shared
+       variables, since those also drive backgrounds/borders/icons on
+       dark surfaces where the brighter brand teal is correct. */
+    color: #188077;
     font-weight: 600;
     font-size: 0.85rem;
     text-decoration: none;
@@ -1167,7 +1049,7 @@
 }
 
 .ow-ab-partner-link:hover {
-    color: var(--bs-link-hover-color);
+    color: #146860;
 }
 
 .ow-ab-partner-link-arrow {
